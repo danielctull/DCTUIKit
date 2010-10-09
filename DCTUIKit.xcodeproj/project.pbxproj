@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		241917181260C58600E61FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241917171260C58600E61FE7 /* UIKit.framework */; };
+		2419171A1260C58600E61FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241917191260C58600E61FE7 /* Foundation.framework */; };
+		2419171C1260C58600E61FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2419171B1260C58600E61FE7 /* CoreGraphics.framework */; };
+		2419171E1260C58600E61FE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2419171D1260C58600E61FE7 /* CoreData.framework */; };
+		241917231260C58600E61FE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 241917211260C58600E61FE7 /* InfoPlist.strings */; };
+		241917251260C58600E61FE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917241260C58600E61FE7 /* main.m */; };
+		241917281260C58700E61FE7 /* DCTUIKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917271260C58700E61FE7 /* DCTUIKitAppDelegate.m */; };
+		2419172B1260C58700E61FE7 /* DCTUIKit.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 2419172A1260C58700E61FE7 /* DCTUIKit.xcdatamodel */; };
+		2419172E1260C58700E61FE7 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2419172C1260C58700E61FE7 /* MainWindow_iPhone.xib */; };
+		241917311260C58700E61FE7 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2419172F1260C58700E61FE7 /* MainWindow_iPad.xib */; };
+		241917341260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */; };
+		241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		241917141260C58600E61FE7 /* DCTUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCTUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		241917171260C58600E61FE7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		241917191260C58600E61FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2419171B1260C58600E61FE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2419171D1260C58600E61FE7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2419171F1260C58600E61FE7 /* DCTUIKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCTUIKit-Info.plist"; sourceTree = "<group>"; };
+		241917201260C58600E61FE7 /* DCTUIKit_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKit_Prefix.pch; sourceTree = "<group>"; };
+		241917221260C58600E61FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		241917241260C58600E61FE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		241917261260C58600E61FE7 /* DCTUIKitAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKitAppDelegate.h; sourceTree = "<group>"; };
+		241917271260C58700E61FE7 /* DCTUIKitAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate.m; sourceTree = "<group>"; };
+		2419172A1260C58700E61FE7 /* DCTUIKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DCTUIKit.xcdatamodel; sourceTree = "<group>"; };
+		2419172D1260C58700E61FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		241917301260C58700E61FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		241917321260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKitAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate_iPhone.m; sourceTree = "<group>"; };
+		241917351260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKitAppDelegate_iPad.h; sourceTree = "<group>"; };
+		241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate_iPad.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		241917111260C58600E61FE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				241917181260C58600E61FE7 /* UIKit.framework in Frameworks */,
+				2419171A1260C58600E61FE7 /* Foundation.framework in Frameworks */,
+				2419171C1260C58600E61FE7 /* CoreGraphics.framework in Frameworks */,
+				2419171E1260C58600E61FE7 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		241917031260C58400E61FE7 = {
+			isa = PBXGroup;
+			children = (
+				241917411260C61D00E61FE7 /* DCTUIKit */,
+				2419170A1260C58500E61FE7 /* iPhone */,
+				2419170B1260C58600E61FE7 /* iPad */,
+				2419170C1260C58600E61FE7 /* Classes */,
+				2419170D1260C58600E61FE7 /* Other Sources */,
+				2419170E1260C58600E61FE7 /* Resources */,
+				2419170F1260C58600E61FE7 /* Frameworks */,
+				241917151260C58600E61FE7 /* Products */,
+				241917291260C58700E61FE7 /* Models */,
+			);
+			sourceTree = "<group>";
+		};
+		2419170A1260C58500E61FE7 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				2419172C1260C58700E61FE7 /* MainWindow_iPhone.xib */,
+				241917321260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.h */,
+				241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		2419170B1260C58600E61FE7 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				2419172F1260C58700E61FE7 /* MainWindow_iPad.xib */,
+				241917351260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.h */,
+				241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		2419170C1260C58600E61FE7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				241917261260C58600E61FE7 /* DCTUIKitAppDelegate.h */,
+				241917271260C58700E61FE7 /* DCTUIKitAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2419170D1260C58600E61FE7 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				241917201260C58600E61FE7 /* DCTUIKit_Prefix.pch */,
+				241917241260C58600E61FE7 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2419170E1260C58600E61FE7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2419171F1260C58600E61FE7 /* DCTUIKit-Info.plist */,
+				241917211260C58600E61FE7 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2419170F1260C58600E61FE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				241917171260C58600E61FE7 /* UIKit.framework */,
+				241917191260C58600E61FE7 /* Foundation.framework */,
+				2419171B1260C58600E61FE7 /* CoreGraphics.framework */,
+				2419171D1260C58600E61FE7 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		241917151260C58600E61FE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				241917141260C58600E61FE7 /* DCTUIKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		241917291260C58700E61FE7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2419172A1260C58700E61FE7 /* DCTUIKit.xcdatamodel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		241917411260C61D00E61FE7 /* DCTUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				241917421260C61D00E61FE7 /* Core Data Based */,
+				241917431260C61D00E61FE7 /* View Controllers */,
+				241917441260C61D00E61FE7 /* Views */,
+			);
+			path = DCTUIKit;
+			sourceTree = "<group>";
+		};
+		241917421260C61D00E61FE7 /* Core Data Based */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Core Data Based";
+			sourceTree = "<group>";
+		};
+		241917431260C61D00E61FE7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		241917441260C61D00E61FE7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		241917131260C58600E61FE7 /* DCTUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2419173A1260C58700E61FE7 /* Build configuration list for PBXNativeTarget "DCTUIKit" */;
+			buildPhases = (
+				241917101260C58600E61FE7 /* Sources */,
+				241917111260C58600E61FE7 /* Frameworks */,
+				241917121260C58600E61FE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DCTUIKit;
+			productName = DCTUIKit;
+			productReference = 241917141260C58600E61FE7 /* DCTUIKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		241917051260C58500E61FE7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Daniel Tull";
+			};
+			buildConfigurationList = 241917081260C58500E61FE7 /* Build configuration list for PBXProject "DCTUIKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 241917031260C58400E61FE7;
+			productRefGroup = 241917151260C58600E61FE7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				241917131260C58600E61FE7 /* DCTUIKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		241917121260C58600E61FE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				241917231260C58600E61FE7 /* InfoPlist.strings in Resources */,
+				2419172E1260C58700E61FE7 /* MainWindow_iPhone.xib in Resources */,
+				241917311260C58700E61FE7 /* MainWindow_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		241917101260C58600E61FE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				241917251260C58600E61FE7 /* main.m in Sources */,
+				241917281260C58700E61FE7 /* DCTUIKitAppDelegate.m in Sources */,
+				2419172B1260C58700E61FE7 /* DCTUIKit.xcdatamodel in Sources */,
+				241917341260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m in Sources */,
+				241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		241917211260C58600E61FE7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				241917221260C58600E61FE7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2419172C1260C58700E61FE7 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2419172D1260C58700E61FE7 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		2419172F1260C58700E61FE7 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				241917301260C58700E61FE7 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		241917381260C58700E61FE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		241917391260C58700E61FE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2419173B1260C58700E61FE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DCTUIKit_Prefix.pch;
+				INFOPLIST_FILE = "DCTUIKit-Info.plist";
+				PRODUCT_NAME = DCTUIKit;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2419173C1260C58700E61FE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DCTUIKit_Prefix.pch;
+				INFOPLIST_FILE = "DCTUIKit-Info.plist";
+				PRODUCT_NAME = DCTUIKit;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		241917081260C58500E61FE7 /* Build configuration list for PBXProject "DCTUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				241917381260C58700E61FE7 /* Debug */,
+				241917391260C58700E61FE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2419173A1260C58700E61FE7 /* Build configuration list for PBXNativeTarget "DCTUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2419173B1260C58700E61FE7 /* Debug */,
+				2419173C1260C58700E61FE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 241917051260C58500E61FE7 /* Project object */;
+}
