@@ -167,7 +167,6 @@
 				241917641260CA6B00E61FE7 /* Categories */,
 				241917421260C61D00E61FE7 /* Core Data Based */,
 				241917431260C61D00E61FE7 /* View Controllers */,
-				241917441260C61D00E61FE7 /* Views */,
 			);
 			path = DCTUIKit;
 			sourceTree = "<group>";
@@ -192,13 +191,6 @@
 				241917571260C7B300E61FE7 /* DCTTableViewController.m */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		241917441260C61D00E61FE7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		241917641260CA6B00E61FE7 /* Categories */ = {
