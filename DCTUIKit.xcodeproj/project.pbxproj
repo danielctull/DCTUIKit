@@ -22,6 +22,7 @@
 		2419174E1260C6D100E61FE7 /* DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419174D1260C6D100E61FE7 /* DCTViewController.m */; };
 		241917581260C7B300E61FE7 /* DCTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917571260C7B300E61FE7 /* DCTTableViewController.m */; };
 		2419175D1260C8E300E61FE7 /* DCTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */; };
+		241917601260C98800E61FE7 /* DCTFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419175F1260C98800E61FE7 /* DCTFetchedResultsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		241917571260C7B300E61FE7 /* DCTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewController.m; sourceTree = "<group>"; };
 		2419175B1260C8E300E61FE7 /* DCTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataTableViewController.h; sourceTree = "<group>"; };
 		2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataTableViewController.m; sourceTree = "<group>"; };
+		2419175E1260C98800E61FE7 /* DCTFetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTFetchedResultsTableViewController.h; sourceTree = "<group>"; };
+		2419175F1260C98800E61FE7 /* DCTFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTFetchedResultsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 			children = (
 				2419175B1260C8E300E61FE7 /* DCTCoreDataTableViewController.h */,
 				2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */,
+				2419175E1260C98800E61FE7 /* DCTFetchedResultsTableViewController.h */,
+				2419175F1260C98800E61FE7 /* DCTFetchedResultsTableViewController.m */,
 			);
 			path = "Core Data Based";
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				2419174E1260C6D100E61FE7 /* DCTViewController.m in Sources */,
 				241917581260C7B300E61FE7 /* DCTTableViewController.m in Sources */,
 				2419175D1260C8E300E61FE7 /* DCTCoreDataTableViewController.m in Sources */,
+				241917601260C98800E61FE7 /* DCTFetchedResultsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
