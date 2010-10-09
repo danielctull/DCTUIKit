@@ -21,6 +21,7 @@
 		241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */; };
 		2419174E1260C6D100E61FE7 /* DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419174D1260C6D100E61FE7 /* DCTViewController.m */; };
 		241917581260C7B300E61FE7 /* DCTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917571260C7B300E61FE7 /* DCTTableViewController.m */; };
+		2419175D1260C8E300E61FE7 /* DCTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		2419174D1260C6D100E61FE7 /* DCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTViewController.m; sourceTree = "<group>"; };
 		241917561260C7B300E61FE7 /* DCTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTableViewController.h; sourceTree = "<group>"; };
 		241917571260C7B300E61FE7 /* DCTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewController.m; sourceTree = "<group>"; };
+		2419175B1260C8E300E61FE7 /* DCTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataTableViewController.h; sourceTree = "<group>"; };
+		2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 		241917421260C61D00E61FE7 /* Core Data Based */ = {
 			isa = PBXGroup;
 			children = (
+				2419175B1260C8E300E61FE7 /* DCTCoreDataTableViewController.h */,
+				2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */,
 			);
 			path = "Core Data Based";
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */,
 				2419174E1260C6D100E61FE7 /* DCTViewController.m in Sources */,
 				241917581260C7B300E61FE7 /* DCTTableViewController.m in Sources */,
+				2419175D1260C8E300E61FE7 /* DCTCoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
