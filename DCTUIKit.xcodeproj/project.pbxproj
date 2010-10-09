@@ -19,6 +19,7 @@
 		241917311260C58700E61FE7 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2419172F1260C58700E61FE7 /* MainWindow_iPad.xib */; };
 		241917341260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */; };
 		241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */; };
+		2419174E1260C6D100E61FE7 /* DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419174D1260C6D100E61FE7 /* DCTViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate_iPhone.m; sourceTree = "<group>"; };
 		241917351260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKitAppDelegate_iPad.h; sourceTree = "<group>"; };
 		241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate_iPad.m; sourceTree = "<group>"; };
+		2419174C1260C6D100E61FE7 /* DCTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTViewController.h; sourceTree = "<group>"; };
+		2419174D1260C6D100E61FE7 /* DCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 		241917431260C61D00E61FE7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2419174C1260C6D100E61FE7 /* DCTViewController.h */,
+				2419174D1260C6D100E61FE7 /* DCTViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 				2419172B1260C58700E61FE7 /* DCTUIKit.xcdatamodel in Sources */,
 				241917341260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m in Sources */,
 				241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */,
+				2419174E1260C6D100E61FE7 /* DCTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
