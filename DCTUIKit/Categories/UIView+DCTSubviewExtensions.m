@@ -55,4 +55,18 @@
 	return nil;
 }
 
+- (id)dct_superviewOfKindOfClass:(Class)aClass {
+	
+	if ([self isKindOfClass:aClass])
+		return self;
+	
+	UIView *v = self;
+	
+	while (v = v.superview)
+		if ([v isKindOfClass:aClass])
+			return v;
+	
+	return nil;
+}
+
 @end
