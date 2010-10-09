@@ -23,6 +23,7 @@
 		241917581260C7B300E61FE7 /* DCTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917571260C7B300E61FE7 /* DCTTableViewController.m */; };
 		2419175D1260C8E300E61FE7 /* DCTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */; };
 		241917601260C98800E61FE7 /* DCTFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419175F1260C98800E61FE7 /* DCTFetchedResultsTableViewController.m */; };
+		241917671260CA8D00E61FE7 /* UIView+DCTLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917661260CA8D00E61FE7 /* UIView+DCTLogging.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataTableViewController.m; sourceTree = "<group>"; };
 		2419175E1260C98800E61FE7 /* DCTFetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTFetchedResultsTableViewController.h; sourceTree = "<group>"; };
 		2419175F1260C98800E61FE7 /* DCTFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTFetchedResultsTableViewController.m; sourceTree = "<group>"; };
+		241917651260CA8D00E61FE7 /* UIView+DCTLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCTLogging.h"; sourceTree = "<group>"; };
+		241917661260CA8D00E61FE7 /* UIView+DCTLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCTLogging.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,7 @@
 		241917411260C61D00E61FE7 /* DCTUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				241917641260CA6B00E61FE7 /* Categories */,
 				241917421260C61D00E61FE7 /* Core Data Based */,
 				241917431260C61D00E61FE7 /* View Controllers */,
 				241917441260C61D00E61FE7 /* Views */,
@@ -195,6 +199,15 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		241917641260CA6B00E61FE7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				241917651260CA8D00E61FE7 /* UIView+DCTLogging.h */,
+				241917661260CA8D00E61FE7 /* UIView+DCTLogging.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +282,7 @@
 				241917581260C7B300E61FE7 /* DCTTableViewController.m in Sources */,
 				2419175D1260C8E300E61FE7 /* DCTCoreDataTableViewController.m in Sources */,
 				241917601260C98800E61FE7 /* DCTFetchedResultsTableViewController.m in Sources */,
+				241917671260CA8D00E61FE7 /* UIView+DCTLogging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
