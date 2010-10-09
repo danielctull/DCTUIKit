@@ -26,6 +26,7 @@
 		241917671260CA8D00E61FE7 /* UIView+DCTLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917661260CA8D00E61FE7 /* UIView+DCTLogging.m */; };
 		2419176B1260CFD100E61FE7 /* UIView+DCTSubviewExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419176A1260CFD100E61FE7 /* UIView+DCTSubviewExtensions.m */; };
 		2419176F1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419176E1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m */; };
+		241917741260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917731260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		2419176A1260CFD100E61FE7 /* UIView+DCTSubviewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCTSubviewExtensions.m"; sourceTree = "<group>"; };
 		2419176D1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DCTSystemVersion.h"; sourceTree = "<group>"; };
 		2419176E1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DCTSystemVersion.m"; sourceTree = "<group>"; };
+		241917721260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DCTFeatureCheck.h"; sourceTree = "<group>"; };
+		241917731260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DCTFeatureCheck.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 		241917641260CA6B00E61FE7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				241917721260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.h */,
+				241917731260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m */,
 				2419176D1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.h */,
 				2419176E1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m */,
 				241917691260CFD100E61FE7 /* UIView+DCTSubviewExtensions.h */,
@@ -287,6 +292,7 @@
 				241917671260CA8D00E61FE7 /* UIView+DCTLogging.m in Sources */,
 				2419176B1260CFD100E61FE7 /* UIView+DCTSubviewExtensions.m in Sources */,
 				2419176F1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m in Sources */,
+				241917741260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
