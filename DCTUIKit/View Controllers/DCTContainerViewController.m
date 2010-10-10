@@ -37,12 +37,15 @@
 #import "DCTContainerViewController.h"
 
 @interface DCTContainerViewController ()
-- (void)createChildViewControllersIfNeeded;
+- (void)dctInternal_createChildViewControllersIfNeeded;
 @end
 
 @implementation DCTContainerViewController
 
 @synthesize mainViewController;
+
+#pragma mark -
+#pragma mark NSObject
 
 - (void)dealloc {
 	[mainViewController release], mainViewController = nil;
@@ -50,9 +53,8 @@
 	[super dealloc];
 }
 
-- (void)createChildViewControllersIfNeeded {
-	if (!childViewControllers) childViewControllers = [[NSMutableArray alloc] init];
-}
+#pragma mark -
+#pragma mark DCTContainerViewController
 
 - (void)addViewController:(UIViewController *)vc {
 	[self createChildViewControllersIfNeeded];
@@ -171,6 +173,13 @@
 	
 	for (UIViewController *vc in self.viewControllers)
 		[vc willAnimateSecondHalfOfRotationFromInterfaceOrientation:fromInterfaceOrientation duration:duration];
+}
+
+#pragma mark -
+#pragma mark Internal
+
+- (void)dctInternal_createChildViewControllersIfNeeded {
+	if (!childViewControllers) childViewControllers = [[NSMutableArray alloc] init];
 }
 
 @end
