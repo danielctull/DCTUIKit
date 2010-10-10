@@ -40,15 +40,8 @@
 
 @synthesize position, barView, contentView, viewController;
 
-- (id)initWithViewController:(UIViewController *)aViewController {
-	
-	if (!(self = [super init])) return nil;
-	
-	self.wantsFullScreenLayout = YES;
-	viewController = [aViewController retain];
-	
-	return self;
-}
+#pragma mark -
+#pragma mark NSObject
 
 - (void)dealloc {
 	[viewController release];
@@ -56,14 +49,9 @@
 	[contentView release];
     [super dealloc];
 }
-/*
- - (id)initWithArchiver:(DTSpringBackArchiver *)archiver {
- return [self initWithViewController:[resurrector objectForKey:@"viewController"]];
- }
- 
- - (void)encodeToArchiver:(DTSpringBackArchiver *)archiver {
- [resurrector setObject:self.viewController forKey:@"viewController"];
- }*/
+
+#pragma mark -
+#pragma mark UIViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -113,7 +101,6 @@
 
 #pragma mark -
 #pragma mark UIViewController view event methods
-
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
@@ -172,18 +159,23 @@
 	[self.viewController willAnimateSecondHalfOfRotationFromInterfaceOrientation:fromInterfaceOrientation duration:duration];
 }
 
-
-
-
 #pragma mark -
-#pragma mark Methods for subclasses to use
+#pragma mark DCTContentViewController
 
-- (void)loadContentView {}
+- (id)initWithViewController:(UIViewController *)aViewController {
+	
+	if (!(self = [super init])) return nil;
+	
+	self.wantsFullScreenLayout = YES;
+	viewController = [aViewController retain];
+	
+	return self;
+}
 
-
-
-#pragma mark -
-#pragma mark Public methods
+- (UIView *)contentView {
+	if (!contentView) contentView = [[UIView alloc] initWithFrame:[self contentFrame]];
+	return contentView;
+}
 
 - (void)setBarHidden:(BOOL)hidden animated:(BOOL)animated {
 	if (barHidden == hidden) return;
@@ -214,14 +206,6 @@
 		self.contentView.frame = [self contentFrame];
 	}
 	if (animated) [UIView commitAnimations];
-}
-
-#pragma mark -
-#pragma mark Accessor methods
-
-- (UIView *)contentView {
-	if (!contentView) contentView = [[UIView alloc] initWithFrame:[self contentFrame]];
-	return contentView;
 }
 
 #pragma mark -
@@ -285,5 +269,11 @@
 	
 	return self.view.frame;
 }
+
+#pragma mark -
+#pragma mark Methods for subclasses to use
+
+- (void)loadContentView {}
+
 
 @end
