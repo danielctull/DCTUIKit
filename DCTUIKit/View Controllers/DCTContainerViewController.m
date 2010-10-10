@@ -57,12 +57,12 @@
 #pragma mark DCTContainerViewController
 
 - (void)addViewController:(UIViewController *)vc {
-	[self createChildViewControllersIfNeeded];
+	[self dctInternal_createChildViewControllersIfNeeded];
 	[childViewControllers addObject:vc];
 }
 
 - (void)removeViewController:(UIViewController *)vc {
-	[self createChildViewControllersIfNeeded];
+	[self dctInternal_createChildViewControllersIfNeeded];
 	if ([childViewControllers containsObject:vc])
 		[childViewControllers removeObject:vc];
 }
@@ -90,7 +90,7 @@
 }
 
 - (NSArray *)viewControllers {
-	[self createChildViewControllersIfNeeded];
+	[self dctInternal_createChildViewControllersIfNeeded];
 	return [NSArray arrayWithArray:childViewControllers];
 }
 
