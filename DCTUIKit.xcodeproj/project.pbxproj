@@ -34,6 +34,7 @@
 		241917871260D5C500E61FE7 /* UIResponder+DCTNextResponderExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917861260D5C500E61FE7 /* UIResponder+DCTNextResponderExtensions.m */; };
 		2459D80F126C6119008B9BB3 /* DCTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2459D80E126C6119008B9BB3 /* DCTTabBarController.m */; };
 		2459D814126C612A008B9BB3 /* DCTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2459D813126C612A008B9BB3 /* DCTTabBar.m */; };
+		245D2D02126CF9DD007DF365 /* DCTUITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 245D2D01126CF9DD007DF365 /* DCTUITabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,8 @@
 		2459D80E126C6119008B9BB3 /* DCTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTabBarController.m; sourceTree = "<group>"; };
 		2459D812126C612A008B9BB3 /* DCTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTabBar.h; sourceTree = "<group>"; };
 		2459D813126C612A008B9BB3 /* DCTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTabBar.m; sourceTree = "<group>"; };
+		245D2D00126CF9DD007DF365 /* DCTUITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTUITabBar.h; sourceTree = "<group>"; };
+		245D2D01126CF9DD007DF365 /* DCTUITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTUITabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +259,8 @@
 			children = (
 				2459D812126C612A008B9BB3 /* DCTTabBar.h */,
 				2459D813126C612A008B9BB3 /* DCTTabBar.m */,
+				245D2D00126CF9DD007DF365 /* DCTUITabBar.h */,
+				245D2D01126CF9DD007DF365 /* DCTUITabBar.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				2410E9591262582700654194 /* DCTContentViewController.m in Sources */,
 				2459D80F126C6119008B9BB3 /* DCTTabBarController.m in Sources */,
 				2459D814126C612A008B9BB3 /* DCTTabBar.m in Sources */,
+				245D2D02126CF9DD007DF365 /* DCTUITabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
