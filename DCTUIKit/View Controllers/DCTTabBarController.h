@@ -55,10 +55,15 @@
 
 @end
 
-
-
+#pragma mark -
 
 @protocol DCTTabBarControllerDelegate <NSObject>
 @optional
 - (void)dctTabBarController:(DCTTabBarController *)dctTabBarController didSelectViewController:(UIViewController *)viewController;
+@end
+
+#pragma mark -
+
+@interface UIViewController (DCTTabBarController)
+@property (nonatomic, readonly) DCTTabBarController *dctTabBarController;
 @end

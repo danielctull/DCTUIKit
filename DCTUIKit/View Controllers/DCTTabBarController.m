@@ -36,6 +36,7 @@
 
 #import "DCTTabBarController.h"
 #import "UIView+DCTSubviewExtensions.h"
+#import "UIResponder+DCTNextResponderExtensions.h"
 
 NSInteger const DCTTabBarUnselectedIndex = -1;
 
@@ -230,3 +231,19 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 }
 
 @end
+
+
+
+
+
+#pragma mark -
+
+@implementation UIViewController (DCTTabBarController)
+
+- (DCTTabBarController *)dctTabBarController {
+	return (DCTTabBarController *)[self dct_nearestResponserOfClass:[DCTTabBarController class]];
+}
+
+@end
+
+
