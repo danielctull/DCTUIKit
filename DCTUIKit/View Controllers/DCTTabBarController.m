@@ -142,8 +142,13 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 	BOOL firstLoad = [self.contentView dct_hasSubviews];
 	
 	[self.contentView dct_removeAllSubviews];
-	self.selectedViewController.view.frame = self.contentView.bounds;
-	[self.contentView addSubview:self.selectedViewController.view];
+	
+	UIViewController *vc = self.selectedViewController;
+	
+	vc.view.frame = self.contentView.bounds;
+	[vc viewWillAppear:NO];
+	[self.contentView addSubview:vc.view];
+	[vc viewDidAppear:NO];
 	
 	if (firstLoad) [self dctInternal_refreshNavigationControllerItems];
 }
@@ -152,6 +157,11 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 #pragma mark Accessors
 
 - (void)setSelectedIndex:(NSUInteger)integer {
+	
+	if (integer == selectedIndex) return;
+	
+	// NEED TO SET VIEW DID DISAPPEAR
+	
 	selectedIndex = integer;
 	if (viewIsLoaded) {
 		[self loadContentView];
