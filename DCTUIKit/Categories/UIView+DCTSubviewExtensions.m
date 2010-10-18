@@ -69,4 +69,8 @@
 	return nil;
 }
 
+- (BOOL)dct_hasSubviews {
+	return ([self.subviews count] > 0);
+}
+
 @end

@@ -40,4 +40,5 @@
 - (void)dct_removeAllSubviews;
 - (id)dct_subviewOfKindOfClass:(Class)aClass;
 - (id)dct_superviewOfKindOfClass:(Class)aClass;
+- (BOOL)dct_hasSubviews;
 @end
