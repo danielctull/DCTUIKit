@@ -160,13 +160,15 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 - (void)setSelectedIndex:(NSUInteger)integer {
 	
 	if (integer == selectedIndex) return;
-	
-	// NEED TO SET VIEW DID DISAPPEAR
+		
+	UIViewController *vc = self.selectedViewController;
+	[vc viewWillDisappear:NO];
 	
 	selectedIndex = integer;
-	if (viewIsLoaded) {
-		[self loadContentView];
-	}
+
+	if (viewIsLoaded) [self loadContentView];
+	
+	[vc viewDidDisappear:NO];
 }
 
 - (UIViewController *)selectedViewController {
