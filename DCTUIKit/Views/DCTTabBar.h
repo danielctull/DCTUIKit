@@ -22,5 +22,5 @@
 @end
 
 @protocol DCTTabBarDelegate <NSObject>
-- (void)tabBar:(DCTTabBar *)tabBar didSelectItem:(UITabBarItem *)item;
+- (void)dctTabBar:(DCTTabBar *)tabBar didSelectItem:(UITabBarItem *)item;
 @end

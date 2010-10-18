@@ -43,7 +43,9 @@
 	NSMutableArray *tempHitAreas = [[NSMutableArray alloc] init];
 	CGFloat position;
 	for (UITabBarItem *i in self.items) {
-				
+		
+		NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), i.title);
+		
 		NSInteger intWidth = (NSInteger)width;
 		NSInteger intPosition = (NSInteger)position;
 		
@@ -71,13 +73,13 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {}
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-		
+	
 	UITouch *theTouch = [touches anyObject];
 	
 	CGPoint point = [theTouch locationInView:self];
 	
 	for (NSValue *v in self.itemHitAreas) {
-	
+		
 		CGRect r = [v CGRectValue];
 		
 		if (point.x >= r.origin.x 
@@ -87,7 +89,7 @@
 			
 			NSInteger index = [self.itemHitAreas indexOfObject:v];
 			self.selectedItem = [self.items objectAtIndex:index];
-			[self.delegate tabBar:self didSelectItem:self.selectedItem];
+			[self.delegate dctTabBar:self didSelectItem:self.selectedItem];
 			return;
 		}
 	}

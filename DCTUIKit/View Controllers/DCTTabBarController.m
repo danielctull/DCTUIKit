@@ -14,6 +14,7 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 @interface DCTTabBarController ()
 - (void)dctInternal_setUpTabBarItems;
 - (void)dctInternal_sendDelegateMessageDidSelectViewController:(UIViewController *)viewController;
+- (void)dctInternal_refreshNavigationControllerItems;
 @end
 
 
@@ -35,6 +36,14 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 	if (!(self = [self init])) return nil;
 	
 	viewControllers = [vcs retain];
+	
+	return self;
+}
+
+- (id)init {
+	
+	if (!(self = [super init])) return nil;
+	
 	self.position = DCTContentBarPositionBottom;
 	selectedIndex = DCTTabBarUnselectedIndex;
 	
@@ -89,6 +98,10 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 	[self.selectedViewController viewDidDisappear:animated];
 }
 
+- (UINavigationItem *)navigationItem {
+	return self.selectedViewController.navigationItem;
+}
+
 #pragma mark -
 #pragma mark Public methods
 
@@ -96,12 +109,15 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 	[self setBarHidden:hidden animated:animated];
 }
 
-
-
 - (void)loadContentView {
+	
+	BOOL firstLoad = [self.contentView dct_hasSubviews];
+	
 	[self.contentView dct_removeAllSubviews];
 	self.selectedViewController.view.frame = self.contentView.bounds;
-	[self.contentView addSubview:self.selectedViewController.view];	
+	[self.contentView addSubview:self.selectedViewController.view];
+	
+	if (firstLoad) [self dctInternal_refreshNavigationControllerItems];
 }
 
 #pragma mark -
@@ -110,9 +126,6 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 - (void)setSelectedIndex:(NSUInteger)integer {
 	selectedIndex = integer;
 	if (viewIsLoaded) {
-		//UIViewController *selectedViewController = self.selectedViewController;
-		//selectedViewController.view.frame = self.contentView.bounds;
-		self.title = self.selectedViewController.title;
 		[self loadContentView];
 	}
 }
@@ -134,14 +147,14 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 }
 
 - (DCTTabBar *)tabBar {
-	if (!tabBar) tabBar = [[DCTTabBar alloc] initWithFrame:CGRectMake(0.0, 0.0, 100.0, 44.0)];
+	if (!tabBar) self.tabBar = [[DCTTabBar alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)];
 	return tabBar;
 }
 
 #pragma mark -
 #pragma mark DCTTabBarDelegate
 
-- (void)tabBar:(DCTTabBar *)tab didSelectItem:(UITabBarItem *)item {
+- (void)dctTabBar:(DCTTabBar *)tab didSelectItem:(UITabBarItem *)item {
 	self.selectedIndex = [tab.items indexOfObject:item];
 	[self dctInternal_sendDelegateMessageDidSelectViewController:self.selectedViewController];
 }
@@ -159,7 +172,23 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 
 - (void)dctInternal_sendDelegateMessageDidSelectViewController:(UIViewController *)vc {
 	if ([self.delegate respondsToSelector:@selector(DCTTabBarController:didSelectViewController:)])
-		[self.delegate DCTTabBarController:self didSelectViewController:vc];
+		[self.delegate dctTabBarController:self didSelectViewController:vc];
+}
+
+- (void)dctInternal_refreshNavigationControllerItems {
+	
+	UINavigationController *nav = self.navigationController;
+	
+	if (nav == nil) return;
+	
+	NSMutableArray *items = [nav.viewControllers mutableCopy];
+	
+	NSInteger index = [items indexOfObject:self];
+	
+	[items removeObjectAtIndex:index];
+	[items insertObject:self atIndex:index];
+	nav.viewControllers = items;
+	[items release];
 }
 
 @end
