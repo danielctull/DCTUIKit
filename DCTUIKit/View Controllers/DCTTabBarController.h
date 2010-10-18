@@ -1,8 +1,8 @@
 /*
- UIView+DCTSubviewExtensions.h
+ DCTTabBarController.h
  DCTUIKit
  
- Created by Daniel Tull on 13.10.2009.
+ Created by Daniel Tull on 29.09.2009.
  
  
  
@@ -35,10 +35,35 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "DCTContentViewController.h"
+#import "DCTTabBar.h"
 
-@interface UIView (DCTSubviewExtensions)
-- (void)dct_removeAllSubviews;
-- (id)dct_subviewOfKindOfClass:(Class)aClass;
-- (id)dct_superviewOfKindOfClass:(Class)aClass;
-- (BOOL)dct_hasSubviews;
+@protocol DCTTabBarControllerDelegate;
+
+@interface DCTTabBarController : DCTContentViewController <DCTTabBarDelegate> {
+	BOOL viewIsLoaded;
+}
+
+@property (nonatomic, assign) UIViewController *selectedViewController;
+@property (nonatomic, assign) NSUInteger selectedIndex;
+@property (nonatomic, copy) NSArray *viewControllers;
+@property (nonatomic, retain) DCTTabBar *tabBar;
+
+@property (nonatomic, assign) id<DCTTabBarControllerDelegate> delegate;
+
+- (id)initWithViewControllers:(NSArray *)vcs;
+
+@end
+
+#pragma mark -
+
+@protocol DCTTabBarControllerDelegate <NSObject>
+@optional
+- (void)dctTabBarController:(DCTTabBarController *)dctTabBarController didSelectViewController:(UIViewController *)viewController;
+@end
+
+#pragma mark -
+
+@interface UIViewController (DCTTabBarController)
+@property (nonatomic, readonly) DCTTabBarController *dctTabBarController;
 @end

@@ -1,8 +1,8 @@
 /*
- UIView+DCTSubviewExtensions.h
+ DCTUITabBar.h
  DCTUIKit
  
- Created by Daniel Tull on 13.10.2009.
+ Created by Daniel Tull on 26.11.2009.
  
  
  
@@ -34,11 +34,11 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <UIKit/UIKit.h>
+#import "DCTTabBar.h"
 
-@interface UIView (DCTSubviewExtensions)
-- (void)dct_removeAllSubviews;
-- (id)dct_subviewOfKindOfClass:(Class)aClass;
-- (id)dct_superviewOfKindOfClass:(Class)aClass;
-- (BOOL)dct_hasSubviews;
+
+@interface DCTUITabBar : DCTTabBar <UITabBarDelegate> {
+	UITabBar *uiTabBar;
+}
+
 @end

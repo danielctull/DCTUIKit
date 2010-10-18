@@ -1,8 +1,8 @@
 /*
- UIView+DCTSubviewExtensions.h
+ DCTUITabBar.m
  DCTUIKit
  
- Created by Daniel Tull on 13.10.2009.
+ Created by Daniel Tull on 26.11.2009.
  
  
  
@@ -34,11 +34,65 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <UIKit/UIKit.h>
+#import "DCTUITabBar.h"
 
-@interface UIView (DCTSubviewExtensions)
-- (void)dct_removeAllSubviews;
-- (id)dct_subviewOfKindOfClass:(Class)aClass;
-- (id)dct_superviewOfKindOfClass:(Class)aClass;
-- (BOOL)dct_hasSubviews;
+
+@implementation DCTUITabBar
+
+#pragma mark -
+#pragma mark NSObject
+
+- (void)dealloc {
+	[uiTabBar release];
+	[super dealloc];	
+}
+
+- (id)init {
+	
+	if (!(self = [super initWithFrame:CGRectMake(0.0, 0.0, 320.0, 49.0)])) return nil;
+	
+	UITabBar *tb = [[UITabBar alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 49.0)];
+	uiTabBar = [tb retain];
+	uiTabBar.delegate = self;
+	
+	return self;	
+}
+
+#pragma mark -
+#pragma mark UIView
+
+
+- (void)drawRect:(CGRect)rect {
+}
+
+- (void)layoutSubviews {
+	[self addSubview:uiTabBar];
+}
+
+#pragma mark -
+#pragma mark DCTTabBar
+
+- (void)setSelectedItem:(UITabBarItem *)anItem {
+	uiTabBar.selectedItem = anItem;
+}
+
+- (UITabBarItem *)selectedItem {
+	return uiTabBar.selectedItem;
+}
+
+- (void)setItems:(NSArray *)someItems {
+	uiTabBar.items = someItems;
+}
+
+- (NSArray *)items {
+	return uiTabBar.items;
+}
+
+#pragma mark -
+#pragma mark UITabBarDelegate
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+	[self.delegate dctTabBar:self didSelectItem:item];
+}
+
 @end
