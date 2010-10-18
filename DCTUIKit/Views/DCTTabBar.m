@@ -35,6 +35,7 @@
  */
 
 #import "DCTTabBar.h"
+#import "UIView+DCTSubviewExtensions.h"
 
 @implementation DCTTabBar
 
@@ -63,6 +64,8 @@
 #pragma mark UIView
 
 - (void)drawRect:(CGRect)rect {
+	
+	[self dct_removeAllSubviews];
 	
 	self.backgroundColor = [UIColor blackColor]; 
 	
