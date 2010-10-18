@@ -75,8 +75,6 @@
 	CGFloat position;
 	for (UITabBarItem *i in self.items) {
 		
-		NSLog(@"%@:%@ %@", self, NSStringFromSelector(_cmd), i.title);
-		
 		NSInteger intWidth = (NSInteger)width;
 		NSInteger intPosition = (NSInteger)position;
 		
