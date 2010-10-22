@@ -41,7 +41,7 @@
 @protocol DCTTabBarControllerDelegate;
 
 @interface DCTTabBarController : DCTContentViewController <DCTTabBarDelegate> {
-	BOOL viewIsLoaded;
+	BOOL viewIsLoaded, viewHasAppeared;
 }
 
 @property (nonatomic, assign) UIViewController *selectedViewController;

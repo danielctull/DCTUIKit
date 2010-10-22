@@ -13,4 +13,24 @@
 - (IBAction)presentVC:(id)sender {
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	NSLog(@"%@:%@", self, NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+	[super viewDidDisappear:animated];
+	NSLog(@"%@:%@", self, NSStringFromSelector(_cmd));
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	NSLog(@"%@:%@", self, NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	NSLog(@"%@:%@", self, NSStringFromSelector(_cmd));
+}
+
 @end

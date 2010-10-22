@@ -109,12 +109,13 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	[self.selectedViewController viewDidAppear:animated];
+	if (viewHasAppeared) [self.selectedViewController viewDidAppear:animated];
+	viewHasAppeared = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	[self.selectedViewController viewWillAppear:animated];
+	if (viewHasAppeared) [self.selectedViewController viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -142,14 +143,7 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 	
 	BOOL firstLoad = [self.contentView dct_hasSubviews];
 	
-	[self.contentView dct_removeAllSubviews];
-	
-	UIViewController *vc = self.selectedViewController;
-	
-	vc.view.frame = self.contentView.bounds;
-	[vc viewWillAppear:NO];
-	[self.contentView addSubview:vc.view];
-	[vc viewDidAppear:NO];
+	//[self.contentView dct_removeAllSubviews]; 
 	
 	if (firstLoad) [self dctInternal_refreshNavigationControllerItems];
 }
@@ -160,15 +154,21 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 - (void)setSelectedIndex:(NSUInteger)integer {
 	
 	if (integer == selectedIndex) return;
-		
-	UIViewController *vc = self.selectedViewController;
-	[vc viewWillDisappear:NO];
+	
+	UIViewController *oldVC = nil;
+	if (selectedIndex != DCTTabBarUnselectedIndex) oldVC = self.selectedViewController;
 	
 	selectedIndex = integer;
-
-	if (viewIsLoaded) [self loadContentView];
+	UIViewController *newVC = self.selectedViewController;
+	newVC.view.frame = self.contentView.bounds;
 	
-	[vc viewDidDisappear:NO];
+	[oldVC viewWillDisappear:NO];
+	[oldVC.view removeFromSuperview];
+	[oldVC viewDidDisappear:NO]; 
+	
+	[newVC viewWillAppear:NO];
+	[self.contentView addSubview:newVC.view];
+	[newVC viewDidAppear:NO];
 }
 
 - (UIViewController *)selectedViewController {

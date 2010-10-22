@@ -8,6 +8,7 @@
 
 #import "DCTUIKitAppDelegate.h"
 #import "DTTestViewController.h"
+#import "DCTUITabBar.h"
 
 @implementation DCTUIKitAppDelegate
 
@@ -20,10 +21,13 @@
 	vc1.title = @"One";
 	
 	DTTestViewController *vc2 = [[DTTestViewController alloc] init];
-	vc1.title = @"Two";
+	vc2.title = @"Two";
+	
+	DCTUITabBar *tabBar = [[DCTUITabBar alloc] init];
 	
 	tabs = [[DCTTabBarController alloc] initWithViewControllers:[NSArray arrayWithObjects:vc1, vc2, nil]];
-	
+	tabs.tabBar = tabBar;
+	[tabBar release];
 	[vc1 release];
 	[vc2 release];
 	
