@@ -163,11 +163,12 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 	newVC.view.frame = self.contentView.bounds;
 	
 	[oldVC viewWillDisappear:NO];
-	[oldVC.view removeFromSuperview];
-	[oldVC viewDidDisappear:NO]; 
-	
 	[newVC viewWillAppear:NO];
+	
+	[oldVC.view removeFromSuperview];
 	[self.contentView addSubview:newVC.view];
+	
+	[oldVC viewDidDisappear:NO];
 	[newVC viewDidAppear:NO];
 }
 
