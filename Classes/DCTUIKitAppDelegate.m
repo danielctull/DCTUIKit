@@ -7,6 +7,7 @@
 //
 
 #import "DCTUIKitAppDelegate.h"
+#import "DTTestViewController.h"
 
 @implementation DCTUIKitAppDelegate
 
@@ -14,7 +15,20 @@
 @synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+	
+	DTTestViewController *vc1 = [[DTTestViewController alloc] init];
+	vc1.title = @"One";
+	
+	DTTestViewController *vc2 = [[DTTestViewController alloc] init];
+	vc1.title = @"Two";
+	
+	tabs = [[DCTTabBarController alloc] initWithViewControllers:[NSArray arrayWithObjects:vc1, vc2, nil]];
+	
+	[vc1 release];
+	[vc2 release];
+	
+	[window addSubview:tabs.view];
+	
 	// Override point for customization after application launch.
 	[window makeKeyAndVisible];
     return YES;

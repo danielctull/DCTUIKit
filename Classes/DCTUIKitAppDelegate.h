@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DCTTabBarController.h"
 
 @interface DCTUIKitAppDelegate : NSObject <UIApplicationDelegate> {
+	DCTTabBarController *tabs;
 	UIWindow *window;
 	NSManagedObjectContext *managedObjectContext;
 	NSManagedObjectModel *managedObjectModel;
