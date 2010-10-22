@@ -35,6 +35,8 @@
 		2459D80F126C6119008B9BB3 /* DCTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2459D80E126C6119008B9BB3 /* DCTTabBarController.m */; };
 		2459D814126C612A008B9BB3 /* DCTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2459D813126C612A008B9BB3 /* DCTTabBar.m */; };
 		245D2D02126CF9DD007DF365 /* DCTUITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 245D2D01126CF9DD007DF365 /* DCTUITabBar.m */; };
+		246AF74412717B1A00A37445 /* DTTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246AF74212717B1A00A37445 /* DTTestViewController.m */; };
+		246AF74512717B1A00A37445 /* DTTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246AF74312717B1A00A37445 /* DTTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,9 @@
 		2459D813126C612A008B9BB3 /* DCTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTabBar.m; sourceTree = "<group>"; };
 		245D2D00126CF9DD007DF365 /* DCTUITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTUITabBar.h; sourceTree = "<group>"; };
 		245D2D01126CF9DD007DF365 /* DCTUITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTUITabBar.m; sourceTree = "<group>"; };
+		246AF74112717B1A00A37445 /* DTTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTestViewController.h; sourceTree = "<group>"; };
+		246AF74212717B1A00A37445 /* DTTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTestViewController.m; sourceTree = "<group>"; };
+		246AF74312717B1A00A37445 /* DTTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTTestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 				2419170A1260C58500E61FE7 /* iPhone */,
 				2419170B1260C58600E61FE7 /* iPad */,
 				2419170C1260C58600E61FE7 /* Classes */,
+				246AF73E12717A7500A37445 /* Example Classes */,
 				2419170D1260C58600E61FE7 /* Other Sources */,
 				2419170E1260C58600E61FE7 /* Resources */,
 				2419170F1260C58600E61FE7 /* Frameworks */,
@@ -265,6 +271,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		246AF73E12717A7500A37445 /* Example Classes */ = {
+			isa = PBXGroup;
+			children = (
+				246AF74112717B1A00A37445 /* DTTestViewController.h */,
+				246AF74212717B1A00A37445 /* DTTestViewController.m */,
+				246AF74312717B1A00A37445 /* DTTestViewController.xib */,
+			);
+			path = "Example Classes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -318,6 +334,7 @@
 				241917231260C58600E61FE7 /* InfoPlist.strings in Resources */,
 				2419172E1260C58700E61FE7 /* MainWindow_iPhone.xib in Resources */,
 				241917311260C58700E61FE7 /* MainWindow_iPad.xib in Resources */,
+				246AF74512717B1A00A37445 /* DTTestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +366,7 @@
 				2459D80F126C6119008B9BB3 /* DCTTabBarController.m in Sources */,
 				2459D814126C612A008B9BB3 /* DCTTabBar.m in Sources */,
 				245D2D02126CF9DD007DF365 /* DCTUITabBar.m in Sources */,
+				246AF74412717B1A00A37445 /* DTTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

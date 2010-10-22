@@ -65,6 +65,17 @@
 }
 
 #pragma mark -
+#pragma mark IBOutlet accessors
+
+- (UITabBarItem *)tabBarItem {
+	return [super tabBarItem];
+}
+
+- (void)setTabBarItem:(UITabBarItem *)item {
+	[super setTabBarItem:item];
+}
+
+#pragma mark -
 #pragma mark UIKeyboard Notification methods
 
 - (void)keyboardWillShowNotification:(NSNotification *)notification {

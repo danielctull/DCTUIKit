@@ -40,6 +40,8 @@
     
 }
 
+@property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
+
 - (void)keyboardWillShowNotification:(NSNotification *)notification;
 - (void)keyboardDidShowNotification:(NSNotification *)notification;
 - (void)keyboardWillHideNotification:(NSNotification *)notification;
