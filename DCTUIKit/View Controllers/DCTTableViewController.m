@@ -53,9 +53,7 @@
 
 - (id)init {
 	
-	self = [super init];
-	
-	if (!self) return nil;
+	if (!(self = [super init])) return nil;
 	
 	tableViewStyle = UITableViewStylePlain;
 	clearsSelectionOnViewWillAppear = YES;
@@ -69,7 +67,8 @@
 }
 
 - (void)loadView {
-	[self loadTableView];
+	[super loadView];
+	if (!tableView) [self loadTableView];
 }
 
 // Saving and reloading the position of the table view - if memory warning removes table.
@@ -101,19 +100,23 @@
 
 - (UITableView *)tableView {
 	
-	if (!tableView)	[self loadTableView];
+	if (!tableView)	[self loadView];
 	
 	return tableView;
 }
 
 - (void)loadTableView {
+	
 	if (!tableView) {
-		tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0) style:self.tableViewStyle];
+		tableView = [[UITableView alloc] initWithFrame:self.view.bounds
+												 style:self.tableViewStyle];
 		tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		self.tableView.dataSource = self;
 		self.tableView.delegate = self;
 	}
-	self.view = tableView;
+	
+	tableView.frame = self.view.bounds;
+	[self.view addSubview:tableView];
 }
 
 #pragma mark -
