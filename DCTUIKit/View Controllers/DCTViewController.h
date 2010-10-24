@@ -43,6 +43,9 @@
 @property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
 @property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
 
+- (NSString *)loadTitle;
+- (IBAction)dismissModalViewController:(id)sender;
+
 - (void)keyboardWillShowNotification:(NSNotification *)notification;
 - (void)keyboardDidShowNotification:(NSNotification *)notification;
 - (void)keyboardWillHideNotification:(NSNotification *)notification;

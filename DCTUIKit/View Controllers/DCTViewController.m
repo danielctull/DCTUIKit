@@ -64,8 +64,30 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHideNotification:) name:UIKeyboardDidHideNotification object:nil];
 }
 
+- (void)loadView {
+	
+	NSString *nib = self.nibName;
+	if (!nib || [nib isEqualToString:@""]) nib = NSStringFromClass([self class]);
+	
+	NSBundle *bundle = self.nibBundle;
+	if (!bundle) bundle = [NSBundle mainBundle];
+	
+	[bundle loadNibNamed:nib owner:self options:nil];
+	
+	if ([self isViewLoaded]) return;
+	
+	[super loadView];
+}
+
 #pragma mark -
-#pragma mark IBOutlet accessors
+#pragma mark IBAction
+
+- (IBAction)dismissModalViewController:(id)sender {
+	[self.parentViewController dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark IBOutlet
 
 - (UITabBarItem *)tabBarItem {
 	return [super tabBarItem];
@@ -76,6 +98,7 @@
 }
 
 - (void)setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {
+	NSLog(@"%@:%@", self, NSStringFromSelector(_cmd));
 	self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 }
 
@@ -89,6 +112,18 @@
 
 - (UIBarButtonItem *)rightBarButtonItem {
 	return self.navigationItem.rightBarButtonItem;
+}
+
+- (NSString *)title {
+	NSString *t = super.title;
+	
+	if (!t) t = [self loadTitle];
+	
+	return t;
+}
+
+- (NSString *)loadTitle {
+	return super.title;
 }
 
 #pragma mark -
