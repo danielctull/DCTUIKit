@@ -75,6 +75,22 @@
 	[super setTabBarItem:item];
 }
 
+- (void)setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {
+	self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+}
+
+- (UIBarButtonItem *)leftBarButtonItem {
+	return self.navigationItem.leftBarButtonItem;
+}
+
+- (void)setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
+	self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+}
+
+- (UIBarButtonItem *)rightBarButtonItem {
+	return self.navigationItem.rightBarButtonItem;
+}
+
 #pragma mark -
 #pragma mark UIKeyboard Notification methods
 

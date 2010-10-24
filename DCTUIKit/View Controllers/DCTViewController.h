@@ -41,6 +41,7 @@
 }
 
 @property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
+@property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
 
 - (void)keyboardWillShowNotification:(NSNotification *)notification;
 - (void)keyboardDidShowNotification:(NSNotification *)notification;
