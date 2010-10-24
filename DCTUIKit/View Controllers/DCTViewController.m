@@ -42,11 +42,6 @@
 
 @implementation DCTViewController
 
-// Because all view controllers should rotate all ways, right?
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return YES;
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];	
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
@@ -98,7 +93,6 @@
 }
 
 - (void)setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {
-	NSLog(@"%@:%@", self, NSStringFromSelector(_cmd));
 	self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 }
 
