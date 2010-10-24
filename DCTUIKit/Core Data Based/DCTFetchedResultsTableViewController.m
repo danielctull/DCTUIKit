@@ -50,6 +50,20 @@
 }
 
 #pragma mark -
+#pragma mark UIViewController
+
+- (void)viewDidUnload {
+	[super viewDidUnload];
+	self.fetchedResultsController = nil;
+}
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	if (!fetchedResultsController) [self loadFetchedResultsController];
+}
+
+#pragma mark -
 #pragma mark DCTFetchedResultsTableViewController
 
 - (void)setFetchedResultsController:(NSFetchedResultsController *)frc {
@@ -62,6 +76,15 @@
 	[fetchedResultsController performFetch:nil];
 	fetchedResultsController.delegate = self;
 }
+
+- (NSFetchedResultsController *)fetchedResultsController {
+	
+	if (!fetchedResultsController) [self loadFetchedResultsController];
+	
+	return fetchedResultsController;	
+}
+
+- (void)loadFetchedResultsController {}
 
 - (NSIndexPath *)tableViewIndexPathForFetchedResultsControllerIndexPath:(NSIndexPath *)indexPath {
 	return indexPath;
