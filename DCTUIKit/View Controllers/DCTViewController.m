@@ -61,13 +61,21 @@
 
 - (void)loadView {
 	
+	// Making the nib loading nature explicit. Will try to load a nib that has 
+	// the same name as the view controller class.
+	
 	NSString *nib = self.nibName;
 	if (!nib || [nib isEqualToString:@""]) nib = NSStringFromClass([self class]);
 	
 	NSBundle *bundle = self.nibBundle;
 	if (!bundle) bundle = [NSBundle mainBundle];
 	
-	[bundle loadNibNamed:nib owner:self options:nil];
+	NSString *path = [bundle pathForResource:nib ofType:@"nib"];
+	
+	// Do I need to check for a xib?
+	if (!path) path = [bundle pathForResource:nib ofType:@"xib"];
+	
+	if (path) [bundle loadNibNamed:nib owner:self options:nil];
 	
 	if ([self isViewLoaded]) return;
 	
