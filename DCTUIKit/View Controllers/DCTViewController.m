@@ -42,6 +42,8 @@
 
 @implementation DCTViewController
 
+@synthesize resizeViewToFitKeyboard;
+
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];	
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
@@ -132,13 +134,13 @@
 #pragma mark UIKeyboard Notification methods
 
 - (void)keyboardWillShowNotification:(NSNotification *)notification {
-	[self dctInternal_keyboardWillHide:NO withNotification:notification];
+	if (self.resizeViewToFitKeyboard) [self dctInternal_keyboardWillHide:NO withNotification:notification];
 }
 
 - (void)keyboardDidShowNotification:(NSNotification *)notification {}
 
 - (void)keyboardWillHideNotification:(NSNotification *)notification {
-	[self dctInternal_keyboardWillHide:YES withNotification:notification];
+	if (self.resizeViewToFitKeyboard) [self dctInternal_keyboardWillHide:YES withNotification:notification];
 }
 
 - (void)keyboardDidHideNotification:(NSNotification *)notification {}
