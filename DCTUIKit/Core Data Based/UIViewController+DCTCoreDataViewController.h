@@ -1,8 +1,8 @@
 /*
- DCTCoreDataTableViewController.h
+ UIViewController+DCTCoreDataViewController.h
  DCTUIKit
  
- Created by Daniel Tull on 04.05.2010.
+ Created by Daniel Tull on 28.10.2010.
  
  
  
@@ -34,10 +34,18 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "DCTTableViewController.h"
-#import <CoreData/CoreData.h>
-#import "DCTCoreDataViewControllerProtocol.h"
+#import <Foundation/Foundation.h>
+#import "UIViewController+DCTCoreDataViewController.h"
 
-@interface DCTCoreDataTableViewController : DCTTableViewController <DCTCoreDataViewControllerProtocol> {}
+@protocol DCTCoreDataViewControllerProtocol <NSObject>
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@end
+
+
+@interface UIViewController (DCTCoreDataViewController)
+
+- (void)pushCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated;
+
+- (void)presentModalCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)vc animated:(BOOL)animated;
+
 @end
