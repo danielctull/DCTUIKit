@@ -44,8 +44,8 @@
 
 @interface UIViewController (DCTCoreDataViewController)
 
-- (void)pushCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated;
+- (void)dct_pushCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated;
 
-- (void)presentModalCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)vc animated:(BOOL)animated;
+- (void)dct_presentModalCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)vc animated:(BOOL)animated;
 
 @end

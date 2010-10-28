@@ -39,7 +39,7 @@
 
 @implementation UIViewController (DCTCoreDataViewController)
 
-- (void)pushCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
+- (void)dct_pushCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
 	
 	if ([self conformsToProtocol:@protocol(DCTCoreDataViewControllerProtocol)]) {
 		UIViewController<DCTCoreDataViewControllerProtocol> *coreDataSelf = self;
@@ -49,7 +49,7 @@
 	[self.navigationController pushViewController:viewController animated:animated];
 }
 
-- (void)presentModalCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
+- (void)dct_presentModalCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
 	
 	if ([self conformsToProtocol:@protocol(DCTCoreDataViewControllerProtocol)]) {
 		UIViewController<DCTCoreDataViewControllerProtocol> *coreDataSelf = self;
