@@ -36,7 +36,7 @@
 
 #import "DCTViewController.h"
 #import <CoreData/CoreData.h>
-#import "DCTCoreDataViewControllerProtocol.h"
+#import "UIViewController+DCTCoreDataViewController.h"
 
 @interface DCTCoreDataViewController : DCTViewController <DCTCoreDataViewControllerProtocol> {    
 }

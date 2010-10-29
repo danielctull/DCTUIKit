@@ -34,8 +34,7 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Foundation/Foundation.h>
-#import "UIViewController+DCTCoreDataViewController.h"
+#import <UIKit/UIKit.h>
 
 @protocol DCTCoreDataViewControllerProtocol <NSObject>
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;

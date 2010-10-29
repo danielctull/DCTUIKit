@@ -36,7 +36,7 @@
 
 #import "DCTTableViewController.h"
 #import <CoreData/CoreData.h>
-#import "DCTCoreDataViewControllerProtocol.h"
+#import "UIViewController+DCTCoreDataViewController.h"
 
 @interface DCTCoreDataTableViewController : DCTTableViewController <DCTCoreDataViewControllerProtocol> {}
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
