@@ -35,6 +35,7 @@
  */
 
 #import "DCTViewController.h"
+#import <CoreData/CoreData.h>
 
 @interface DCTCoreDataViewController : DCTViewController {    
 }
