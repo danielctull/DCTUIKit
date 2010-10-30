@@ -45,7 +45,6 @@ typedef enum {
 } DCTContentBarPosition;
 
 @interface DCTContentViewController : UIViewController {
-    BOOL barHidden;
 }
 
 @property (nonatomic, assign) DCTContentBarPosition position;
@@ -59,6 +58,9 @@ typedef enum {
 
 // Publically Use:
 - (id)initWithViewController:(UIViewController *)aViewController;
+
+@property (nonatomic, assign) BOOL barHidden;
 - (void)setBarHidden:(BOOL)hidden animated:(BOOL)animated;
+- (void)setBarHidden:(BOOL)hidden animated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
 
 @end
