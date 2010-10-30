@@ -198,7 +198,7 @@
 	
 	if (self.position == DCTContentBarPositionNone) return;
 		
-	NSTimeInterval time = 0.4;
+	NSTimeInterval time = 0.333;
 	if (!animated) time = 0.0;
 	
 	[UIView animateWithDuration:time animations:^{
