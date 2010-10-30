@@ -38,7 +38,7 @@
 
 @implementation DCTContentViewController
 
-@synthesize position, barView, contentView, viewController;
+@synthesize position, barView, contentView, viewController, barHidden;
 
 #pragma mark -
 #pragma mark NSObject
@@ -177,35 +177,55 @@
 	return contentView;
 }
 
+- (UIView *)barView {
+	if (!barView) barView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, 44.0)];
+	return barView;
+}
+
+- (void)setBarHidden:(BOOL)aBool {
+	[self setBarHidden:aBool animated:NO completion:nil];
+}
+
 - (void)setBarHidden:(BOOL)hidden animated:(BOOL)animated {
+	[self setBarHidden:hidden animated:animated completion:nil];
+}
+
+- (void)setBarHidden:(BOOL)hidden animated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
+	
 	if (barHidden == hidden) return;
 	
 	barHidden = hidden;
 	
 	if (self.position == DCTContentBarPositionNone) return;
+		
+	NSTimeInterval time = 0.4;
+	if (!animated) time = 0.0;
 	
-	if (animated) [UIView beginAnimations:@"hidingOrShowingTabBar" context:nil]; 
-	
-	if (hidden) {
-		self.contentView.frame = self.view.bounds;
+	[UIView animateWithDuration:time animations:^{
 		
-		if (self.position == DCTContentBarPositionBottom)
-			self.barView.frame = CGRectMake(self.barView.frame.origin.x, self.barView.frame.origin.y + self.barView.frame.size.height, self.barView.frame.size.width, self.barView.frame.size.height);
+		if (hidden) {
+			self.contentView.frame = self.view.bounds;
+			
+			if (self.position == DCTContentBarPositionBottom)
+				self.barView.frame = CGRectMake(self.barView.frame.origin.x, self.barView.frame.origin.y + self.barView.frame.size.height, self.barView.frame.size.width, self.barView.frame.size.height);
+			
+			else if (self.position == DCTContentBarPositionTop)
+				self.barView.frame = CGRectMake(self.barView.frame.origin.x, self.barView.frame.origin.y - self.barView.frame.size.height, self.barView.frame.size.width, self.barView.frame.size.height);
+			
+			else if (self.position == DCTContentBarPositionRight)
+				self.barView.frame = CGRectMake(self.barView.frame.origin.x + self.barView.frame.size.width, self.barView.frame.origin.y, self.barView.frame.size.width, self.barView.frame.size.height);
+			
+			else if (self.position == DCTContentBarPositionLeft)
+				self.barView.frame = CGRectMake(self.barView.frame.origin.x - self.barView.frame.size.width, self.barView.frame.origin.y, self.barView.frame.size.width, self.barView.frame.size.height);
+			
+		} else {
+			self.barView.frame = [self barFrame];
+			self.contentView.frame = [self contentFrame];
+		}
 		
-		else if (self.position == DCTContentBarPositionTop)
-			self.barView.frame = CGRectMake(self.barView.frame.origin.x, self.barView.frame.origin.y - self.barView.frame.size.height, self.barView.frame.size.width, self.barView.frame.size.height);
 		
-		else if (self.position == DCTContentBarPositionRight)
-			self.barView.frame = CGRectMake(self.barView.frame.origin.x + self.barView.frame.size.width, self.barView.frame.origin.y, self.barView.frame.size.width, self.barView.frame.size.height);
 		
-		else if (self.position == DCTContentBarPositionLeft)
-			self.barView.frame = CGRectMake(self.barView.frame.origin.x - self.barView.frame.size.width, self.barView.frame.origin.y, self.barView.frame.size.width, self.barView.frame.size.height);
-		
-	} else {
-		self.barView.frame = [self barFrame];
-		self.contentView.frame = [self contentFrame];
-	}
-	if (animated) [UIView commitAnimations];
+	} completion:completion];
 }
 
 #pragma mark -
