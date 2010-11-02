@@ -1,8 +1,8 @@
 /*
- DCTViewController.h
+ UIViewController+DCTCoreDataViewController.m
  DCTUIKit
  
- Created by Daniel Tull on 19.09.2010.
+ Created by Daniel Tull on 28.10.2010.
  
  
  
@@ -34,22 +34,29 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <UIKit/UIKit.h>
+#import "UIViewController+DCTCoreDataViewController.h"
 
-@interface DCTViewController : UIViewController {
-    
+
+@implementation UIViewController (DCTCoreDataViewController)
+
+- (void)dct_pushCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
+	
+	if ([self conformsToProtocol:@protocol(DCTCoreDataViewControllerProtocol)]) {
+		UIViewController<DCTCoreDataViewControllerProtocol> *coreDataSelf = self;
+		viewController.managedObjectContext = coreDataSelf.managedObjectContext;
+	}
+	
+	[self.navigationController pushViewController:viewController animated:animated];
 }
 
-@property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
-@property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
-@property (nonatomic, assign) BOOL resizeViewToFitKeyboard;
-
-- (NSString *)loadTitle;
-- (IBAction)dismissModalViewController:(id)sender;
-
-- (void)keyboardWillShowNotification:(NSNotification *)notification;
-- (void)keyboardDidShowNotification:(NSNotification *)notification;
-- (void)keyboardWillHideNotification:(NSNotification *)notification;
-- (void)keyboardDidHideNotification:(NSNotification *)notification;
+- (void)dct_presentModalCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
+	
+	if ([self conformsToProtocol:@protocol(DCTCoreDataViewControllerProtocol)]) {
+		UIViewController<DCTCoreDataViewControllerProtocol> *coreDataSelf = self;
+		viewController.managedObjectContext = coreDataSelf.managedObjectContext;
+	}
+	
+	[self presentModalViewController:viewController animated:animated];
+}
 
 @end

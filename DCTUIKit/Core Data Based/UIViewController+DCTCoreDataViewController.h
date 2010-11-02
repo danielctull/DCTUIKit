@@ -1,8 +1,8 @@
 /*
- DCTViewController.h
+ UIViewController+DCTCoreDataViewController.h
  DCTUIKit
  
- Created by Daniel Tull on 19.09.2010.
+ Created by Daniel Tull on 28.10.2010.
  
  
  
@@ -36,20 +36,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DCTViewController : UIViewController {
-    
-}
+@protocol DCTCoreDataViewControllerProtocol <NSObject>
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@end
 
-@property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
-@property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
-@property (nonatomic, assign) BOOL resizeViewToFitKeyboard;
 
-- (NSString *)loadTitle;
-- (IBAction)dismissModalViewController:(id)sender;
+@interface UIViewController (DCTCoreDataViewController)
 
-- (void)keyboardWillShowNotification:(NSNotification *)notification;
-- (void)keyboardDidShowNotification:(NSNotification *)notification;
-- (void)keyboardWillHideNotification:(NSNotification *)notification;
-- (void)keyboardDidHideNotification:(NSNotification *)notification;
+- (void)dct_pushCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated;
+
+- (void)dct_presentModalCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)vc animated:(BOOL)animated;
 
 @end

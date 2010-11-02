@@ -41,6 +41,8 @@
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
+- (void)loadFetchedResultsController;
+
 - (NSIndexPath *)tableViewIndexPathForFetchedResultsControllerIndexPath:(NSIndexPath *)indexPath;
 - (NSIndexPath *)fetchedResultsControllerIndexPathForTableViewIndexPath:(NSIndexPath *)indexPath;
 - (NSUInteger)tableViewSectionIndexForFetchedResultsControllerSectionIndex:(NSUInteger)index;

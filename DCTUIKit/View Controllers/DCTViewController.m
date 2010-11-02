@@ -42,10 +42,7 @@
 
 @implementation DCTViewController
 
-// Because all view controllers should rotate all ways, right?
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return YES;
-}
+@synthesize resizeViewToFitKeyboard;
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];	
@@ -66,13 +63,21 @@
 
 - (void)loadView {
 	
+	// Making the nib loading nature explicit. Will try to load a nib that has 
+	// the same name as the view controller class.
+	
 	NSString *nib = self.nibName;
 	if (!nib || [nib isEqualToString:@""]) nib = NSStringFromClass([self class]);
 	
 	NSBundle *bundle = self.nibBundle;
 	if (!bundle) bundle = [NSBundle mainBundle];
 	
-	[bundle loadNibNamed:nib owner:self options:nil];
+	NSString *path = [bundle pathForResource:nib ofType:@"nib"];
+	
+	// Do I need to check for a xib?
+	if (!path) path = [bundle pathForResource:nib ofType:@"xib"];
+	
+	if (path) [bundle loadNibNamed:nib owner:self options:nil];
 	
 	if ([self isViewLoaded]) return;
 	
@@ -98,7 +103,6 @@
 }
 
 - (void)setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {
-	NSLog(@"%@:%@", self, NSStringFromSelector(_cmd));
 	self.navigationItem.leftBarButtonItem = leftBarButtonItem;
 }
 
@@ -130,13 +134,13 @@
 #pragma mark UIKeyboard Notification methods
 
 - (void)keyboardWillShowNotification:(NSNotification *)notification {
-	[self dctInternal_keyboardWillHide:NO withNotification:notification];
+	if (self.resizeViewToFitKeyboard) [self dctInternal_keyboardWillHide:NO withNotification:notification];
 }
 
 - (void)keyboardDidShowNotification:(NSNotification *)notification {}
 
 - (void)keyboardWillHideNotification:(NSNotification *)notification {
-	[self dctInternal_keyboardWillHide:YES withNotification:notification];
+	if (self.resizeViewToFitKeyboard) [self dctInternal_keyboardWillHide:YES withNotification:notification];
 }
 
 - (void)keyboardDidHideNotification:(NSNotification *)notification {}
