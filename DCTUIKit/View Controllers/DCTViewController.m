@@ -38,6 +38,7 @@
 
 @interface DCTViewController ()
 - (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification;
+- (NSString *)dctInternal_nibNameForClass:(Class)aClass inBundle:(NSBundle *)bundle;
 @end
 
 @implementation DCTViewController
@@ -64,24 +65,38 @@
 - (void)loadView {
 	
 	// Making the nib loading nature explicit. Will try to load a nib that has 
-	// the same name as the view controller class.
-	
-	NSString *nib = self.nibName;
-	if (!nib || [nib isEqualToString:@""]) nib = NSStringFromClass([self class]);
+	// the same name as the view controller class or one of its superclasses.
 	
 	NSBundle *bundle = self.nibBundle;
 	if (!bundle) bundle = [NSBundle mainBundle];
 	
-	NSString *path = [bundle pathForResource:nib ofType:@"nib"];
+	NSString *nib = self.nibName;
 	
-	// Do I need to check for a xib?
-	if (!path) path = [bundle pathForResource:nib ofType:@"xib"];
+	if (!nib || [nib isEqualToString:@""]) {
+		nib = [self dctInternal_nibNameForClass:[self class] inBundle:bundle];
+	}
 	
-	if (path) [bundle loadNibNamed:nib owner:self options:nil];
+	if (nib) [bundle loadNibNamed:nib owner:self options:nil];
 	
 	if ([self isViewLoaded]) return;
 	
 	[super loadView];
+}
+
+- (NSString *)dctInternal_nibNameForClass:(Class)aClass inBundle:(NSBundle *)bundle {
+	
+	// If the class is not a UIViewController subclass, we don't need to check for a nib.
+	if (![aClass isSubclassOfClass:[UIViewController class]]) return nil;
+	
+	// Get the classname, see if a xib with that name exists in the resources, is so return it.
+	NSString *classname = NSStringFromClass(aClass);
+	NSString *path = [bundle pathForResource:classname ofType:@"nib"];
+	if (!path) path = [bundle pathForResource:classname ofType:@"xib"];
+	
+	if (path) return classname;	
+	
+	// See if a xib exists for the superclass.
+	return [self dctInternal_nibNameForClass:[aClass superclass] inBundle:bundle];
 }
 
 #pragma mark -
