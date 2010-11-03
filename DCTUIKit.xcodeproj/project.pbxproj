@@ -38,6 +38,7 @@
 		246AF74412717B1A00A37445 /* DTTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246AF74212717B1A00A37445 /* DTTestViewController.m */; };
 		246AF74512717B1A00A37445 /* DTTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246AF74312717B1A00A37445 /* DTTestViewController.xib */; };
 		249679AF12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249679AE12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m */; };
+		24C2978B12819816003DBCC5 /* DCTTableViewSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C2978A12819816003DBCC5 /* DCTTableViewSectionController.m */; };
 		24D3F03A127447C300313245 /* UIAlertView+DCTErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D3F039127447C300313245 /* UIAlertView+DCTErrorHandling.m */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,8 @@
 		246AF74312717B1A00A37445 /* DTTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTTestViewController.xib; sourceTree = "<group>"; };
 		249679AD12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DCTCoreDataViewController.h"; sourceTree = "<group>"; };
 		249679AE12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DCTCoreDataViewController.m"; sourceTree = "<group>"; };
+		24C2978912819816003DBCC5 /* DCTTableViewSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTableViewSectionController.h; sourceTree = "<group>"; };
+		24C2978A12819816003DBCC5 /* DCTTableViewSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewSectionController.m; sourceTree = "<group>"; };
 		24D3F038127447C300313245 /* UIAlertView+DCTErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+DCTErrorHandling.h"; sourceTree = "<group>"; };
 		24D3F039127447C300313245 /* UIAlertView+DCTErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+DCTErrorHandling.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +214,7 @@
 			children = (
 				241917641260CA6B00E61FE7 /* Categories */,
 				241917421260C61D00E61FE7 /* Core Data Based */,
+				248EFACB128196C000C32445 /* Section Controller */,
 				241917431260C61D00E61FE7 /* View Controllers */,
 				2459D811126C612A008B9BB3 /* Views */,
 			);
@@ -289,6 +293,15 @@
 				246AF74312717B1A00A37445 /* DTTestViewController.xib */,
 			);
 			path = "Example Classes";
+			sourceTree = "<group>";
+		};
+		248EFACB128196C000C32445 /* Section Controller */ = {
+			isa = PBXGroup;
+			children = (
+				24C2978912819816003DBCC5 /* DCTTableViewSectionController.h */,
+				24C2978A12819816003DBCC5 /* DCTTableViewSectionController.m */,
+			);
+			path = "Section Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +392,7 @@
 				246AF74412717B1A00A37445 /* DTTestViewController.m in Sources */,
 				24D3F03A127447C300313245 /* UIAlertView+DCTErrorHandling.m in Sources */,
 				249679AF12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m in Sources */,
+				24C2978B12819816003DBCC5 /* DCTTableViewSectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
