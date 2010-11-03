@@ -39,6 +39,7 @@
 		246AF74512717B1A00A37445 /* DTTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246AF74312717B1A00A37445 /* DTTestViewController.xib */; };
 		249679AF12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249679AE12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m */; };
 		24C2978B12819816003DBCC5 /* DCTTableViewSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C2978A12819816003DBCC5 /* DCTTableViewSectionController.m */; };
+		24C2978D12819B68003DBCC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C2978C12819B68003DBCC5 /* QuartzCore.framework */; };
 		24D3F03A127447C300313245 /* UIAlertView+DCTErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D3F039127447C300313245 /* UIAlertView+DCTErrorHandling.m */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		249679AE12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DCTCoreDataViewController.m"; sourceTree = "<group>"; };
 		24C2978912819816003DBCC5 /* DCTTableViewSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTableViewSectionController.h; sourceTree = "<group>"; };
 		24C2978A12819816003DBCC5 /* DCTTableViewSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewSectionController.m; sourceTree = "<group>"; };
+		24C2978C12819B68003DBCC5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Xcode4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		24D3F038127447C300313245 /* UIAlertView+DCTErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+DCTErrorHandling.h"; sourceTree = "<group>"; };
 		24D3F039127447C300313245 /* UIAlertView+DCTErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+DCTErrorHandling.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C2978D12819B68003DBCC5 /* QuartzCore.framework in Frameworks */,
 				241917181260C58600E61FE7 /* UIKit.framework in Frameworks */,
 				2419171A1260C58600E61FE7 /* Foundation.framework in Frameworks */,
 				2419171C1260C58600E61FE7 /* CoreGraphics.framework in Frameworks */,
@@ -185,6 +188,7 @@
 		2419170F1260C58600E61FE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24C2978C12819B68003DBCC5 /* QuartzCore.framework */,
 				241917171260C58600E61FE7 /* UIKit.framework */,
 				241917191260C58600E61FE7 /* Foundation.framework */,
 				2419171B1260C58600E61FE7 /* CoreGraphics.framework */,
