@@ -2,7 +2,7 @@
  DCTTableViewSectionController.h
  DCTUIKit
  
- Created by Daniel Tull on 03.11.2010.
+ Created by Daniel Tull on 16.09.2010.
  
  
  
@@ -35,6 +35,24 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface DCTTableViewSectionController : NSObject {}
+@protocol DCTTableViewSectionControllerDelegate;
+
+@interface DCTTableViewSectionController : NSObject <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {}
+
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSString *sectionTitle;
+@property (nonatomic, assign) id<DCTTableViewSectionControllerDelegate> delegate;
+@property (nonatomic, assign) NSInteger section;
+@property (nonatomic, assign) BOOL opened;
+
+- (id)objectForTableViewIndexPath:(NSIndexPath *)tvIndexPath;
+- (void)checkButtonTapped:(UIButton *)sender event:(id)event;
+
+@end
+
+@protocol DCTTableViewSectionControllerDelegate <NSObject>
+- (NSString *)sectionController:(DCTTableViewSectionController *)sc titleForObject:(NSManagedObject *)mo;
 @end
