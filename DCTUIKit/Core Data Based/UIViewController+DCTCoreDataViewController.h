@@ -35,6 +35,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @protocol DCTCoreDataViewControllerProtocol <NSObject>
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
