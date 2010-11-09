@@ -62,7 +62,7 @@
 	
 	UIView *v = self;
 	
-	while (v = v.superview)
+	while ((v = v.superview))
 		if ([v isKindOfClass:aClass])
 			return v;
 	

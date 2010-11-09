@@ -45,7 +45,7 @@
 	
 	UIResponder *nextResponder = self;
 	
-	while (nextResponder = [nextResponder nextResponder])
+	while ((nextResponder = [nextResponder nextResponder]))
 		if ([nextResponder isKindOfClass:aClass])
 			return nextResponder;
 	
@@ -60,7 +60,7 @@
 	
 	if ([self isKindOfClass:aClass]) [array addObject:self];
 	
-	while (nextResponder = [nextResponder nextResponder])
+	while ((nextResponder = [nextResponder nextResponder]))
 		if ([nextResponder isKindOfClass:aClass])
 			[array addObject:nextResponder];
 	
