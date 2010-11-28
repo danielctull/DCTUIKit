@@ -50,7 +50,7 @@
 	NSArray *options = [error localizedRecoveryOptions];
 	NSInteger count = [options count];
 	
-	NSString *cancelTitle = @"Cancel";
+	NSString *cancelTitle = @"OK";
 	if (count > 0) cancelTitle = [options objectAtIndex:0];
 	
 	NSArray *otherButtons = nil;
@@ -61,7 +61,7 @@
 		[mutableOptions release];		
 	}	
 	
-	id alertView = [[self alloc] initWithTitle:nil
+	id alertView = [[self alloc] initWithTitle:[error domain]
 									   message:[error localizedDescription]
 									  delegate:nil
 							 cancelButtonTitle:cancelTitle
