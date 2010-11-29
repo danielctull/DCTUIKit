@@ -72,7 +72,7 @@
 	CGFloat width = self.frame.size.width / [self.items count];
 	
 	NSMutableArray *tempHitAreas = [[NSMutableArray alloc] init];
-	CGFloat position;
+	CGFloat position = 0.0;
 	for (UITabBarItem *i in self.items) {
 		
 		NSInteger intWidth = (NSInteger)width;
