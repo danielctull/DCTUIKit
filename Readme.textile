@@ -1,6 +1,8 @@
 h1. DCTUIKit
 
-DCTUIKit is my collection of extensions to Apple's UIKit framework. 
+DCTUIKit is my collection of extensions to Apple's UIKit framework.
+
+*WARNING* DCTUIKit 1.1 moves the location of all of the classes so you may need to jiggle things about when updating.
 
 h2. Branch Structure
 
