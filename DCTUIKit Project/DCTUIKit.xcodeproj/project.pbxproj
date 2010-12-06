@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		241917181260C58600E61FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241917171260C58600E61FE7 /* UIKit.framework */; };
+		2419171A1260C58600E61FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241917191260C58600E61FE7 /* Foundation.framework */; };
+		2419171C1260C58600E61FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2419171B1260C58600E61FE7 /* CoreGraphics.framework */; };
+		2419171E1260C58600E61FE7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2419171D1260C58600E61FE7 /* CoreData.framework */; };
+		241917231260C58600E61FE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 241917211260C58600E61FE7 /* InfoPlist.strings */; };
+		241917251260C58600E61FE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917241260C58600E61FE7 /* main.m */; };
+		241917281260C58700E61FE7 /* DCTUIKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917271260C58700E61FE7 /* DCTUIKitAppDelegate.m */; };
+		2419172B1260C58700E61FE7 /* DCTUIKit.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 2419172A1260C58700E61FE7 /* DCTUIKit.xcdatamodel */; };
+		2419172E1260C58700E61FE7 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2419172C1260C58700E61FE7 /* MainWindow_iPhone.xib */; };
+		241917311260C58700E61FE7 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2419172F1260C58700E61FE7 /* MainWindow_iPad.xib */; };
+		241917341260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */; };
+		241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */; };
+		242182D212AD3D9C0020937F /* UIAlertView+DCTErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FB612AD3D9C0020937F /* UIAlertView+DCTErrorHandling.m */; };
+		242182D312AD3D9C0020937F /* UIDevice+DCTFeatureCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FB812AD3D9C0020937F /* UIDevice+DCTFeatureCheck.m */; };
+		242182D412AD3D9C0020937F /* UIDevice+DCTSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FBA12AD3D9C0020937F /* UIDevice+DCTSystemVersion.m */; };
+		242182D512AD3D9C0020937F /* UIResponder+DCTNextResponderExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FBC12AD3D9C0020937F /* UIResponder+DCTNextResponderExtensions.m */; };
+		242182D612AD3D9C0020937F /* UITableViewCell+DCTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FBE12AD3D9C0020937F /* UITableViewCell+DCTExtensions.m */; };
+		242182D712AD3D9C0020937F /* UIView+DCTLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FC012AD3D9C0020937F /* UIView+DCTLogging.m */; };
+		242182D812AD3D9C0020937F /* UIView+DCTSubviewExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FC212AD3D9C0020937F /* UIView+DCTSubviewExtensions.m */; };
+		242182D912AD3D9C0020937F /* DCTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FC512AD3D9C0020937F /* DCTCoreDataTableViewController.m */; };
+		242182DA12AD3D9C0020937F /* DCTCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FC712AD3D9C0020937F /* DCTCoreDataViewController.m */; };
+		242182DB12AD3D9C0020937F /* DCTFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FC912AD3D9C0020937F /* DCTFetchedResultsTableViewController.m */; };
+		242182DC12AD3D9C0020937F /* UIViewController+DCTCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FCB12AD3D9C0020937F /* UIViewController+DCTCoreDataViewController.m */; };
+		242182DD12AD3D9C0020937F /* DCTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FCE12AD3D9C0020937F /* DCTTabBar.m */; };
+		242182DE12AD3D9C0020937F /* DCTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FD012AD3D9C0020937F /* DCTTabBarController.m */; };
+		242182DF12AD3D9C0020937F /* DCTUITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FD212AD3D9C0020937F /* DCTUITabBar.m */; };
+		242182E812AD3D9C0020937F /* DCTTableViewSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FF012AD3D9C0020937F /* DCTTableViewSectionController.m */; };
+		242182E912AD3D9C0020937F /* DCTContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FF312AD3D9C0020937F /* DCTContainerViewController.m */; };
+		242182EA12AD3D9C0020937F /* DCTContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FF512AD3D9C0020937F /* DCTContentViewController.m */; };
+		242182EB12AD3D9C0020937F /* DCTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FF712AD3D9C0020937F /* DCTTableViewController.m */; };
+		242182EC12AD3D9C0020937F /* DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FF912AD3D9C0020937F /* DCTViewController.m */; };
+		246AF74412717B1A00A37445 /* DTTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246AF74212717B1A00A37445 /* DTTestViewController.m */; };
+		246AF74512717B1A00A37445 /* DTTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246AF74312717B1A00A37445 /* DTTestViewController.xib */; };
+		24C2978D12819B68003DBCC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C2978C12819B68003DBCC5 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		241917141260C58600E61FE7 /* DCTUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCTUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		241917171260C58600E61FE7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		241917191260C58600E61FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2419171B1260C58600E61FE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2419171D1260C58600E61FE7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2419171F1260C58600E61FE7 /* DCTUIKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCTUIKit-Info.plist"; sourceTree = "<group>"; };
+		241917201260C58600E61FE7 /* DCTUIKit_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKit_Prefix.pch; sourceTree = "<group>"; };
+		241917221260C58600E61FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		241917241260C58600E61FE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		241917261260C58600E61FE7 /* DCTUIKitAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKitAppDelegate.h; sourceTree = "<group>"; };
+		241917271260C58700E61FE7 /* DCTUIKitAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate.m; sourceTree = "<group>"; };
+		2419172A1260C58700E61FE7 /* DCTUIKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DCTUIKit.xcdatamodel; sourceTree = "<group>"; };
+		2419172D1260C58700E61FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		241917301260C58700E61FE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		241917321260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKitAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate_iPhone.m; sourceTree = "<group>"; };
+		241917351260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKitAppDelegate_iPad.h; sourceTree = "<group>"; };
+		241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate_iPad.m; sourceTree = "<group>"; };
+		24217FB512AD3D9C0020937F /* UIAlertView+DCTErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+DCTErrorHandling.h"; sourceTree = "<group>"; };
+		24217FB612AD3D9C0020937F /* UIAlertView+DCTErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+DCTErrorHandling.m"; sourceTree = "<group>"; };
+		24217FB712AD3D9C0020937F /* UIDevice+DCTFeatureCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DCTFeatureCheck.h"; sourceTree = "<group>"; };
+		24217FB812AD3D9C0020937F /* UIDevice+DCTFeatureCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DCTFeatureCheck.m"; sourceTree = "<group>"; };
+		24217FB912AD3D9C0020937F /* UIDevice+DCTSystemVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DCTSystemVersion.h"; sourceTree = "<group>"; };
+		24217FBA12AD3D9C0020937F /* UIDevice+DCTSystemVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DCTSystemVersion.m"; sourceTree = "<group>"; };
+		24217FBB12AD3D9C0020937F /* UIResponder+DCTNextResponderExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+DCTNextResponderExtensions.h"; sourceTree = "<group>"; };
+		24217FBC12AD3D9C0020937F /* UIResponder+DCTNextResponderExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+DCTNextResponderExtensions.m"; sourceTree = "<group>"; };
+		24217FBD12AD3D9C0020937F /* UITableViewCell+DCTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+DCTExtensions.h"; sourceTree = "<group>"; };
+		24217FBE12AD3D9C0020937F /* UITableViewCell+DCTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+DCTExtensions.m"; sourceTree = "<group>"; };
+		24217FBF12AD3D9C0020937F /* UIView+DCTLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCTLogging.h"; sourceTree = "<group>"; };
+		24217FC012AD3D9C0020937F /* UIView+DCTLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCTLogging.m"; sourceTree = "<group>"; };
+		24217FC112AD3D9C0020937F /* UIView+DCTSubviewExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCTSubviewExtensions.h"; sourceTree = "<group>"; };
+		24217FC212AD3D9C0020937F /* UIView+DCTSubviewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCTSubviewExtensions.m"; sourceTree = "<group>"; };
+		24217FC412AD3D9C0020937F /* DCTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataTableViewController.h; sourceTree = "<group>"; };
+		24217FC512AD3D9C0020937F /* DCTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataTableViewController.m; sourceTree = "<group>"; };
+		24217FC612AD3D9C0020937F /* DCTCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataViewController.h; sourceTree = "<group>"; };
+		24217FC712AD3D9C0020937F /* DCTCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataViewController.m; sourceTree = "<group>"; };
+		24217FC812AD3D9C0020937F /* DCTFetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTFetchedResultsTableViewController.h; sourceTree = "<group>"; };
+		24217FC912AD3D9C0020937F /* DCTFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTFetchedResultsTableViewController.m; sourceTree = "<group>"; };
+		24217FCA12AD3D9C0020937F /* UIViewController+DCTCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DCTCoreDataViewController.h"; sourceTree = "<group>"; };
+		24217FCB12AD3D9C0020937F /* UIViewController+DCTCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DCTCoreDataViewController.m"; sourceTree = "<group>"; };
+		24217FCD12AD3D9C0020937F /* DCTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTabBar.h; sourceTree = "<group>"; };
+		24217FCE12AD3D9C0020937F /* DCTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTabBar.m; sourceTree = "<group>"; };
+		24217FCF12AD3D9C0020937F /* DCTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTabBarController.h; sourceTree = "<group>"; };
+		24217FD012AD3D9C0020937F /* DCTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTabBarController.m; sourceTree = "<group>"; };
+		24217FD112AD3D9C0020937F /* DCTUITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTUITabBar.h; sourceTree = "<group>"; };
+		24217FD212AD3D9C0020937F /* DCTUITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTUITabBar.m; sourceTree = "<group>"; };
+		24217FEF12AD3D9C0020937F /* DCTTableViewSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTableViewSectionController.h; sourceTree = "<group>"; };
+		24217FF012AD3D9C0020937F /* DCTTableViewSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewSectionController.m; sourceTree = "<group>"; };
+		24217FF212AD3D9C0020937F /* DCTContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTContainerViewController.h; sourceTree = "<group>"; };
+		24217FF312AD3D9C0020937F /* DCTContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTContainerViewController.m; sourceTree = "<group>"; };
+		24217FF412AD3D9C0020937F /* DCTContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTContentViewController.h; sourceTree = "<group>"; };
+		24217FF512AD3D9C0020937F /* DCTContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTContentViewController.m; sourceTree = "<group>"; };
+		24217FF612AD3D9C0020937F /* DCTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTableViewController.h; sourceTree = "<group>"; };
+		24217FF712AD3D9C0020937F /* DCTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewController.m; sourceTree = "<group>"; };
+		24217FF812AD3D9C0020937F /* DCTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTViewController.h; sourceTree = "<group>"; };
+		24217FF912AD3D9C0020937F /* DCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTViewController.m; sourceTree = "<group>"; };
+		246AF74112717B1A00A37445 /* DTTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTestViewController.h; sourceTree = "<group>"; };
+		246AF74212717B1A00A37445 /* DTTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTestViewController.m; sourceTree = "<group>"; };
+		246AF74312717B1A00A37445 /* DTTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTTestViewController.xib; sourceTree = "<group>"; };
+		24C2978C12819B68003DBCC5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Xcode4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		241917111260C58600E61FE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24C2978D12819B68003DBCC5 /* QuartzCore.framework in Frameworks */,
+				241917181260C58600E61FE7 /* UIKit.framework in Frameworks */,
+				2419171A1260C58600E61FE7 /* Foundation.framework in Frameworks */,
+				2419171C1260C58600E61FE7 /* CoreGraphics.framework in Frameworks */,
+				2419171E1260C58600E61FE7 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		241917031260C58400E61FE7 = {
+			isa = PBXGroup;
+			children = (
+				24217BD612AD3D9A0020937F /* DCTUIKit */,
+				2419170A1260C58500E61FE7 /* iPhone */,
+				2419170B1260C58600E61FE7 /* iPad */,
+				2419170C1260C58600E61FE7 /* Classes */,
+				246AF73E12717A7500A37445 /* Example Classes */,
+				2419170D1260C58600E61FE7 /* Other Sources */,
+				2419170E1260C58600E61FE7 /* Resources */,
+				2419170F1260C58600E61FE7 /* Frameworks */,
+				241917151260C58600E61FE7 /* Products */,
+				241917291260C58700E61FE7 /* Models */,
+			);
+			sourceTree = "<group>";
+		};
+		2419170A1260C58500E61FE7 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				2419172C1260C58700E61FE7 /* MainWindow_iPhone.xib */,
+				241917321260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.h */,
+				241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		2419170B1260C58600E61FE7 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				2419172F1260C58700E61FE7 /* MainWindow_iPad.xib */,
+				241917351260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.h */,
+				241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		2419170C1260C58600E61FE7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				241917261260C58600E61FE7 /* DCTUIKitAppDelegate.h */,
+				241917271260C58700E61FE7 /* DCTUIKitAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2419170D1260C58600E61FE7 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				241917201260C58600E61FE7 /* DCTUIKit_Prefix.pch */,
+				241917241260C58600E61FE7 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2419170E1260C58600E61FE7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2419171F1260C58600E61FE7 /* DCTUIKit-Info.plist */,
+				241917211260C58600E61FE7 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2419170F1260C58600E61FE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24C2978C12819B68003DBCC5 /* QuartzCore.framework */,
+				241917171260C58600E61FE7 /* UIKit.framework */,
+				241917191260C58600E61FE7 /* Foundation.framework */,
+				2419171B1260C58600E61FE7 /* CoreGraphics.framework */,
+				2419171D1260C58600E61FE7 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		241917151260C58600E61FE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				241917141260C58600E61FE7 /* DCTUIKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		241917291260C58700E61FE7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2419172A1260C58700E61FE7 /* DCTUIKit.xcdatamodel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		24217BD612AD3D9A0020937F /* DCTUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				24217FB412AD3D9C0020937F /* Categories */,
+				24217FC312AD3D9C0020937F /* Core Data Based */,
+				24217FCC12AD3D9C0020937F /* DCTTabBarController */,
+				24217FEE12AD3D9C0020937F /* Section Controller */,
+				24217FF112AD3D9C0020937F /* View Controllers */,
+			);
+			name = DCTUIKit;
+			path = /Users/danielctull/Dropbox/Programs/Cocoa/Frameworks/DCTUIKit;
+			sourceTree = "<absolute>";
+		};
+		24217FB412AD3D9C0020937F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				24217FB512AD3D9C0020937F /* UIAlertView+DCTErrorHandling.h */,
+				24217FB612AD3D9C0020937F /* UIAlertView+DCTErrorHandling.m */,
+				24217FB712AD3D9C0020937F /* UIDevice+DCTFeatureCheck.h */,
+				24217FB812AD3D9C0020937F /* UIDevice+DCTFeatureCheck.m */,
+				24217FB912AD3D9C0020937F /* UIDevice+DCTSystemVersion.h */,
+				24217FBA12AD3D9C0020937F /* UIDevice+DCTSystemVersion.m */,
+				24217FBB12AD3D9C0020937F /* UIResponder+DCTNextResponderExtensions.h */,
+				24217FBC12AD3D9C0020937F /* UIResponder+DCTNextResponderExtensions.m */,
+				24217FBD12AD3D9C0020937F /* UITableViewCell+DCTExtensions.h */,
+				24217FBE12AD3D9C0020937F /* UITableViewCell+DCTExtensions.m */,
+				24217FBF12AD3D9C0020937F /* UIView+DCTLogging.h */,
+				24217FC012AD3D9C0020937F /* UIView+DCTLogging.m */,
+				24217FC112AD3D9C0020937F /* UIView+DCTSubviewExtensions.h */,
+				24217FC212AD3D9C0020937F /* UIView+DCTSubviewExtensions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		24217FC312AD3D9C0020937F /* Core Data Based */ = {
+			isa = PBXGroup;
+			children = (
+				24217FC412AD3D9C0020937F /* DCTCoreDataTableViewController.h */,
+				24217FC512AD3D9C0020937F /* DCTCoreDataTableViewController.m */,
+				24217FC612AD3D9C0020937F /* DCTCoreDataViewController.h */,
+				24217FC712AD3D9C0020937F /* DCTCoreDataViewController.m */,
+				24217FC812AD3D9C0020937F /* DCTFetchedResultsTableViewController.h */,
+				24217FC912AD3D9C0020937F /* DCTFetchedResultsTableViewController.m */,
+				24217FCA12AD3D9C0020937F /* UIViewController+DCTCoreDataViewController.h */,
+				24217FCB12AD3D9C0020937F /* UIViewController+DCTCoreDataViewController.m */,
+			);
+			path = "Core Data Based";
+			sourceTree = "<group>";
+		};
+		24217FCC12AD3D9C0020937F /* DCTTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				24217FCD12AD3D9C0020937F /* DCTTabBar.h */,
+				24217FCE12AD3D9C0020937F /* DCTTabBar.m */,
+				24217FCF12AD3D9C0020937F /* DCTTabBarController.h */,
+				24217FD012AD3D9C0020937F /* DCTTabBarController.m */,
+				24217FD112AD3D9C0020937F /* DCTUITabBar.h */,
+				24217FD212AD3D9C0020937F /* DCTUITabBar.m */,
+			);
+			path = DCTTabBarController;
+			sourceTree = "<group>";
+		};
+		24217FEE12AD3D9C0020937F /* Section Controller */ = {
+			isa = PBXGroup;
+			children = (
+				24217FEF12AD3D9C0020937F /* DCTTableViewSectionController.h */,
+				24217FF012AD3D9C0020937F /* DCTTableViewSectionController.m */,
+			);
+			path = "Section Controller";
+			sourceTree = "<group>";
+		};
+		24217FF112AD3D9C0020937F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				24217FF212AD3D9C0020937F /* DCTContainerViewController.h */,
+				24217FF312AD3D9C0020937F /* DCTContainerViewController.m */,
+				24217FF412AD3D9C0020937F /* DCTContentViewController.h */,
+				24217FF512AD3D9C0020937F /* DCTContentViewController.m */,
+				24217FF612AD3D9C0020937F /* DCTTableViewController.h */,
+				24217FF712AD3D9C0020937F /* DCTTableViewController.m */,
+				24217FF812AD3D9C0020937F /* DCTViewController.h */,
+				24217FF912AD3D9C0020937F /* DCTViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		246AF73E12717A7500A37445 /* Example Classes */ = {
+			isa = PBXGroup;
+			children = (
+				246AF74112717B1A00A37445 /* DTTestViewController.h */,
+				246AF74212717B1A00A37445 /* DTTestViewController.m */,
+				246AF74312717B1A00A37445 /* DTTestViewController.xib */,
+			);
+			path = "Example Classes";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		241917131260C58600E61FE7 /* DCTUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2419173A1260C58700E61FE7 /* Build configuration list for PBXNativeTarget "DCTUIKit" */;
+			buildPhases = (
+				241917101260C58600E61FE7 /* Sources */,
+				241917111260C58600E61FE7 /* Frameworks */,
+				241917121260C58600E61FE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DCTUIKit;
+			productName = DCTUIKit;
+			productReference = 241917141260C58600E61FE7 /* DCTUIKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		241917051260C58500E61FE7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Daniel Tull";
+			};
+			buildConfigurationList = 241917081260C58500E61FE7 /* Build configuration list for PBXProject "DCTUIKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 241917031260C58400E61FE7;
+			productRefGroup = 241917151260C58600E61FE7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				241917131260C58600E61FE7 /* DCTUIKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		241917121260C58600E61FE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				241917231260C58600E61FE7 /* InfoPlist.strings in Resources */,
+				2419172E1260C58700E61FE7 /* MainWindow_iPhone.xib in Resources */,
+				241917311260C58700E61FE7 /* MainWindow_iPad.xib in Resources */,
+				246AF74512717B1A00A37445 /* DTTestViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		241917101260C58600E61FE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				241917251260C58600E61FE7 /* main.m in Sources */,
+				241917281260C58700E61FE7 /* DCTUIKitAppDelegate.m in Sources */,
+				2419172B1260C58700E61FE7 /* DCTUIKit.xcdatamodel in Sources */,
+				241917341260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m in Sources */,
+				241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */,
+				246AF74412717B1A00A37445 /* DTTestViewController.m in Sources */,
+				242182D212AD3D9C0020937F /* UIAlertView+DCTErrorHandling.m in Sources */,
+				242182D312AD3D9C0020937F /* UIDevice+DCTFeatureCheck.m in Sources */,
+				242182D412AD3D9C0020937F /* UIDevice+DCTSystemVersion.m in Sources */,
+				242182D512AD3D9C0020937F /* UIResponder+DCTNextResponderExtensions.m in Sources */,
+				242182D612AD3D9C0020937F /* UITableViewCell+DCTExtensions.m in Sources */,
+				242182D712AD3D9C0020937F /* UIView+DCTLogging.m in Sources */,
+				242182D812AD3D9C0020937F /* UIView+DCTSubviewExtensions.m in Sources */,
+				242182D912AD3D9C0020937F /* DCTCoreDataTableViewController.m in Sources */,
+				242182DA12AD3D9C0020937F /* DCTCoreDataViewController.m in Sources */,
+				242182DB12AD3D9C0020937F /* DCTFetchedResultsTableViewController.m in Sources */,
+				242182DC12AD3D9C0020937F /* UIViewController+DCTCoreDataViewController.m in Sources */,
+				242182DD12AD3D9C0020937F /* DCTTabBar.m in Sources */,
+				242182DE12AD3D9C0020937F /* DCTTabBarController.m in Sources */,
+				242182DF12AD3D9C0020937F /* DCTUITabBar.m in Sources */,
+				242182E812AD3D9C0020937F /* DCTTableViewSectionController.m in Sources */,
+				242182E912AD3D9C0020937F /* DCTContainerViewController.m in Sources */,
+				242182EA12AD3D9C0020937F /* DCTContentViewController.m in Sources */,
+				242182EB12AD3D9C0020937F /* DCTTableViewController.m in Sources */,
+				242182EC12AD3D9C0020937F /* DCTViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		241917211260C58600E61FE7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				241917221260C58600E61FE7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2419172C1260C58700E61FE7 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2419172D1260C58700E61FE7 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		2419172F1260C58700E61FE7 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				241917301260C58700E61FE7 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		241917381260C58700E61FE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		241917391260C58700E61FE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2419173B1260C58700E61FE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DCTUIKit_Prefix.pch;
+				INFOPLIST_FILE = "DCTUIKit-Info.plist";
+				PRODUCT_NAME = DCTUIKit;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2419173C1260C58700E61FE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = DCTUIKit_Prefix.pch;
+				INFOPLIST_FILE = "DCTUIKit-Info.plist";
+				PRODUCT_NAME = DCTUIKit;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		241917081260C58500E61FE7 /* Build configuration list for PBXProject "DCTUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				241917381260C58700E61FE7 /* Debug */,
+				241917391260C58700E61FE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2419173A1260C58700E61FE7 /* Build configuration list for PBXNativeTarget "DCTUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2419173B1260C58700E61FE7 /* Debug */,
+				2419173C1260C58700E61FE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 241917051260C58500E61FE7 /* Project object */;
+}
