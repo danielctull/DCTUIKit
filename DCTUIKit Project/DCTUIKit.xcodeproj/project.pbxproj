@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2410E952126255C500654194 /* DCTContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2410E951126255C500654194 /* DCTContainerViewController.m */; };
-		2410E9591262582700654194 /* DCTContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2410E9581262582700654194 /* DCTContentViewController.m */; };
 		241917181260C58600E61FE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241917171260C58600E61FE7 /* UIKit.framework */; };
 		2419171A1260C58600E61FE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241917191260C58600E61FE7 /* Foundation.framework */; };
 		2419171C1260C58600E61FE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2419171B1260C58600E61FE7 /* CoreGraphics.framework */; };
@@ -21,33 +19,31 @@
 		241917311260C58700E61FE7 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2419172F1260C58700E61FE7 /* MainWindow_iPad.xib */; };
 		241917341260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */; };
 		241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */; };
-		2419174E1260C6D100E61FE7 /* DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419174D1260C6D100E61FE7 /* DCTViewController.m */; };
-		241917581260C7B300E61FE7 /* DCTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917571260C7B300E61FE7 /* DCTTableViewController.m */; };
-		2419175D1260C8E300E61FE7 /* DCTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */; };
-		241917601260C98800E61FE7 /* DCTFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419175F1260C98800E61FE7 /* DCTFetchedResultsTableViewController.m */; };
-		241917671260CA8D00E61FE7 /* UIView+DCTLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917661260CA8D00E61FE7 /* UIView+DCTLogging.m */; };
-		2419176B1260CFD100E61FE7 /* UIView+DCTSubviewExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419176A1260CFD100E61FE7 /* UIView+DCTSubviewExtensions.m */; };
-		2419176F1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2419176E1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m */; };
-		241917741260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917731260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m */; };
-		2419177A1260D2C200E61FE7 /* DCTCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917791260D2C200E61FE7 /* DCTCoreDataViewController.m */; };
-		241917821260D43D00E61FE7 /* UITableViewCell+DCTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917811260D43D00E61FE7 /* UITableViewCell+DCTExtensions.m */; };
-		241917871260D5C500E61FE7 /* UIResponder+DCTNextResponderExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 241917861260D5C500E61FE7 /* UIResponder+DCTNextResponderExtensions.m */; };
-		2459D80F126C6119008B9BB3 /* DCTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2459D80E126C6119008B9BB3 /* DCTTabBarController.m */; };
-		2459D814126C612A008B9BB3 /* DCTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2459D813126C612A008B9BB3 /* DCTTabBar.m */; };
-		245D2D02126CF9DD007DF365 /* DCTUITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 245D2D01126CF9DD007DF365 /* DCTUITabBar.m */; };
 		246AF74412717B1A00A37445 /* DTTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246AF74212717B1A00A37445 /* DTTestViewController.m */; };
 		246AF74512717B1A00A37445 /* DTTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246AF74312717B1A00A37445 /* DTTestViewController.xib */; };
-		249679AF12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249679AE12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m */; };
-		24C2978B12819816003DBCC5 /* DCTTableViewSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C2978A12819816003DBCC5 /* DCTTableViewSectionController.m */; };
+		2485EB5212AD3CC8001B5986 /* UIAlertView+DCTErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E83A12AD3CC7001B5986 /* UIAlertView+DCTErrorHandling.m */; };
+		2485EB5312AD3CC8001B5986 /* UIDevice+DCTFeatureCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E83C12AD3CC7001B5986 /* UIDevice+DCTFeatureCheck.m */; };
+		2485EB5412AD3CC8001B5986 /* UIDevice+DCTSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E83E12AD3CC7001B5986 /* UIDevice+DCTSystemVersion.m */; };
+		2485EB5512AD3CC8001B5986 /* UIResponder+DCTNextResponderExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E84012AD3CC7001B5986 /* UIResponder+DCTNextResponderExtensions.m */; };
+		2485EB5612AD3CC8001B5986 /* UITableViewCell+DCTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E84212AD3CC7001B5986 /* UITableViewCell+DCTExtensions.m */; };
+		2485EB5712AD3CC8001B5986 /* UIView+DCTLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E84412AD3CC7001B5986 /* UIView+DCTLogging.m */; };
+		2485EB5812AD3CC8001B5986 /* UIView+DCTSubviewExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E84612AD3CC7001B5986 /* UIView+DCTSubviewExtensions.m */; };
+		2485EB5912AD3CC8001B5986 /* DCTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E84912AD3CC7001B5986 /* DCTCoreDataTableViewController.m */; };
+		2485EB5A12AD3CC8001B5986 /* DCTCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E84B12AD3CC7001B5986 /* DCTCoreDataViewController.m */; };
+		2485EB5B12AD3CC8001B5986 /* DCTFetchedResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E84D12AD3CC7001B5986 /* DCTFetchedResultsTableViewController.m */; };
+		2485EB5C12AD3CC8001B5986 /* UIViewController+DCTCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E84F12AD3CC7001B5986 /* UIViewController+DCTCoreDataViewController.m */; };
+		2485EB6512AD3CC8001B5986 /* DCTTableViewSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E86D12AD3CC8001B5986 /* DCTTableViewSectionController.m */; };
+		2485EB6612AD3CC8001B5986 /* DCTContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E87012AD3CC8001B5986 /* DCTContainerViewController.m */; };
+		2485EB6712AD3CC8001B5986 /* DCTContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E87212AD3CC8001B5986 /* DCTContentViewController.m */; };
+		2485EB6812AD3CC8001B5986 /* DCTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E87412AD3CC8001B5986 /* DCTTabBarController.m */; };
+		2485EB6912AD3CC8001B5986 /* DCTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E87612AD3CC8001B5986 /* DCTTableViewController.m */; };
+		2485EB6A12AD3CC8001B5986 /* DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E87812AD3CC8001B5986 /* DCTViewController.m */; };
+		2485EB6B12AD3CC8001B5986 /* DCTTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E87B12AD3CC8001B5986 /* DCTTabBar.m */; };
+		2485EB6C12AD3CC8001B5986 /* DCTUITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485E87D12AD3CC8001B5986 /* DCTUITabBar.m */; };
 		24C2978D12819B68003DBCC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C2978C12819B68003DBCC5 /* QuartzCore.framework */; };
-		24D3F03A127447C300313245 /* UIAlertView+DCTErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D3F039127447C300313245 /* UIAlertView+DCTErrorHandling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2410E950126255C500654194 /* DCTContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTContainerViewController.h; sourceTree = "<group>"; };
-		2410E951126255C500654194 /* DCTContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTContainerViewController.m; sourceTree = "<group>"; };
-		2410E9571262582700654194 /* DCTContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTContentViewController.h; sourceTree = "<group>"; };
-		2410E9581262582700654194 /* DCTContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTContentViewController.m; sourceTree = "<group>"; };
 		241917141260C58600E61FE7 /* DCTUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCTUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		241917171260C58600E61FE7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		241917191260C58600E61FE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -66,44 +62,48 @@
 		241917331260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate_iPhone.m; sourceTree = "<group>"; };
 		241917351260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKitAppDelegate_iPad.h; sourceTree = "<group>"; };
 		241917361260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTUIKitAppDelegate_iPad.m; sourceTree = "<group>"; };
-		2419174C1260C6D100E61FE7 /* DCTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTViewController.h; sourceTree = "<group>"; };
-		2419174D1260C6D100E61FE7 /* DCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTViewController.m; sourceTree = "<group>"; };
-		241917561260C7B300E61FE7 /* DCTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTableViewController.h; sourceTree = "<group>"; };
-		241917571260C7B300E61FE7 /* DCTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewController.m; sourceTree = "<group>"; };
-		2419175B1260C8E300E61FE7 /* DCTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataTableViewController.h; sourceTree = "<group>"; };
-		2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataTableViewController.m; sourceTree = "<group>"; };
-		2419175E1260C98800E61FE7 /* DCTFetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTFetchedResultsTableViewController.h; sourceTree = "<group>"; };
-		2419175F1260C98800E61FE7 /* DCTFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTFetchedResultsTableViewController.m; sourceTree = "<group>"; };
-		241917651260CA8D00E61FE7 /* UIView+DCTLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCTLogging.h"; sourceTree = "<group>"; };
-		241917661260CA8D00E61FE7 /* UIView+DCTLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCTLogging.m"; sourceTree = "<group>"; };
-		241917691260CFD100E61FE7 /* UIView+DCTSubviewExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCTSubviewExtensions.h"; sourceTree = "<group>"; };
-		2419176A1260CFD100E61FE7 /* UIView+DCTSubviewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCTSubviewExtensions.m"; sourceTree = "<group>"; };
-		2419176D1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DCTSystemVersion.h"; sourceTree = "<group>"; };
-		2419176E1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DCTSystemVersion.m"; sourceTree = "<group>"; };
-		241917721260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DCTFeatureCheck.h"; sourceTree = "<group>"; };
-		241917731260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DCTFeatureCheck.m"; sourceTree = "<group>"; };
-		241917781260D2C200E61FE7 /* DCTCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataViewController.h; sourceTree = "<group>"; };
-		241917791260D2C200E61FE7 /* DCTCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataViewController.m; sourceTree = "<group>"; };
-		241917801260D43D00E61FE7 /* UITableViewCell+DCTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+DCTExtensions.h"; sourceTree = "<group>"; };
-		241917811260D43D00E61FE7 /* UITableViewCell+DCTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+DCTExtensions.m"; sourceTree = "<group>"; };
-		241917851260D5C500E61FE7 /* UIResponder+DCTNextResponderExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+DCTNextResponderExtensions.h"; sourceTree = "<group>"; };
-		241917861260D5C500E61FE7 /* UIResponder+DCTNextResponderExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+DCTNextResponderExtensions.m"; sourceTree = "<group>"; };
-		2459D80D126C6119008B9BB3 /* DCTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTabBarController.h; sourceTree = "<group>"; };
-		2459D80E126C6119008B9BB3 /* DCTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTabBarController.m; sourceTree = "<group>"; };
-		2459D812126C612A008B9BB3 /* DCTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTabBar.h; sourceTree = "<group>"; };
-		2459D813126C612A008B9BB3 /* DCTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTabBar.m; sourceTree = "<group>"; };
-		245D2D00126CF9DD007DF365 /* DCTUITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTUITabBar.h; sourceTree = "<group>"; };
-		245D2D01126CF9DD007DF365 /* DCTUITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTUITabBar.m; sourceTree = "<group>"; };
 		246AF74112717B1A00A37445 /* DTTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTestViewController.h; sourceTree = "<group>"; };
 		246AF74212717B1A00A37445 /* DTTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTestViewController.m; sourceTree = "<group>"; };
 		246AF74312717B1A00A37445 /* DTTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTTestViewController.xib; sourceTree = "<group>"; };
-		249679AD12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DCTCoreDataViewController.h"; sourceTree = "<group>"; };
-		249679AE12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DCTCoreDataViewController.m"; sourceTree = "<group>"; };
-		24C2978912819816003DBCC5 /* DCTTableViewSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTableViewSectionController.h; sourceTree = "<group>"; };
-		24C2978A12819816003DBCC5 /* DCTTableViewSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewSectionController.m; sourceTree = "<group>"; };
+		2485E83912AD3CC7001B5986 /* UIAlertView+DCTErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+DCTErrorHandling.h"; sourceTree = "<group>"; };
+		2485E83A12AD3CC7001B5986 /* UIAlertView+DCTErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+DCTErrorHandling.m"; sourceTree = "<group>"; };
+		2485E83B12AD3CC7001B5986 /* UIDevice+DCTFeatureCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DCTFeatureCheck.h"; sourceTree = "<group>"; };
+		2485E83C12AD3CC7001B5986 /* UIDevice+DCTFeatureCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DCTFeatureCheck.m"; sourceTree = "<group>"; };
+		2485E83D12AD3CC7001B5986 /* UIDevice+DCTSystemVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DCTSystemVersion.h"; sourceTree = "<group>"; };
+		2485E83E12AD3CC7001B5986 /* UIDevice+DCTSystemVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DCTSystemVersion.m"; sourceTree = "<group>"; };
+		2485E83F12AD3CC7001B5986 /* UIResponder+DCTNextResponderExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+DCTNextResponderExtensions.h"; sourceTree = "<group>"; };
+		2485E84012AD3CC7001B5986 /* UIResponder+DCTNextResponderExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+DCTNextResponderExtensions.m"; sourceTree = "<group>"; };
+		2485E84112AD3CC7001B5986 /* UITableViewCell+DCTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+DCTExtensions.h"; sourceTree = "<group>"; };
+		2485E84212AD3CC7001B5986 /* UITableViewCell+DCTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+DCTExtensions.m"; sourceTree = "<group>"; };
+		2485E84312AD3CC7001B5986 /* UIView+DCTLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCTLogging.h"; sourceTree = "<group>"; };
+		2485E84412AD3CC7001B5986 /* UIView+DCTLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCTLogging.m"; sourceTree = "<group>"; };
+		2485E84512AD3CC7001B5986 /* UIView+DCTSubviewExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCTSubviewExtensions.h"; sourceTree = "<group>"; };
+		2485E84612AD3CC7001B5986 /* UIView+DCTSubviewExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCTSubviewExtensions.m"; sourceTree = "<group>"; };
+		2485E84812AD3CC7001B5986 /* DCTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataTableViewController.h; sourceTree = "<group>"; };
+		2485E84912AD3CC7001B5986 /* DCTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataTableViewController.m; sourceTree = "<group>"; };
+		2485E84A12AD3CC7001B5986 /* DCTCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTCoreDataViewController.h; sourceTree = "<group>"; };
+		2485E84B12AD3CC7001B5986 /* DCTCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTCoreDataViewController.m; sourceTree = "<group>"; };
+		2485E84C12AD3CC7001B5986 /* DCTFetchedResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTFetchedResultsTableViewController.h; sourceTree = "<group>"; };
+		2485E84D12AD3CC7001B5986 /* DCTFetchedResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTFetchedResultsTableViewController.m; sourceTree = "<group>"; };
+		2485E84E12AD3CC7001B5986 /* UIViewController+DCTCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DCTCoreDataViewController.h"; sourceTree = "<group>"; };
+		2485E84F12AD3CC7001B5986 /* UIViewController+DCTCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DCTCoreDataViewController.m"; sourceTree = "<group>"; };
+		2485E86C12AD3CC8001B5986 /* DCTTableViewSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTableViewSectionController.h; sourceTree = "<group>"; };
+		2485E86D12AD3CC8001B5986 /* DCTTableViewSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewSectionController.m; sourceTree = "<group>"; };
+		2485E86F12AD3CC8001B5986 /* DCTContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTContainerViewController.h; sourceTree = "<group>"; };
+		2485E87012AD3CC8001B5986 /* DCTContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTContainerViewController.m; sourceTree = "<group>"; };
+		2485E87112AD3CC8001B5986 /* DCTContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTContentViewController.h; sourceTree = "<group>"; };
+		2485E87212AD3CC8001B5986 /* DCTContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTContentViewController.m; sourceTree = "<group>"; };
+		2485E87312AD3CC8001B5986 /* DCTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTabBarController.h; sourceTree = "<group>"; };
+		2485E87412AD3CC8001B5986 /* DCTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTabBarController.m; sourceTree = "<group>"; };
+		2485E87512AD3CC8001B5986 /* DCTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTableViewController.h; sourceTree = "<group>"; };
+		2485E87612AD3CC8001B5986 /* DCTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewController.m; sourceTree = "<group>"; };
+		2485E87712AD3CC8001B5986 /* DCTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTViewController.h; sourceTree = "<group>"; };
+		2485E87812AD3CC8001B5986 /* DCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTViewController.m; sourceTree = "<group>"; };
+		2485E87A12AD3CC8001B5986 /* DCTTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTTabBar.h; sourceTree = "<group>"; };
+		2485E87B12AD3CC8001B5986 /* DCTTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTabBar.m; sourceTree = "<group>"; };
+		2485E87C12AD3CC8001B5986 /* DCTUITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTUITabBar.h; sourceTree = "<group>"; };
+		2485E87D12AD3CC8001B5986 /* DCTUITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTUITabBar.m; sourceTree = "<group>"; };
 		24C2978C12819B68003DBCC5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Xcode4/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		24D3F038127447C300313245 /* UIAlertView+DCTErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+DCTErrorHandling.h"; sourceTree = "<group>"; };
-		24D3F039127447C300313245 /* UIAlertView+DCTErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+DCTErrorHandling.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 		241917031260C58400E61FE7 = {
 			isa = PBXGroup;
 			children = (
-				241917411260C61D00E61FE7 /* DCTUIKit */,
+				2485E45E12AD3CBF001B5986 /* DCTUIKit */,
 				2419170A1260C58500E61FE7 /* iPhone */,
 				2419170B1260C58600E61FE7 /* iPad */,
 				2419170C1260C58600E61FE7 /* Classes */,
@@ -213,82 +213,6 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		241917411260C61D00E61FE7 /* DCTUIKit */ = {
-			isa = PBXGroup;
-			children = (
-				241917641260CA6B00E61FE7 /* Categories */,
-				241917421260C61D00E61FE7 /* Core Data Based */,
-				248EFACB128196C000C32445 /* Section Controller */,
-				241917431260C61D00E61FE7 /* View Controllers */,
-				2459D811126C612A008B9BB3 /* Views */,
-			);
-			path = DCTUIKit;
-			sourceTree = "<group>";
-		};
-		241917421260C61D00E61FE7 /* Core Data Based */ = {
-			isa = PBXGroup;
-			children = (
-				241917781260D2C200E61FE7 /* DCTCoreDataViewController.h */,
-				241917791260D2C200E61FE7 /* DCTCoreDataViewController.m */,
-				2419175B1260C8E300E61FE7 /* DCTCoreDataTableViewController.h */,
-				2419175C1260C8E300E61FE7 /* DCTCoreDataTableViewController.m */,
-				2419175E1260C98800E61FE7 /* DCTFetchedResultsTableViewController.h */,
-				2419175F1260C98800E61FE7 /* DCTFetchedResultsTableViewController.m */,
-				249679AD12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.h */,
-				249679AE12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m */,
-			);
-			path = "Core Data Based";
-			sourceTree = "<group>";
-		};
-		241917431260C61D00E61FE7 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				2419174C1260C6D100E61FE7 /* DCTViewController.h */,
-				2419174D1260C6D100E61FE7 /* DCTViewController.m */,
-				241917561260C7B300E61FE7 /* DCTTableViewController.h */,
-				241917571260C7B300E61FE7 /* DCTTableViewController.m */,
-				2410E950126255C500654194 /* DCTContainerViewController.h */,
-				2410E951126255C500654194 /* DCTContainerViewController.m */,
-				2410E9571262582700654194 /* DCTContentViewController.h */,
-				2410E9581262582700654194 /* DCTContentViewController.m */,
-				2459D80D126C6119008B9BB3 /* DCTTabBarController.h */,
-				2459D80E126C6119008B9BB3 /* DCTTabBarController.m */,
-			);
-			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		241917641260CA6B00E61FE7 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				24D3F038127447C300313245 /* UIAlertView+DCTErrorHandling.h */,
-				24D3F039127447C300313245 /* UIAlertView+DCTErrorHandling.m */,
-				241917721260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.h */,
-				241917731260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m */,
-				2419176D1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.h */,
-				2419176E1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m */,
-				241917851260D5C500E61FE7 /* UIResponder+DCTNextResponderExtensions.h */,
-				241917861260D5C500E61FE7 /* UIResponder+DCTNextResponderExtensions.m */,
-				241917801260D43D00E61FE7 /* UITableViewCell+DCTExtensions.h */,
-				241917811260D43D00E61FE7 /* UITableViewCell+DCTExtensions.m */,
-				241917691260CFD100E61FE7 /* UIView+DCTSubviewExtensions.h */,
-				2419176A1260CFD100E61FE7 /* UIView+DCTSubviewExtensions.m */,
-				241917651260CA8D00E61FE7 /* UIView+DCTLogging.h */,
-				241917661260CA8D00E61FE7 /* UIView+DCTLogging.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		2459D811126C612A008B9BB3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2459D812126C612A008B9BB3 /* DCTTabBar.h */,
-				2459D813126C612A008B9BB3 /* DCTTabBar.m */,
-				245D2D00126CF9DD007DF365 /* DCTUITabBar.h */,
-				245D2D01126CF9DD007DF365 /* DCTUITabBar.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		246AF73E12717A7500A37445 /* Example Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,13 +223,90 @@
 			path = "Example Classes";
 			sourceTree = "<group>";
 		};
-		248EFACB128196C000C32445 /* Section Controller */ = {
+		2485E45E12AD3CBF001B5986 /* DCTUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				24C2978912819816003DBCC5 /* DCTTableViewSectionController.h */,
-				24C2978A12819816003DBCC5 /* DCTTableViewSectionController.m */,
+				2485E83812AD3CC7001B5986 /* Categories */,
+				2485E84712AD3CC7001B5986 /* Core Data Based */,
+				2485E86B12AD3CC8001B5986 /* Section Controller */,
+				2485E86E12AD3CC8001B5986 /* View Controllers */,
+				2485E87912AD3CC8001B5986 /* Views */,
+			);
+			name = DCTUIKit;
+			path = /Users/danielctull/Dropbox/Programs/Cocoa/Frameworks/DCTUIKit;
+			sourceTree = "<absolute>";
+		};
+		2485E83812AD3CC7001B5986 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2485E83912AD3CC7001B5986 /* UIAlertView+DCTErrorHandling.h */,
+				2485E83A12AD3CC7001B5986 /* UIAlertView+DCTErrorHandling.m */,
+				2485E83B12AD3CC7001B5986 /* UIDevice+DCTFeatureCheck.h */,
+				2485E83C12AD3CC7001B5986 /* UIDevice+DCTFeatureCheck.m */,
+				2485E83D12AD3CC7001B5986 /* UIDevice+DCTSystemVersion.h */,
+				2485E83E12AD3CC7001B5986 /* UIDevice+DCTSystemVersion.m */,
+				2485E83F12AD3CC7001B5986 /* UIResponder+DCTNextResponderExtensions.h */,
+				2485E84012AD3CC7001B5986 /* UIResponder+DCTNextResponderExtensions.m */,
+				2485E84112AD3CC7001B5986 /* UITableViewCell+DCTExtensions.h */,
+				2485E84212AD3CC7001B5986 /* UITableViewCell+DCTExtensions.m */,
+				2485E84312AD3CC7001B5986 /* UIView+DCTLogging.h */,
+				2485E84412AD3CC7001B5986 /* UIView+DCTLogging.m */,
+				2485E84512AD3CC7001B5986 /* UIView+DCTSubviewExtensions.h */,
+				2485E84612AD3CC7001B5986 /* UIView+DCTSubviewExtensions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		2485E84712AD3CC7001B5986 /* Core Data Based */ = {
+			isa = PBXGroup;
+			children = (
+				2485E84812AD3CC7001B5986 /* DCTCoreDataTableViewController.h */,
+				2485E84912AD3CC7001B5986 /* DCTCoreDataTableViewController.m */,
+				2485E84A12AD3CC7001B5986 /* DCTCoreDataViewController.h */,
+				2485E84B12AD3CC7001B5986 /* DCTCoreDataViewController.m */,
+				2485E84C12AD3CC7001B5986 /* DCTFetchedResultsTableViewController.h */,
+				2485E84D12AD3CC7001B5986 /* DCTFetchedResultsTableViewController.m */,
+				2485E84E12AD3CC7001B5986 /* UIViewController+DCTCoreDataViewController.h */,
+				2485E84F12AD3CC7001B5986 /* UIViewController+DCTCoreDataViewController.m */,
+			);
+			path = "Core Data Based";
+			sourceTree = "<group>";
+		};
+		2485E86B12AD3CC8001B5986 /* Section Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2485E86C12AD3CC8001B5986 /* DCTTableViewSectionController.h */,
+				2485E86D12AD3CC8001B5986 /* DCTTableViewSectionController.m */,
 			);
 			path = "Section Controller";
+			sourceTree = "<group>";
+		};
+		2485E86E12AD3CC8001B5986 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2485E86F12AD3CC8001B5986 /* DCTContainerViewController.h */,
+				2485E87012AD3CC8001B5986 /* DCTContainerViewController.m */,
+				2485E87112AD3CC8001B5986 /* DCTContentViewController.h */,
+				2485E87212AD3CC8001B5986 /* DCTContentViewController.m */,
+				2485E87312AD3CC8001B5986 /* DCTTabBarController.h */,
+				2485E87412AD3CC8001B5986 /* DCTTabBarController.m */,
+				2485E87512AD3CC8001B5986 /* DCTTableViewController.h */,
+				2485E87612AD3CC8001B5986 /* DCTTableViewController.m */,
+				2485E87712AD3CC8001B5986 /* DCTViewController.h */,
+				2485E87812AD3CC8001B5986 /* DCTViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		2485E87912AD3CC8001B5986 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2485E87A12AD3CC8001B5986 /* DCTTabBar.h */,
+				2485E87B12AD3CC8001B5986 /* DCTTabBar.m */,
+				2485E87C12AD3CC8001B5986 /* DCTUITabBar.h */,
+				2485E87D12AD3CC8001B5986 /* DCTUITabBar.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,26 +378,26 @@
 				2419172B1260C58700E61FE7 /* DCTUIKit.xcdatamodel in Sources */,
 				241917341260C58700E61FE7 /* DCTUIKitAppDelegate_iPhone.m in Sources */,
 				241917371260C58700E61FE7 /* DCTUIKitAppDelegate_iPad.m in Sources */,
-				2419174E1260C6D100E61FE7 /* DCTViewController.m in Sources */,
-				241917581260C7B300E61FE7 /* DCTTableViewController.m in Sources */,
-				2419175D1260C8E300E61FE7 /* DCTCoreDataTableViewController.m in Sources */,
-				241917601260C98800E61FE7 /* DCTFetchedResultsTableViewController.m in Sources */,
-				241917671260CA8D00E61FE7 /* UIView+DCTLogging.m in Sources */,
-				2419176B1260CFD100E61FE7 /* UIView+DCTSubviewExtensions.m in Sources */,
-				2419176F1260D0C400E61FE7 /* UIDevice+DCTSystemVersion.m in Sources */,
-				241917741260D1B800E61FE7 /* UIDevice+DCTFeatureCheck.m in Sources */,
-				2419177A1260D2C200E61FE7 /* DCTCoreDataViewController.m in Sources */,
-				241917821260D43D00E61FE7 /* UITableViewCell+DCTExtensions.m in Sources */,
-				241917871260D5C500E61FE7 /* UIResponder+DCTNextResponderExtensions.m in Sources */,
-				2410E952126255C500654194 /* DCTContainerViewController.m in Sources */,
-				2410E9591262582700654194 /* DCTContentViewController.m in Sources */,
-				2459D80F126C6119008B9BB3 /* DCTTabBarController.m in Sources */,
-				2459D814126C612A008B9BB3 /* DCTTabBar.m in Sources */,
-				245D2D02126CF9DD007DF365 /* DCTUITabBar.m in Sources */,
 				246AF74412717B1A00A37445 /* DTTestViewController.m in Sources */,
-				24D3F03A127447C300313245 /* UIAlertView+DCTErrorHandling.m in Sources */,
-				249679AF12796AA700ED6ACD /* UIViewController+DCTCoreDataViewController.m in Sources */,
-				24C2978B12819816003DBCC5 /* DCTTableViewSectionController.m in Sources */,
+				2485EB5212AD3CC8001B5986 /* UIAlertView+DCTErrorHandling.m in Sources */,
+				2485EB5312AD3CC8001B5986 /* UIDevice+DCTFeatureCheck.m in Sources */,
+				2485EB5412AD3CC8001B5986 /* UIDevice+DCTSystemVersion.m in Sources */,
+				2485EB5512AD3CC8001B5986 /* UIResponder+DCTNextResponderExtensions.m in Sources */,
+				2485EB5612AD3CC8001B5986 /* UITableViewCell+DCTExtensions.m in Sources */,
+				2485EB5712AD3CC8001B5986 /* UIView+DCTLogging.m in Sources */,
+				2485EB5812AD3CC8001B5986 /* UIView+DCTSubviewExtensions.m in Sources */,
+				2485EB5912AD3CC8001B5986 /* DCTCoreDataTableViewController.m in Sources */,
+				2485EB5A12AD3CC8001B5986 /* DCTCoreDataViewController.m in Sources */,
+				2485EB5B12AD3CC8001B5986 /* DCTFetchedResultsTableViewController.m in Sources */,
+				2485EB5C12AD3CC8001B5986 /* UIViewController+DCTCoreDataViewController.m in Sources */,
+				2485EB6512AD3CC8001B5986 /* DCTTableViewSectionController.m in Sources */,
+				2485EB6612AD3CC8001B5986 /* DCTContainerViewController.m in Sources */,
+				2485EB6712AD3CC8001B5986 /* DCTContentViewController.m in Sources */,
+				2485EB6812AD3CC8001B5986 /* DCTTabBarController.m in Sources */,
+				2485EB6912AD3CC8001B5986 /* DCTTableViewController.m in Sources */,
+				2485EB6A12AD3CC8001B5986 /* DCTViewController.m in Sources */,
+				2485EB6B12AD3CC8001B5986 /* DCTTabBar.m in Sources */,
+				2485EB6C12AD3CC8001B5986 /* DCTUITabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
