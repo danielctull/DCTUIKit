@@ -287,7 +287,7 @@
 						  self.view.frame.size.width - self.barView.frame.size.width, 
 						  self.view.frame.size.height);
 	
-	return self.view.frame;
+	return self.view.bounds;
 }
 
 #pragma mark -
