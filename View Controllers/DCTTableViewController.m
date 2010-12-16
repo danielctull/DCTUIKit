@@ -61,6 +61,9 @@
 	return self;
 }
 
+#pragma mark -
+#pragma mark UIViewController
+
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	self.tableView = nil;
