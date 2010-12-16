@@ -64,6 +64,12 @@
 
 - (void)loadView {
 	
+	
+	// If the subclass has loaded a view and called super, return so that
+	// multiple views aren't loaded.
+	
+	if ([self isViewLoaded]) return;
+	
 	// Making the nib loading nature explicit. Will try to load a nib that has 
 	// the same name as the view controller class or one of its superclasses.
 	
