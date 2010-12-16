@@ -97,9 +97,10 @@
 	// Get the classname, see if a xib with that name exists in the resources, is so return it.
 	NSString *classname = NSStringFromClass(aClass);
 	NSString *path = [bundle pathForResource:classname ofType:@"nib"];
-	if (!path) path = [bundle pathForResource:classname ofType:@"xib"];
 	
-	if (path) return classname;	
+	if (!path) path = [bundle pathForResource:classname ofType:@"xib"]; // Is this check needed? All xibs will get compiled to nibs right?
+	
+	if (path) return classname;
 	
 	// See if a xib exists for the superclass.
 	return [self dctInternal_nibNameForClass:[aClass superclass] inBundle:bundle];
