@@ -36,6 +36,8 @@
 
 #import <UIKit/UIKit.h>
 
+/** Subclass of UIViewController.
+ */
 @interface DCTViewController : UIViewController {
     
 }

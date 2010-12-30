@@ -36,7 +36,29 @@
 
 #import <UIKit/UIKit.h>
 
+/** Feature checking category.
+ */
 @interface UIDevice (DCTFeatureCheck)
+
+/** A safe method to use for any OS.
+ 
+ Ths method checks to see if `isMultitaskingSupported` exists on UIDevice, if
+ it doesn't it returns NO.
+ 
+ If the method does exist, it returns the result of calling it.
+ 
+ @return YES if the device supports multitasking.
+ */
 - (BOOL)dct_multitaskingSupported;
+
+/** Method to check for blocks support on the current device's OS.
+ 
+ Blocks were brought in iOS4, so this checks if the major version number is 
+ greater than or equal to 4.
+ 
+ @return YES if blocks are supported.
+ 
+ @see [UIDevice(DCTSystemVersion) dct_majorSystemVersion]
+ */
 - (BOOL)dct_blocksSupported;
 @end

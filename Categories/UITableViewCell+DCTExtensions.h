@@ -36,6 +36,14 @@
 
 #import <UIKit/UIKit.h>
 
+/** Extensions to UITableViewCell. */
 @interface UITableViewCell (DCTExtensions)
+
+/** Searches for the parent tableview of the receiving cell.
+  
+ @return The table view if one is found, nil if not.
+ 
+ @see [UIView(DCTSubviewExtensions) dct_superviewOfKindOfClass:]
+ */
 - (UITableView *)dct_tableView;
 @end

@@ -37,8 +37,35 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (DCTSubviewExtensions)
+
+/** Removes all subviews from the receiver. */
 - (void)dct_removeAllSubviews;
+
+
+
+/** Finds a subview of the receiver with the kind of the given class.
+ 
+ This traverses down the view hierachy until a suitable class is found.
+ 
+ @param aClass The class the returned view should be.
+ @return A view of kind of the given class.
+ */
 - (id)dct_subviewOfKindOfClass:(Class)aClass;
+
+
+
+/** Finds a superview of the receiver with the kind of the given class.
+ 
+ This traverses up the view hierachy until a suitable class is found.
+ 
+ @param aClass The class the returned view should be.
+ @return A view of kind of the given class.
+ */
 - (id)dct_superviewOfKindOfClass:(Class)aClass;
+
+/** Returns whether or not the receiver has subviews.
+ 
+ @return YES if the receiver has any subviews, NO if it doesn't.
+ */
 - (BOOL)dct_hasSubviews;
 @end

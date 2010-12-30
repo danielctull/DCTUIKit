@@ -36,6 +36,11 @@
 
 #import <UIKit/UIKit.h>
 
+/** Category to add nicer log output of a view hierarchy */
 @interface UIView (DCTLogging)
+
+/** Calling this will traverse the view hierarchy starting at the receiver,
+ building a string which it will then output to the console. The output shows 
+ the hierarchy as indentated. */
 - (void)dct_logHierarchy;
 @end

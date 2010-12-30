@@ -44,14 +44,33 @@
 	BOOL viewIsLoaded, viewHasAppeared;
 }
 
-@property (nonatomic, assign) UIViewController *selectedViewController;
-@property (nonatomic, assign) NSUInteger selectedIndex;
-@property (nonatomic, copy) NSArray *viewControllers;
-@property (nonatomic, retain) DCTTabBar *tabBar;
 
+/// @name Creating a Tab Bar Controller
+/** The currently selected view controller.*/
+- (id)initWithViewControllers:(NSArray *)vcs;
+
+
+/// @name Tab Bar Controller Properties
+
+/** Delegate for the tab bar controller.*/
 @property (nonatomic, assign) id<DCTTabBarControllerDelegate> delegate;
 
-- (id)initWithViewControllers:(NSArray *)vcs;
+/** The tab bar for the controller.*/
+@property (nonatomic, retain) DCTTabBar *tabBar;
+
+/// @name Managing the View Controllers
+
+/** The view controllers managed by the tab bar controller.*/
+@property (nonatomic, copy) NSArray *viewControllers;
+
+/// @name Tab Selection
+
+/** The currently selected view controller.*/
+@property (nonatomic, assign) UIViewController *selectedViewController;
+
+/** The index of the currently selected view controller.*/
+@property (nonatomic, assign) NSUInteger selectedIndex;
+
 
 @end
 
