@@ -136,6 +136,10 @@
 	
 	cell.textLabel.text = [NSString stringWithFormat:@"Cell with indexPath: %i.%i", indexPath.section, indexPath.row];
 	
+	[self tableView:tv configureCell:cell atIndexPath:indexPath];
+	
 	return cell;
 }
+
+- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {}
 @end

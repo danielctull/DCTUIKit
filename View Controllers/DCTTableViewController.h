@@ -46,5 +46,5 @@
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
 
 - (void)loadTableView;
-
+- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
