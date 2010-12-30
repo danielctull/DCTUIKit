@@ -41,10 +41,31 @@
 	NSMutableArray *childViewControllers;
 }
 
+/// @name Managing the View Controllers
+
+/** View controllers managed by the container. */
 @property (nonatomic, readonly) NSArray *viewControllers;
+
+/** The main view controller.
+ 
+ This view controller is the one that will be asked for specific
+ details, such as `shouldAutorotateToInterfaceOrientation:`. 
+ */
 @property (nonatomic, retain) UIViewController *mainViewController;
 
-- (void)addViewController:(UIViewController *)vc;
-- (void)removeViewController:(UIViewController *)vc;
+/** Add a view controller to the array of managed view controllers.
+ 
+ If this is the first view controller added, it will automatically become
+ the mainViewController.
+ 
+ @param viewController The view controller to be added.
+ */
+- (void)addViewController:(UIViewController *)viewController;
+
+/** Remove the given view controller from the array of view controllers.
+ 
+ @param viewController The view controller to be removed.
+ */
+- (void)removeViewController:(UIViewController *)viewController;
 
 @end

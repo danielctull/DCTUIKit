@@ -36,9 +36,30 @@
 
 #import <UIKit/UIKit.h>
 
-
+/** Category to show the version numbers for the system. */
 @interface UIDevice (DCTSystemVersion)
+
+/** Returns the major part of the system version.
+ 
+ If the system version is `4.2.1`, this returns `4`.
+ 
+ @return The major part of the system version.
+ */
 - (NSInteger)dct_majorSystemVersion;
+
+/** Returns the minor part of the system version.
+ 
+ If the system version is `4.2.1`, this returns `2`.
+ 
+ @return The minor part of the system version.
+ */
 - (NSInteger)dct_minorSystemVersion;
+
+/** Returns the maintenance part of the system version.
+ 
+ If the system version is `4.2.1`, this returns `1`.
+ 
+ @return The maintenance part of the system version.
+ */
 - (NSInteger)dct_maintenanceSystemVersion;
 @end

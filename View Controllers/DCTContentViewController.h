@@ -47,13 +47,42 @@ typedef enum {
 @interface DCTContentViewController : UIViewController {
 }
 
+/// @name Creating a Content View Controller
+/**
+ 
+ */
+- (id)initWithViewController:(UIViewController *)aViewController;
+
+/** The position of the bar view.
+ 
+ Possible values are:
+ 
+ * `DCTContentBarPositionNone` Do not show the bar view - pretty pointless.
+ * `DCTContentBarPositionLeft` Show the bar view on the left.
+ * `DCTContentBarPositionRight` Show the bar view on the right.
+ * `DCTContentBarPositionTop` Show the bar view above the content view.
+ * `DCTContentBarPositionBottom` Show the bar view below the content view.
+ 
+ */
 @property (nonatomic, assign) DCTContentBarPosition position;
 @property (nonatomic, retain) UIViewController *viewController;
 @property (nonatomic, retain) IBOutlet UIView *barView, *contentView;
 
-// For subclasses really:
+
+/// @name Methods for Subclasses to Override
+
+/** The frame to use for the bar.
+ @return Frame to use.
+ */
 - (CGRect)barFrame;
+
+/** The frame to use for the content.
+ 
+ @return Frame to use.
+ */
 - (CGRect)contentFrame;
+
+/** The place for subclasses to load the content view.*/
 - (void)loadContentView;
 
 // Publically Use:
