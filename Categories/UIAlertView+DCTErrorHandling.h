@@ -39,7 +39,21 @@
 
 @interface UIAlertView (DCTErrorHandling)
 
+/** Creates and presents a UIAlertView with the given error.
+ 
+ Uses dct_alertViewWithError: to create the alert view and calls show on it.
+ 
+ @param error The error to use for the information to display in the alert view.
+ @return The created Alert View.
+ */
 + (id)dct_presentAlertViewWithError:(NSError *)error;
+
+/** Creates a UIAlertView with the given error.
+ 
+ @param error The error to use for the information to display in the alert view.
+ 
+ @return The created Alert View.
+ */
 + (id)dct_alertViewWithError:(NSError *)error;
 
 @end

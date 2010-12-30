@@ -38,17 +38,35 @@
 
 @protocol DCTTabBarDelegate;
 
+/** DCTTabBar is displayed by a DCTTabBarController and can be subclasses to give 
+ a custom look, as the default look is a little plain. */
 @interface DCTTabBar : UIView {
 	NSArray *items;
 	id<DCTTabBarDelegate> delegate;
 	UITabBarItem *selectedItem;
 	NSArray *itemHitAreas;
 }
+
+/** The currently selected item. Will exist in the items array.*/
 @property (nonatomic, retain) UITabBarItem *selectedItem;
-@property (nonatomic, retain) NSArray *items, *itemHitAreas;
+
+/** An array of UITabBarItems that is represented by the tab bar. */
+@property (nonatomic, retain) NSArray *items;
+
+/** An array of hit areas. These should correspond to the UITabBarItems in the items array. */
+@property (nonatomic, retain) NSArray *itemHitAreas;
+
+/** The delegate for the tab bar. */
 @property (nonatomic, assign) NSObject <DCTTabBarDelegate> *delegate;
 @end
 
+/** Delegate methods for the tab bar.*/
 @protocol DCTTabBarDelegate <NSObject>
+
+/** Allows the delegate to respond to touches on the tab bar.
+ 
+ @param tabBar The tab bar that was tapped.
+ @param item The item that was selected.
+ */
 - (void)dctTabBar:(DCTTabBar *)tabBar didSelectItem:(UITabBarItem *)item;
 @end

@@ -36,7 +36,13 @@
 
 #import "DCTTabBar.h"
 
-
+/** A subclass of DCTTabBar that wraps UITabBar so the default look is usable in a DCTTabBarController.
+ This is desirable as it is easier to customise the functionality of DCTTabBarController compared to the
+ default UITabBarController. 
+ 
+ A DCTTabBarController can also be put inside a UINavigationController, which a lot of clients seem to 
+ want to do.
+ */
 @interface DCTUITabBar : DCTTabBar <UITabBarDelegate> {
 	UITabBar *uiTabBar;
 }

@@ -64,6 +64,12 @@
 
 - (void)loadView {
 	
+	
+	// If the subclass has loaded a view and called super, return so that
+	// multiple views aren't loaded.
+	
+	if ([self isViewLoaded]) return;
+	
 	// Making the nib loading nature explicit. Will try to load a nib that has 
 	// the same name as the view controller class or one of its superclasses.
 	
@@ -91,9 +97,10 @@
 	// Get the classname, see if a xib with that name exists in the resources, is so return it.
 	NSString *classname = NSStringFromClass(aClass);
 	NSString *path = [bundle pathForResource:classname ofType:@"nib"];
-	if (!path) path = [bundle pathForResource:classname ofType:@"xib"];
 	
-	if (path) return classname;	
+	if (!path) path = [bundle pathForResource:classname ofType:@"xib"]; // Is this check needed? All xibs will get compiled to nibs right?
+	
+	if (path) return classname;
 	
 	// See if a xib exists for the superclass.
 	return [self dctInternal_nibNameForClass:[aClass superclass] inBundle:bundle];
