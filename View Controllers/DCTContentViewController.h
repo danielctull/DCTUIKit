@@ -64,6 +64,8 @@ typedef enum {
  * `DCTContentBarPositionBottom` Show the bar view below the content view.
  
  */
+@property (nonatomic, assign) CGSize portraitBarSize, landscapeBarSize;
+
 @property (nonatomic, assign) DCTContentBarPosition position;
 @property (nonatomic, retain) UIViewController *viewController;
 @property (nonatomic, retain) IBOutlet UIView *barView, *contentView;
@@ -83,6 +85,8 @@ typedef enum {
 - (CGRect)contentFrame;
 
 /** The place for subclasses to load the content view.*/
+
+- (void)loadBarView;
 - (void)loadContentView;
 
 // Publically Use:
