@@ -72,10 +72,13 @@
 	
 	if (self.position == DCTContentBarPositionTop)
 		self.barView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin);
+	
 	else if (self.position == DCTContentBarPositionBottom)
 		self.barView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin);
+	
 	else if (self.position == DCTContentBarPositionRight)
 		self.barView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin);
+	
 	else if (self.position == DCTContentBarPositionLeft)
 		self.barView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin);
 	
@@ -147,13 +150,14 @@
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	[self.viewController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	
-	[UIView animateWithDuration:duration animations:^{
-		self.barView.frame = [self dctInternal_barFrameForInterfaceOrientation:toInterfaceOrientation 
-																	 barHidden:self.barHidden];
-		
-		self.contentView.frame = [self dctInternal_contentFrameForInterfaceOrientation:toInterfaceOrientation 
-																			 barHidden:self.barHidden];
-	}];
+	BOOL currentlyPortrait = UIInterfaceOrientationIsPortrait(self.interfaceOrientation);
+	BOOL toPortrait = UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
+	
+	if (currentlyPortrait == toPortrait) return;
+	
+	self.barView.frame = [self dctInternal_barFrameForInterfaceOrientation:toInterfaceOrientation barHidden:self.barHidden];
+	self.contentView.frame = [self dctInternal_contentFrameForInterfaceOrientation:toInterfaceOrientation barHidden:self.barHidden];
+	
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -188,7 +192,7 @@
 	
 	if (!(self = [super init])) return nil;
 	
-	self.wantsFullScreenLayout = YES;
+	self.wantsFullScreenLayout = NO;
 	viewController = [aViewController retain];
 	
 	return self;
@@ -216,7 +220,7 @@
 
 - (void)setBarHidden:(BOOL)hidden animated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
 	
-	//if (barHidden == hidden) return;
+	if (barHidden == hidden) return;
 	
 	barHidden = hidden;
 	
@@ -239,37 +243,46 @@
 - (CGRect)dctInternal_barFrameForInterfaceOrientation:(UIInterfaceOrientation)orientation
 											barHidden:(BOOL)theBarHidden {
 	
-	CGFloat barWidth = self.portraitBarSize.width;
-	CGFloat barHeight = self.portraitBarSize.height;
+	CGFloat barWidth = self.landscapeBarSize.width;
+	CGFloat barHeight = self.landscapeBarSize.height;
 	
-	if (UIInterfaceOrientationIsLandscape(orientation)) {
-		barWidth = self.landscapeBarSize.width;
-		barHeight = self.landscapeBarSize.height;
+	if (UIInterfaceOrientationIsPortrait(orientation)) {
+		barWidth = self.portraitBarSize.width;
+		barHeight = self.portraitBarSize.height;
+	}
+	
+	
+	// For some reason when in landscape the view size comes 
+	// back the same as the portrait, so I flip it here.
+	// Must be a nicer way to check for this?
+	CGRect viewFrame = self.view.frame;
+	if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+		CGFloat height = viewFrame.size.height;
+		viewFrame.size.height = viewFrame.size.width;
+		viewFrame.size.width = height;
 	}
 	
 	CGRect rect = CGRectMake(0.0, 0.0, barWidth, barHeight);
 	
 	if (self.position == DCTContentBarPositionBottom)
-		rect.origin.y = self.view.frame.size.height - barHeight;
+		rect.origin.y = viewFrame.size.height - barHeight;
 	
 	else if (self.position == DCTContentBarPositionRight)
-		rect.origin.x = self.view.frame.size.width - barWidth;
-	
-	
+		rect.origin.x = viewFrame.size.width - barWidth;
 	
 	if (theBarHidden) {
 		
 		if (self.position == DCTContentBarPositionBottom)
-			rect.origin.y = self.view.bounds.size.height;
+			rect.origin.y = viewFrame.size.height;
 			
 		else if (self.position == DCTContentBarPositionTop)
-			rect.origin.y = -barHeight;
+			rect.origin.y = 0.0-barHeight;
 		
 		else if (self.position == DCTContentBarPositionRight)
-			rect.origin.x = self.view.frame.size.width;
+			rect.origin.x = viewFrame.size.width;
 			
 		else if (self.position == DCTContentBarPositionLeft)
-			rect.origin.x = -barWidth;
+			rect.origin.x = 0.0-barWidth;
 	}
 	
 	return rect;
@@ -282,12 +295,12 @@
 	
 	if (theBarHidden) return self.view.bounds;
 	
-	CGFloat barWidth = self.portraitBarSize.width;
-	CGFloat barHeight = self.portraitBarSize.height;
+	CGFloat barWidth = self.landscapeBarSize.width;
+	CGFloat barHeight = self.landscapeBarSize.height;
 	
-	if (UIInterfaceOrientationIsLandscape(orientation)) {
-		barWidth = self.landscapeBarSize.width;
-		barHeight = self.landscapeBarSize.height;
+	if (UIInterfaceOrientationIsPortrait(orientation)) {
+		barWidth = self.portraitBarSize.width;
+		barHeight = self.portraitBarSize.height;
 	}
 	
 	CGRect rect = self.view.bounds;
