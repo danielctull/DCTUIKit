@@ -47,6 +47,8 @@ typedef enum {
 @interface DCTContentViewController : UIViewController {
 }
 
+@property (nonatomic, assign) CGSize portraitBarSize, landscapeBarSize;
+
 @property (nonatomic, assign) DCTContentBarPosition position;
 @property (nonatomic, retain) UIViewController *viewController;
 @property (nonatomic, retain) IBOutlet UIView *barView, *contentView;
@@ -54,6 +56,8 @@ typedef enum {
 // For subclasses really:
 - (CGRect)barFrame;
 - (CGRect)contentFrame;
+
+- (void)loadBarView;
 - (void)loadContentView;
 
 // Publically Use:
