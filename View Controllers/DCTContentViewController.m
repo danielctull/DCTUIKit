@@ -37,8 +37,11 @@
 #import "DCTContentViewController.h"
 
 @interface DCTContentViewController ()
-- (CGRect)dctInternal_barFrameForInterfaceOrientation:(UIInterfaceOrientation)orientation;
-- (CGRect)dctInternal_contentFrameForInterfaceOrientation:(UIInterfaceOrientation)orientation;
+- (CGRect)dctInternal_barFrameForInterfaceOrientation:(UIInterfaceOrientation)orientation
+											barHidden:(BOOL)theBarHidden;
+
+- (CGRect)dctInternal_contentFrameForInterfaceOrientation:(UIInterfaceOrientation)orientation
+												barHidden:(BOOL)theBarHidden;
 @end
 
 @implementation DCTContentViewController
@@ -64,7 +67,8 @@
 	
 	[self.view addSubview:self.contentView];
 	
-	self.barView.frame = [self barFrame];
+	self.barView.frame = [self dctInternal_barFrameForInterfaceOrientation:self.interfaceOrientation
+																 barHidden:self.barHidden];
 	
 	if (self.position == DCTContentBarPositionTop)
 		self.barView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin);
@@ -76,7 +80,7 @@
 		self.barView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin);
 	
 	[self.view addSubview:self.barView];
-	self.contentView.frame = [self contentFrame];
+	self.contentView.frame = [self dctInternal_contentFrameForInterfaceOrientation:self.interfaceOrientation barHidden:self.barHidden];
 	
 	UIViewAutoresizing resizing = (UIViewAutoresizingFlexibleHeight |
 								   UIViewAutoresizingFlexibleWidth);
@@ -144,8 +148,11 @@
 	[self.viewController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	
 	[UIView animateWithDuration:duration animations:^{
-		self.barView.frame = [self dctInternal_barFrameForInterfaceOrientation:toInterfaceOrientation];
-		self.contentView.frame = [self dctInternal_contentFrameForInterfaceOrientation:toInterfaceOrientation];
+		self.barView.frame = [self dctInternal_barFrameForInterfaceOrientation:toInterfaceOrientation 
+																	 barHidden:self.barHidden];
+		
+		self.contentView.frame = [self dctInternal_contentFrameForInterfaceOrientation:toInterfaceOrientation 
+																			 barHidden:self.barHidden];
 	}];
 }
 
@@ -215,32 +222,13 @@
 	
 	if (self.position == DCTContentBarPositionNone) return;
 		
-	NSTimeInterval time = 0.333;
+	NSTimeInterval time = 1.0 / 3.0;
 	if (!animated) time = 0.0;
 	
 	[UIView animateWithDuration:time animations:^{
 		
-		if (hidden) {
-			self.contentView.frame = self.view.bounds;
-			
-			if (self.position == DCTContentBarPositionBottom)
-				self.barView.frame = CGRectMake(self.barView.frame.origin.x, self.barView.frame.origin.y + self.barView.frame.size.height, self.barView.frame.size.width, self.barView.frame.size.height);
-			
-			else if (self.position == DCTContentBarPositionTop)
-				self.barView.frame = CGRectMake(self.barView.frame.origin.x, self.barView.frame.origin.y - self.barView.frame.size.height, self.barView.frame.size.width, self.barView.frame.size.height);
-			
-			else if (self.position == DCTContentBarPositionRight)
-				self.barView.frame = CGRectMake(self.barView.frame.origin.x + self.barView.frame.size.width, self.barView.frame.origin.y, self.barView.frame.size.width, self.barView.frame.size.height);
-			
-			else if (self.position == DCTContentBarPositionLeft)
-				self.barView.frame = CGRectMake(self.barView.frame.origin.x - self.barView.frame.size.width, self.barView.frame.origin.y, self.barView.frame.size.width, self.barView.frame.size.height);
-			
-		} else {
-			self.barView.frame = [self barFrame];
-			self.contentView.frame = [self contentFrame];
-		}
-		
-		
+		self.barView.frame = [self dctInternal_barFrameForInterfaceOrientation:self.interfaceOrientation barHidden:hidden];
+		self.contentView.frame = [self dctInternal_contentFrameForInterfaceOrientation:self.interfaceOrientation barHidden:hidden];
 		
 	} completion:completion];
 }
@@ -248,7 +236,8 @@
 #pragma mark -
 #pragma mark Framing methods
 
-- (CGRect)dctInternal_barFrameForInterfaceOrientation:(UIInterfaceOrientation)orientation {
+- (CGRect)dctInternal_barFrameForInterfaceOrientation:(UIInterfaceOrientation)orientation
+											barHidden:(BOOL)theBarHidden {
 	
 	CGFloat barWidth = self.portraitBarSize.width;
 	CGFloat barHeight = self.portraitBarSize.height;
@@ -260,19 +249,38 @@
 	
 	CGRect rect = CGRectMake(0.0, 0.0, barWidth, barHeight);
 	
-	
 	if (self.position == DCTContentBarPositionBottom)
 		rect.origin.y = self.view.frame.size.height - barHeight;
 	
 	else if (self.position == DCTContentBarPositionRight)
 		rect.origin.x = self.view.frame.size.width - barWidth;
 	
+	
+	
+	if (theBarHidden) {
+		
+		if (self.position == DCTContentBarPositionBottom)
+			rect.origin.y = self.view.bounds.size.height;
+			
+		else if (self.position == DCTContentBarPositionTop)
+			rect.origin.y = -barHeight;
+		
+		else if (self.position == DCTContentBarPositionRight)
+			rect.origin.x = self.view.frame.size.width;
+			
+		else if (self.position == DCTContentBarPositionLeft)
+			rect.origin.x = -barWidth;
+	}
+	
 	return rect;
 }
 
-- (CGRect)dctInternal_contentFrameForInterfaceOrientation:(UIInterfaceOrientation)orientation {
+- (CGRect)dctInternal_contentFrameForInterfaceOrientation:(UIInterfaceOrientation)orientation
+												barHidden:(BOOL)theBarHidden {
 	
-	if (!self.barView) return self.view.bounds;
+	if (self.position == DCTContentBarPositionNone) return self.view.bounds;
+	
+	if (theBarHidden) return self.view.bounds;
 	
 	CGFloat barWidth = self.portraitBarSize.width;
 	CGFloat barHeight = self.portraitBarSize.height;
@@ -303,7 +311,7 @@
 }
 
 - (CGRect)barFrame {
-	return [self dctInternal_barFrameForInterfaceOrientation:self.interfaceOrientation];
+	return [self dctInternal_barFrameForInterfaceOrientation:self.interfaceOrientation barHidden:self.barHidden];
 }
 
 - (CGRect)contentFrame {
@@ -342,4 +350,5 @@
 
 - (void)loadContentView {}
 - (void)loadBarView {}
+
 @end
