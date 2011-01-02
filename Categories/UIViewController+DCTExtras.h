@@ -1,12 +1,12 @@
 /*
- UIResponder+DCTNextResponderExtensions.m
+ UIViewController+DCTExtras.m
  DCTUIKit
  
- Created by Daniel Tull on 26.10.2009.
+ Created by Daniel Tull on 2.1.2011.
  
  
  
- Copyright (c) 2009 Daniel Tull. All rights reserved.
+ Copyright (c) 2011 Daniel Tull. All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
@@ -34,44 +34,11 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "UIResponder+DCTNextResponderExtensions.h"
 
+#import <UIKit/UIKit.h>
 
-@implementation UIResponder (DCTNextResponderExtensions)
+@interface UIViewController (DCTExtras)
 
-- (UIResponder *)dct_nearestResponserOfClass:(Class)aClass {
-	
-	if ([self isKindOfClass:aClass]) return self;
-	
-	UIResponder *nextResponder = self;
-	
-	while ((nextResponder = [nextResponder nextResponder]))
-		if ([nextResponder isKindOfClass:aClass])
-			return nextResponder;
-	
-	return nil;
-}
-
-- (UIResponder *)dct_furthestResponserOfClass:(Class)aClass {
-	
-	NSArray *responders = [self dct_allRespondersOfClass:aClass];
-	
-	return [responders lastObject];
-}
-
-- (NSArray *)dct_allRespondersOfClass:(Class)aClass {
-	
-	UIResponder *nextResponder = self;
-	
-	NSMutableArray *array = [[NSMutableArray alloc] init];
-	
-	if ([self isKindOfClass:aClass]) [array addObject:self];
-	
-	while ((nextResponder = [nextResponder nextResponder]))
-		if ([nextResponder isKindOfClass:aClass])
-			[array addObject:nextResponder];
-	
-	return [array autorelease];
-}
+@property (nonatomic, readonly) UIViewController *dct_topViewController;
 
 @end
