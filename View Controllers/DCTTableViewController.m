@@ -122,6 +122,8 @@
 	[self.view addSubview:tableView];
 }
 
+- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {}
+
 #pragma mark -
 #pragma mark UITableViewDataSource
 
@@ -144,5 +146,5 @@
 	return cell;
 }
 
-- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {}
+
 @end
