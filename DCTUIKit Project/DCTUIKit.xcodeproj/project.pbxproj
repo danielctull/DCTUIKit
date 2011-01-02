@@ -38,6 +38,7 @@
 		242182EA12AD3D9C0020937F /* DCTContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FF512AD3D9C0020937F /* DCTContentViewController.m */; };
 		242182EB12AD3D9C0020937F /* DCTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FF712AD3D9C0020937F /* DCTTableViewController.m */; };
 		242182EC12AD3D9C0020937F /* DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24217FF912AD3D9C0020937F /* DCTViewController.m */; };
+		2466254412D0A5D60033DAC0 /* UIViewController+DCTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 2466254312D0A5D60033DAC0 /* UIViewController+DCTExtras.m */; };
 		246AF74412717B1A00A37445 /* DTTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246AF74212717B1A00A37445 /* DTTestViewController.m */; };
 		246AF74512717B1A00A37445 /* DTTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246AF74312717B1A00A37445 /* DTTestViewController.xib */; };
 		24C2978D12819B68003DBCC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C2978C12819B68003DBCC5 /* QuartzCore.framework */; };
@@ -100,6 +101,8 @@
 		24217FF712AD3D9C0020937F /* DCTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTTableViewController.m; sourceTree = "<group>"; };
 		24217FF812AD3D9C0020937F /* DCTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTViewController.h; sourceTree = "<group>"; };
 		24217FF912AD3D9C0020937F /* DCTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTViewController.m; sourceTree = "<group>"; };
+		2466254212D0A5D60033DAC0 /* UIViewController+DCTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DCTExtras.h"; sourceTree = "<group>"; };
+		2466254312D0A5D60033DAC0 /* UIViewController+DCTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DCTExtras.m"; sourceTree = "<group>"; };
 		246AF74112717B1A00A37445 /* DTTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTestViewController.h; sourceTree = "<group>"; };
 		246AF74212717B1A00A37445 /* DTTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTestViewController.m; sourceTree = "<group>"; };
 		246AF74312717B1A00A37445 /* DTTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTTestViewController.xib; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 		24217FB412AD3D9C0020937F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				2466254212D0A5D60033DAC0 /* UIViewController+DCTExtras.h */,
+				2466254312D0A5D60033DAC0 /* UIViewController+DCTExtras.m */,
 				24217FB512AD3D9C0020937F /* UIAlertView+DCTErrorHandling.h */,
 				24217FB612AD3D9C0020937F /* UIAlertView+DCTErrorHandling.m */,
 				24217FB712AD3D9C0020937F /* UIDevice+DCTFeatureCheck.h */,
@@ -398,6 +403,7 @@
 				242182EA12AD3D9C0020937F /* DCTContentViewController.m in Sources */,
 				242182EB12AD3D9C0020937F /* DCTTableViewController.m in Sources */,
 				242182EC12AD3D9C0020937F /* DCTViewController.m in Sources */,
+				2466254412D0A5D60033DAC0 /* UIViewController+DCTExtras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
