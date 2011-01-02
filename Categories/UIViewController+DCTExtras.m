@@ -40,8 +40,8 @@
 
 @implementation UIViewController (DCTExtras)
 
-- (UIviewController *)dct_topViewController {
-	return (UIviewController *)[self dct_furthestResponserOfClass:[UIViewController class]];
+- (UIViewController *)dct_topViewController {
+	return (UIViewController *)[self dct_furthestResponserOfClass:[UIViewController class]];
 }
 
 @end
