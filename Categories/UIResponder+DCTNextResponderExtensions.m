@@ -52,6 +52,13 @@
 	return nil;
 }
 
+- (UIResponder *)dct_furthestResponserOfClass:(Class)aClass {
+	
+	NSArray *responders = [self dct_allRespondersOfClass:aClass];
+	
+	return [responders lastObject];
+}
+
 - (NSArray *)dct_allRespondersOfClass:(Class)aClass {
 	
 	UIResponder *nextResponder = self;
