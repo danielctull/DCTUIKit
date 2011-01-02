@@ -47,4 +47,6 @@
 
 - (void)loadTableView;
 
+- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
 @end

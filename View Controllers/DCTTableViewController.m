@@ -122,6 +122,8 @@
 	[self.view addSubview:tableView];
 }
 
+- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {}
+
 #pragma mark -
 #pragma mark UITableViewDataSource
 
@@ -139,6 +141,10 @@
 	
 	cell.textLabel.text = [NSString stringWithFormat:@"Cell with indexPath: %i.%i", indexPath.section, indexPath.row];
 	
+	[self tableView:tv configureCell:cell atIndexPath:indexPath];
+	
 	return cell;
 }
+
+
 @end
