@@ -226,8 +226,8 @@
 				24217FF112AD3D9C0020937F /* View Controllers */,
 			);
 			name = DCTUIKit;
-			path = /Users/danielctull/Dropbox/Programs/Cocoa/Frameworks/DCTUIKit;
-			sourceTree = "<absolute>";
+			path = ..;
+			sourceTree = SOURCE_ROOT;
 		};
 		24217FB412AD3D9C0020937F /* Categories */ = {
 			isa = PBXGroup;
@@ -249,8 +249,9 @@
 				24217FC112AD3D9C0020937F /* UIView+DCTSubviewExtensions.h */,
 				24217FC212AD3D9C0020937F /* UIView+DCTSubviewExtensions.m */,
 			);
-			path = Categories;
-			sourceTree = "<group>";
+			name = Categories;
+			path = ../Categories;
+			sourceTree = SOURCE_ROOT;
 		};
 		24217FC312AD3D9C0020937F /* Core Data Based */ = {
 			isa = PBXGroup;
@@ -264,8 +265,9 @@
 				24217FCA12AD3D9C0020937F /* UIViewController+DCTCoreDataViewController.h */,
 				24217FCB12AD3D9C0020937F /* UIViewController+DCTCoreDataViewController.m */,
 			);
-			path = "Core Data Based";
-			sourceTree = "<group>";
+			name = "Core Data Based";
+			path = "../Core Data Based";
+			sourceTree = SOURCE_ROOT;
 		};
 		24217FCC12AD3D9C0020937F /* DCTTabBarController */ = {
 			isa = PBXGroup;
@@ -277,8 +279,9 @@
 				24217FD112AD3D9C0020937F /* DCTUITabBar.h */,
 				24217FD212AD3D9C0020937F /* DCTUITabBar.m */,
 			);
-			path = DCTTabBarController;
-			sourceTree = "<group>";
+			name = DCTTabBarController;
+			path = ../DCTTabBarController;
+			sourceTree = SOURCE_ROOT;
 		};
 		24217FEE12AD3D9C0020937F /* Section Controller */ = {
 			isa = PBXGroup;
@@ -286,8 +289,9 @@
 				24217FEF12AD3D9C0020937F /* DCTTableViewSectionController.h */,
 				24217FF012AD3D9C0020937F /* DCTTableViewSectionController.m */,
 			);
-			path = "Section Controller";
-			sourceTree = "<group>";
+			name = "Section Controller";
+			path = "../Section Controller";
+			sourceTree = SOURCE_ROOT;
 		};
 		24217FF112AD3D9C0020937F /* View Controllers */ = {
 			isa = PBXGroup;
@@ -301,8 +305,9 @@
 				24217FF812AD3D9C0020937F /* DCTViewController.h */,
 				24217FF912AD3D9C0020937F /* DCTViewController.m */,
 			);
-			path = "View Controllers";
-			sourceTree = "<group>";
+			name = "View Controllers";
+			path = "../View Controllers";
+			sourceTree = SOURCE_ROOT;
 		};
 		246AF73E12717A7500A37445 /* Example Classes */ = {
 			isa = PBXGroup;
