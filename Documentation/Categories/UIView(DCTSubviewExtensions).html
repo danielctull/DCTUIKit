@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>UIView(DCTSubviewExtensions) Category Reference</title>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+		<meta name="generator" content="appledoc" />
+	</head>
+	<body>
+		<article>
+			<div class="main-navigation navigation-top">
+				<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+			</div>
+			<div id="header">
+				<div class="section-header">
+					<h1 class="title title-header">UIView(DCTSubviewExtensions) Category Reference</h1>
+				</div>		
+			</div>
+			<div id="container">	
+				
+				<div class="section section-specification"><table cellspacing="0"><tbody>
+					<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">UIView+DCTSubviewExtensions.h</td>
+</tr>
+					</tbody></table></div>
+				
+				
+				
+				
+				
+				
+				<div class="section section-tasks">
+					<h2 class="subtitle subtitle-tasks">Tasks</h2>
+					
+					
+
+					<ul class="task-list">
+						<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dct_removeAllSubviews">- dct_removeAllSubviews</a></code>
+		<span class="tooltip"> Removes all subviews from the receiver. </span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dct_subviewOfKindOfClass:">- dct_subviewOfKindOfClass:</a></code>
+		<span class="tooltip"> Finds a subview of the receiver with the kind of the given class. </span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dct_superviewOfKindOfClass:">- dct_superviewOfKindOfClass:</a></code>
+		<span class="tooltip"> Finds a superview of the receiver with the kind of the given class. </span>
+	</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dct_hasSubviews">- dct_hasSubviews</a></code>
+		<span class="tooltip"> Returns whether or not the receiver has subviews. </span>
+	</span>
+	
+</li>
+					</ul>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				<div class="section section-methods">
+					<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+					
+					<div class="section-method">
+	<a name="//api/name/dct_hasSubviews" title="dct_hasSubviews"></a>
+	<h3 class="subsubtitle method-title">dct_hasSubviews</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> Returns whether or not the receiver has subviews. </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)dct_hasSubviews</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p> YES if the receiver has any subviews, NO if it doesn&apos;t. </p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+DCTSubviewExtensions.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/dct_removeAllSubviews" title="dct_removeAllSubviews"></a>
+	<h3 class="subsubtitle method-title">dct_removeAllSubviews</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> Removes all subviews from the receiver. </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)dct_removeAllSubviews</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+DCTSubviewExtensions.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/dct_subviewOfKindOfClass:" title="dct_subviewOfKindOfClass:"></a>
+	<h3 class="subsubtitle method-title">dct_subviewOfKindOfClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> Finds a subview of the receiver with the kind of the given class. </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)dct_subviewOfKindOfClass:(Class)<em>aClass</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aClass</em></dt>
+			<dd> The class the returned view should be. </dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p> A view of kind of the given class. </p>
+	</div>
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		
+		<p> Finds a subview of the receiver with the kind of the given class. </p>
+		
+		<p> This traverses down the view hierachy until a suitable class is found. </p>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+DCTSubviewExtensions.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+					<div class="section-method">
+	<a name="//api/name/dct_superviewOfKindOfClass:" title="dct_superviewOfKindOfClass:"></a>
+	<h3 class="subsubtitle method-title">dct_superviewOfKindOfClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p> Finds a superview of the receiver with the kind of the given class. </p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)dct_superviewOfKindOfClass:(Class)<em>aClass</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aClass</em></dt>
+			<dd> The class the returned view should be. </dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p> A view of kind of the given class. </p>
+	</div>
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		
+		<p> Finds a superview of the receiver with the kind of the given class. </p>
+		
+		<p> This traverses up the view hierachy until a suitable class is found. </p>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+DCTSubviewExtensions.h</code><br />
+	</div>				
+	
+	
+</div>
+					
+				</div>
+				
+				
+				
+				
+			</div>
+			<div class="main-navigation navigation-bottom">
+				<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+			</div>
+			<div id="footer">
+				<hr />
+				<div class="footer-copyright">
+					<p><span class="copyright">&copy; 2011 Daniel Tull. All rights reserved. (Last updated: 2011-01-08)</span><br />
+					<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc</a>.</span></p>
+				</div>
+			</div>
+		</article>
+	</body>
+</html>
