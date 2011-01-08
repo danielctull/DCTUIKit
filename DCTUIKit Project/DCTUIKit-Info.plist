@@ -2,7 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-
 	<key>CFBundleIdentifier</key>
 	<string>uk.co.danieltull.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -22,7 +21,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
@@ -42,4 +41,3 @@
 	</array>
 </dict>
 </plist>
-
