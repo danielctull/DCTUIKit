@@ -10,12 +10,28 @@
 #import "DTTestViewController.h"
 #import "DCTUITabBar.h"
 
+#import "UIColor+DCTHex.h"
+#import "UIColor+DCTComponents.h"
+
 @implementation DCTUIKitAppDelegate
 
 
 @synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	
+	UIColor *c1 = [UIColor dct_colorWithHexValue:0xFFFFFF];
+	//NSLog(@"c1 r:%f g:%f b:%f a:%f", c1.dct_red, c1.dct_green, c1.dct_blue, c1.dct_alpha);
+	
+	UIColor *c2 = [UIColor dct_colorWithHexString:@"FFFFFF"];
+	//NSLog(@"c2 r:%f g:%f b:%f a:%f", c2.dct_red, c2.dct_green, c2.dct_blue, c2.dct_alpha);
+	
+	UIColor *c3 = [UIColor dct_colorWithHexString:@"121212"];
+	//NSLog(@"c3 r:%f g:%f b:%f a:%f", c3.dct_red, c3.dct_green, c3.dct_blue, c3.dct_alpha);
+	
+	UIColor *c4 = [UIColor dct_colorWithHexValue:0x091020];
+	//NSLog(@"c4 r:%f g:%f b:%f a:%f", c4.dct_red, c4.dct_green, c4.dct_blue, c4.dct_alpha);
+	
 	
 	DTTestViewController *vc1 = [[DTTestViewController alloc] init];
 	vc1.title = @"One";
