@@ -243,6 +243,13 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 
 @implementation UIViewController (DCTTabBarController)
 
+
+/** Get the managing DCTTabBarController object if there is one.
+ 
+ This uses the `dct_nearestResponserOfClass:` method from UIResponder(DCTNextResponderExtensions).
+ 
+ @return The managing DCTTabBarController or nil.
+ */
 - (DCTTabBarController *)dctTabBarController {
 	return (DCTTabBarController *)[self dct_nearestResponserOfClass:[DCTTabBarController class]];
 }
