@@ -36,6 +36,8 @@
 
 #import "DCTViewController.h"
 
+/** Custom table view controller based on UITableViewController, but with some enhancements.
+ */
 @interface DCTTableViewController : DCTViewController <UITableViewDataSource, UITableViewDelegate> {
     CGPoint savedOffset;
 	NSIndexPath *savedIndexPath;

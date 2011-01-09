@@ -46,6 +46,7 @@
 
 
 /// @name Creating a Tab Bar Controller
+
 /** The currently selected view controller.*/
 - (id)initWithViewControllers:(NSArray *)vcs;
 

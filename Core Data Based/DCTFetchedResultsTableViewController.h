@@ -36,6 +36,7 @@
 
 #import "DCTCoreDataTableViewController.h"
 
+/** Table view controller that has a UITableView that is managed by a fetched results controller. */
 @interface DCTFetchedResultsTableViewController : DCTCoreDataTableViewController <NSFetchedResultsControllerDelegate> {
 }
 
