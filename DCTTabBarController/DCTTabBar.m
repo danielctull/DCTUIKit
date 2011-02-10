@@ -91,6 +91,7 @@
 		l.textAlignment = UITextAlignmentCenter;
 		[self addSubview:l];	
 		[tempHitAreas addObject:[NSValue valueWithCGRect:l.frame]];
+		[l release];
 		position += width;
 	}
 	self.itemHitAreas = tempHitAreas;
