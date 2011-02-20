@@ -84,7 +84,6 @@
 	
 	[self.view addSubview:self.barView];
 	self.contentView.frame = [self dctInternal_contentFrameForInterfaceOrientation:self.interfaceOrientation barHidden:self.barHidden];
-	
 	UIViewAutoresizing resizing = (UIViewAutoresizingFlexibleHeight |
 								   UIViewAutoresizingFlexibleWidth);
 	
@@ -202,6 +201,10 @@
 	if (!contentView) [self loadContentView];
 	if (!contentView) contentView = [[UIView alloc] initWithFrame:[self contentFrame]];
 	return contentView;
+}
+
+- (BOOL)isContentViewLoaded {
+	return (contentView == nil);
 }
 
 - (UIView *)barView {
