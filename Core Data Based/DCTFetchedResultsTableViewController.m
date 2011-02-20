@@ -94,12 +94,12 @@
 	return indexPath;
 }
 
-- (NSUInteger)tableViewSectionIndexForFetchedResultsControllerSectionIndex:(NSUInteger)index {
-	return index;
+- (NSUInteger)tableViewSectionIndexForFetchedResultsControllerSectionIndex:(NSUInteger)theIndex {
+	return theIndex;
 }
 
-- (NSUInteger)fetchedResultsControllerSectionIndexForTableViewSectionIndex:(NSUInteger)index {
-	return index;
+- (NSUInteger)fetchedResultsControllerSectionIndexForTableViewSectionIndex:(NSUInteger)theIndex {
+	return theIndex;
 }
 
 #pragma mark -

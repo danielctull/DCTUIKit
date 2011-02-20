@@ -37,7 +37,7 @@
 #import "UIDevice+DCTSystemVersion.h"
 
 @interface UIDevice ()
-- (NSInteger)dctInternal_systemVersionComponentAtIndex:(NSInteger)index;
+- (NSInteger)dctInternal_systemVersionComponentAtIndex:(NSUInteger)theIndex;
 @end
 
 @implementation UIDevice (DCTSystemVersion)
@@ -57,13 +57,13 @@
 #pragma mark -
 #pragma mark Internal
 
-- (NSInteger)dctInternal_systemVersionComponentAtIndex:(NSInteger)index {
+- (NSInteger)dctInternal_systemVersionComponentAtIndex:(NSUInteger)theIndex {
 	
 	NSArray *components = [self.systemVersion componentsSeparatedByString:@"."];
 	
-	if ([components count] <= index) return -1;
+	if ([components count] <= theIndex) return -1;
 	
-	return [[components objectAtIndex:index] integerValue];
+	return [[components objectAtIndex:theIndex] integerValue];
 }
 
 @end

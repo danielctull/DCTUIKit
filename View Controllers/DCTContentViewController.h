@@ -89,6 +89,8 @@ typedef enum {
 - (void)loadBarView;
 - (void)loadContentView;
 
+- (BOOL)isContentViewLoaded;
+
 // Publically Use:
 - (id)initWithViewController:(UIViewController *)aViewController;
 
