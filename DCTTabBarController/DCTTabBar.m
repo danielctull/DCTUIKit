@@ -72,15 +72,15 @@
 	CGFloat width = self.frame.size.width / [self.items count];
 	
 	NSMutableArray *tempHitAreas = [[NSMutableArray alloc] init];
-	CGFloat position = 0.0;
+	CGFloat position = 0.0f;
 	for (UITabBarItem *i in self.items) {
 		
 		NSInteger intWidth = (NSInteger)width;
 		NSInteger intPosition = (NSInteger)position;
 		
-		UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake((CGFloat)intPosition, 0.0, (CGFloat)intWidth, self.frame.size.height)];
+		UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake((CGFloat)intPosition, 0.0f, (CGFloat)intWidth, self.frame.size.height)];
 		l.text = i.title;
-		l.font = [UIFont boldSystemFontOfSize:14.0];
+		l.font = [UIFont boldSystemFontOfSize:14.0f];
 		l.backgroundColor = self.backgroundColor;
 		
 		if (i == self.selectedItem)		
@@ -117,8 +117,8 @@
 			&& point.x <= (r.origin.x + r.size.width) 
 			&& point.y <= (r.origin.y + r.size.height)) {
 			
-			NSInteger index = [self.itemHitAreas indexOfObject:v];
-			self.selectedItem = [self.items objectAtIndex:index];
+			NSInteger theIndex = [self.itemHitAreas indexOfObject:v];
+			self.selectedItem = [self.items objectAtIndex:theIndex];
 			[self.delegate dctTabBar:self didSelectItem:self.selectedItem];
 			return;
 		}

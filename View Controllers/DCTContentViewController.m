@@ -206,7 +206,7 @@
 
 - (UIView *)barView {
 	if (!barView) [self loadBarView];
-	if (!barView) barView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, 44.0)];
+	if (!barView) barView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.bounds.size.width, 44.0f)];
 	return barView;
 }
 
@@ -226,10 +226,10 @@
 	
 	if (self.position == DCTContentBarPositionNone) return;
 		
-	NSTimeInterval time = 1.0 / 3.0;
-	if (!animated) time = 0.0;
+	NSTimeInterval timeInterval = 1.0 / 3.0;
+	if (!animated) timeInterval = 0.0;
 	
-	[UIView animateWithDuration:time animations:^{
+	[UIView animateWithDuration:timeInterval animations:^{
 		
 		self.barView.frame = [self dctInternal_barFrameForInterfaceOrientation:self.interfaceOrientation barHidden:hidden];
 		self.contentView.frame = [self dctInternal_contentFrameForInterfaceOrientation:self.interfaceOrientation barHidden:hidden];
@@ -262,7 +262,7 @@
 		viewFrame.size.width = height;
 	}
 	
-	CGRect rect = CGRectMake(0.0, 0.0, barWidth, barHeight);
+	CGRect rect = CGRectMake(0.0f, 0.0f, barWidth, barHeight);
 	
 	if (self.position == DCTContentBarPositionBottom)
 		rect.origin.y = viewFrame.size.height - barHeight;
@@ -276,13 +276,13 @@
 			rect.origin.y = viewFrame.size.height;
 			
 		else if (self.position == DCTContentBarPositionTop)
-			rect.origin.y = 0.0-barHeight;
+			rect.origin.y = 0.0f - barHeight;
 		
 		else if (self.position == DCTContentBarPositionRight)
 			rect.origin.x = viewFrame.size.width;
 			
 		else if (self.position == DCTContentBarPositionLeft)
-			rect.origin.x = 0.0-barWidth;
+			rect.origin.x = 0.0f - barWidth;
 	}
 	
 	return rect;
@@ -332,26 +332,26 @@
 	if (!self.barView) return self.view.bounds;
 	
 	if (self.position == DCTContentBarPositionBottom)
-		return CGRectMake(0.0, 
-						  0.0, 
+		return CGRectMake(0.0f, 
+						  0.0f, 
 						  self.view.frame.size.width, 
 						  self.view.frame.size.height - self.barView.frame.size.height);
 	
 	else if (self.position == DCTContentBarPositionTop)
-		return CGRectMake(0.0,
+		return CGRectMake(0.0f,
 						  self.barView.frame.size.height, 
 						  self.view.frame.size.width, 
 						  self.view.frame.size.height - self.barView.frame.size.height);
 	
 	else if (self.position == DCTContentBarPositionRight)
-		return CGRectMake(0.0, 
-						  0.0, 
+		return CGRectMake(0.0f, 
+						  0.0f, 
 						  self.view.frame.size.width - self.barView.frame.size.width, 
 						  self.view.frame.size.height);
 	
 	else if (self.position == DCTContentBarPositionLeft)
 		return CGRectMake(self.barView.frame.size.width, 
-						  0.0, 
+						  0.0f, 
 						  self.view.frame.size.width - self.barView.frame.size.width, 
 						  self.view.frame.size.height);
 	

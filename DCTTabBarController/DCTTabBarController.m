@@ -38,7 +38,7 @@
 #import "UIView+DCTSubviewExtensions.h"
 #import "UIResponder+DCTNextResponderExtensions.h"
 
-NSInteger const DCTTabBarUnselectedIndex = -1;
+NSUInteger const DCTTabBarUnselectedIndex = -1;
 
 @interface DCTTabBarController ()
 - (void)dctInternal_setUpTabBarItems;
@@ -189,7 +189,7 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 }
 
 - (DCTTabBar *)tabBar {
-	if (!tabBar) self.tabBar = [[DCTTabBar alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)];
+	if (!tabBar) self.tabBar = [[DCTTabBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
 	return tabBar;
 }
 
@@ -213,7 +213,7 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 }
 
 - (void)dctInternal_sendDelegateMessageDidSelectViewController:(UIViewController *)vc {
-	if ([self.delegate respondsToSelector:@selector(DCTTabBarController:didSelectViewController:)])
+	if ([self.delegate respondsToSelector:@selector(dctTabBarController:didSelectViewController:)])
 		[self.delegate dctTabBarController:self didSelectViewController:vc];
 }
 
@@ -225,10 +225,10 @@ NSInteger const DCTTabBarUnselectedIndex = -1;
 	
 	NSMutableArray *items = [nav.viewControllers mutableCopy];
 	
-	NSInteger index = [items indexOfObject:self];
+	NSInteger theIndex = [items indexOfObject:self];
 	
-	[items removeObjectAtIndex:index];
-	[items insertObject:self atIndex:index];
+	[items removeObjectAtIndex:theIndex];
+	[items insertObject:self atIndex:theIndex];
 	nav.viewControllers = items;
 	[items release];
 }

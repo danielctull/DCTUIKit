@@ -49,9 +49,9 @@
 
 - (id)init {
 	
-	if (!(self = [super initWithFrame:CGRectMake(0.0, 0.0, 320.0, 49.0)])) return nil;
+	if (!(self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 49.0f)])) return nil;
 	
-	UITabBar *tb = [[UITabBar alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 49.0)];
+	UITabBar *tb = [[UITabBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 49.0f)];
 	uiTabBar = [tb retain];
 	uiTabBar.delegate = self;
 	
