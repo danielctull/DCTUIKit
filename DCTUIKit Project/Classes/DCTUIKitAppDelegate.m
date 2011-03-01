@@ -7,7 +7,7 @@
 //
 
 #import "DCTUIKitAppDelegate.h"
-#import "DTTestViewController.h"
+#import "TestViewController.h"
 #import "DCTUITabBar.h"
 
 #import "UIColor+DCTHex.h"
@@ -33,10 +33,10 @@
 	NSLog(@"c4 r:%f g:%f b:%f a:%f", c4.dct_red, c4.dct_green, c4.dct_blue, c4.dct_alpha);
 	*/
 	
-	DTTestViewController *vc1 = [[DTTestViewController alloc] init];
+	TestViewController *vc1 = [[TestViewController alloc] init];
 	vc1.title = @"One";
 	
-	DTTestViewController *vc2 = [[DTTestViewController alloc] init];
+	TestViewController *vc2 = [[TestViewController alloc] init];
 	vc2.title = @"Two";
 	
 	DCTUITabBar *tabBar = [[DCTUITabBar alloc] init];
