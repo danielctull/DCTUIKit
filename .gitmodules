@@ -1,0 +1,3 @@
+[submodule "SampleViewControllers"]
+	path = SampleViewControllers
+	url = git://github.com/danielctull/SampleViewControllers.git
