@@ -278,10 +278,18 @@
 			path = SampleViewControllers;
 			sourceTree = SOURCE_ROOT;
 		};
-		24B8EB21134912BF007A7E2B = {
+		241A22B91349147B00574B99 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				24B8EB2C134912BF007A7E2B /* libDCTUIKit.a */,
+			);
+			name = Libraries;
+			path = DCTUIKitApp;
+			sourceTree = "<group>";
+		};
+		24B8EB21134912BF007A7E2B = {
+			isa = PBXGroup;
+			children = (
 				241A2218134913D200574B99 /* Categories */,
 				241A222D134913D200574B99 /* Core Data Based */,
 				241A2236134913D200574B99 /* DCTTabBarController */,
@@ -290,6 +298,7 @@
 				24B8EB31134912BF007A7E2B /* DCTUIKit */,
 				24B8EB42134912BF007A7E2B /* DCTUIKitTests */,
 				24B8EB6613491326007A7E2B /* DCTUIKitApp */,
+				241A22B91349147B00574B99 /* Libraries */,
 				24B8EB2E134912BF007A7E2B /* Frameworks */,
 				24B8EB2D134912BF007A7E2B /* Products */,
 			);
