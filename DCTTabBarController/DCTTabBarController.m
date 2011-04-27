@@ -253,7 +253,14 @@
  @return The managing DCTTabBarController or nil.
  */
 - (DCTTabBarController *)dctTabBarController {
-	return (DCTTabBarController *)[self dct_nearestResponserOfClass:[DCTTabBarController class]];
+	
+	
+	
+	DCTTabBarController *tbc = [self dct_nearestResponderOfClass:[DCTTabBarController class]];
+	
+	if (!(tbc)) tbc = [self.navigationController dct_nearestResponderOfClass:[DCTTabBarController class]];
+	
+	return tbc;
 }
 
 @end
