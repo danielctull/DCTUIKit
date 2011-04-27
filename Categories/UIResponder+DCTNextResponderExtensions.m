@@ -39,7 +39,7 @@
 
 @implementation UIResponder (DCTNextResponderExtensions)
 
-- (UIResponder *)dct_nearestResponserOfClass:(Class)aClass {
+- (id)dct_nearestResponderOfClass:(Class)aClass {
 	
 	if ([self isKindOfClass:aClass]) return self;
 	
@@ -52,7 +52,7 @@
 	return nil;
 }
 
-- (UIResponder *)dct_furthestResponserOfClass:(Class)aClass {
+- (id)dct_furthestResponderOfClass:(Class)aClass {
 	
 	NSArray *responders = [self dct_allRespondersOfClass:aClass];
 	
