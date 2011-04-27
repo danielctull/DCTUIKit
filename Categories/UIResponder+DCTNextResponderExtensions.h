@@ -38,8 +38,8 @@
 
 @interface UIResponder (DCTNextResponderExtensions)
 
-- (UIResponder *)dct_nearestResponserOfClass:(Class)aClass;
-- (UIResponder *)dct_furthestResponserOfClass:(Class)aClass;
+- (id)dct_nearestResponderOfClass:(Class)aClass;
+- (id)dct_furthestResponderOfClass:(Class)aClass;
 - (NSArray *)dct_allRespondersOfClass:(Class)aClass;
 
 @end
