@@ -142,6 +142,9 @@
 #pragma mark UIViewController autorotation methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+	
+	if (!(self.viewController)) return [super shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+	
 	return [self.viewController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
 }
 

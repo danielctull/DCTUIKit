@@ -132,6 +132,26 @@
 	return self.selectedViewController.navigationItem;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+	
+	NSUInteger noCount = 0, yesCount = 0;
+	
+	NSUInteger vcCount = [self.viewControllers count];
+	
+	for (UIViewController *vc in self.viewControllers) {
+		if ([vc shouldAutorotateToInterfaceOrientation:toInterfaceOrientation])
+			yesCount++;
+		else
+			noCount++;
+	}
+	
+	if (vcCount == yesCount) return YES;
+	
+	if (vcCount == noCount) return NO;
+	
+	return [super shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+}
+
 #pragma mark -
 #pragma mark Public methods
 
