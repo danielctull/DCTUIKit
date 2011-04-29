@@ -78,11 +78,17 @@
 	
 	NSString *nib = self.nibName;
 	
-	if (!nib || [nib isEqualToString:@""]) {
-		nib = [self dctInternal_nibNameForClass:[self class] inBundle:bundle];
-	}
+	if ((nib)) [bundle loadNibNamed:nib owner:self options:nil];
 	
-	if (nib) [bundle loadNibNamed:nib owner:self options:nil];
+	if ([self isViewLoaded]) return;
+	
+	Class theClass = [self class];
+	
+	while (![self isViewLoaded] && [theClass isSubclassOfClass:[UIViewController class]]) {
+		NSString *nibName = [self dctInternal_nibNameForClass:theClass inBundle:bundle];
+		[bundle loadNibNamed:nibName owner:self options:nil];
+		theClass = [theClass superclass];
+	}
 	
 	if ([self isViewLoaded]) return;
 	
@@ -92,18 +98,17 @@
 - (NSString *)dctInternal_nibNameForClass:(Class)aClass inBundle:(NSBundle *)bundle {
 	
 	// If the class is not a UIViewController subclass, we don't need to check for a nib.
-	if (![aClass isSubclassOfClass:[UIViewController class]]) return nil;
+	// if (![aClass isSubclassOfClass:[UIViewController class]]) return nil;
 	
 	// Get the classname, see if a xib with that name exists in the resources, is so return it.
 	NSString *classname = NSStringFromClass(aClass);
 	NSString *path = [bundle pathForResource:classname ofType:@"nib"];
 	
-	if (!path) path = [bundle pathForResource:classname ofType:@"xib"]; // Is this check needed? All xibs will get compiled to nibs right?
+	if (!(path)) path = [bundle pathForResource:classname ofType:@"xib"]; // Is this check needed? All xibs will get compiled to nibs right?
 	
-	if (path) return classname;
+	if ((path)) return classname;
 	
-	// See if a xib exists for the superclass.
-	return [self dctInternal_nibNameForClass:[aClass superclass] inBundle:bundle];
+	return nil;
 }
 
 #pragma mark -
