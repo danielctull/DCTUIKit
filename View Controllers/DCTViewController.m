@@ -45,6 +45,15 @@
 
 @synthesize resizeViewToFitKeyboard;
 
+#pragma mark - NSObject 
+
+- (void)awakeFromNib {
+	[super awakeFromNib];
+	[self title];
+}
+
+#pragma mark - UIViewController
+
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];	
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
@@ -148,7 +157,10 @@
 - (NSString *)title {
 	NSString *t = super.title;
 	
-	if (!t) t = [self loadTitle];
+	if (!(t) || [t isEqualToString:@""]) {
+		t = [self loadTitle];
+		self.title = t;
+	}
 	
 	return t;
 }
