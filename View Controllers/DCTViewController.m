@@ -157,17 +157,12 @@
 - (NSString *)title {
 	NSString *t = super.title;
 	
-	if (!(t) || [t isEqualToString:@""]) {
-		t = [self loadTitle];
-		self.title = t;
-	}
+	if (!(t) || [t isEqualToString:@""]) [self loadTitle];
 	
 	return t;
 }
 
-- (NSString *)loadTitle {
-	return super.title;
-}
+- (void)loadTitle {}
 
 #pragma mark -
 #pragma mark UIKeyboard Notification methods

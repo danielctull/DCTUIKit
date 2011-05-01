@@ -46,7 +46,7 @@
 @property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
 @property (nonatomic, assign) BOOL resizeViewToFitKeyboard;
 
-- (NSString *)loadTitle;
+- (void)loadTitle;
 - (IBAction)dismissModalViewController:(id)sender;
 
 - (void)keyboardWillShowNotification:(NSNotification *)notification;
