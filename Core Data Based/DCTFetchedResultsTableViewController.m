@@ -59,8 +59,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
-	if (!(fetchedResultsController)) [self loadFetchedResultsController];
+	[self fetchedResultsController];
 }
 
 #pragma mark - DCTFetchedResultsTableViewController
@@ -72,8 +71,8 @@
 	fetchedResultsController = [frc retain];
 	[oldFrc release];
 	
-	[fetchedResultsController performFetch:nil];
 	fetchedResultsController.delegate = self;
+	[fetchedResultsController performFetch:nil];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
