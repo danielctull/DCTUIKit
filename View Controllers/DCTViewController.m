@@ -47,11 +47,23 @@
 
 #pragma mark - NSObject 
 
-- (void)awakeFromNib {
-	[super awakeFromNib];
+- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
+	
+	if (!(self = [super initWithNibName:nibName bundle:bundle])) return nil;
+	
 	[self title];
+	
+	return self;	
 }
 
+- (id)initWithCoder:(NSCoder *)coder {
+	
+	if (!(self = [super initWithCoder:coder])) return nil;
+	
+	[self title];
+	
+	return self;	
+}
 #pragma mark - UIViewController
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -72,8 +84,7 @@
 }
 
 - (void)loadView {
-	
-	
+		
 	// If the subclass has loaded a view and called super, return so that
 	// multiple views aren't loaded.
 	
