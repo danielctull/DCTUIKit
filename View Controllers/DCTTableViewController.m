@@ -61,6 +61,11 @@
 	return self;
 }
 
+- (void)awakeFromNib {
+	[super awakeFromNib];
+	clearsSelectionOnViewWillAppear = YES;
+}
+
 #pragma mark -
 #pragma mark UIViewController
 
