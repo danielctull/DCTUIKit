@@ -95,7 +95,7 @@
 	
 	while (![self isViewLoaded] && [theClass isSubclassOfClass:[UIViewController class]]) {
 		NSString *nibName = [self dctInternal_nibNameForClass:theClass inBundle:bundle];
-		[bundle loadNibNamed:nibName owner:self options:nil];
+		if ((nibName)) [bundle loadNibNamed:nibName owner:self options:nil];
 		theClass = [theClass superclass];
 	}
 	
