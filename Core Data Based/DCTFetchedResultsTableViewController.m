@@ -41,30 +41,29 @@
 
 @synthesize fetchedResultsController;
 
-#pragma mark -
-#pragma mark NSObject
+#pragma mark - NSObject
 
 - (void)dealloc {
+	fetchedResultsController.delegate = nil;
 	[fetchedResultsController release], fetchedResultsController = nil;
 	[super dealloc];
 }
 
-#pragma mark -
-#pragma mark UIViewController
+#pragma mark - UIViewController
 
 - (void)viewDidUnload {
 	[super viewDidUnload];
+	self.fetchedResultsController.delegate = nil;
 	self.fetchedResultsController = nil;
 }
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	if (!fetchedResultsController) [self loadFetchedResultsController];
+	if (!(fetchedResultsController)) [self loadFetchedResultsController];
 }
 
-#pragma mark -
-#pragma mark DCTFetchedResultsTableViewController
+#pragma mark - DCTFetchedResultsTableViewController
 
 - (void)setFetchedResultsController:(NSFetchedResultsController *)frc {
 	
@@ -102,8 +101,7 @@
 	return theIndex;
 }
 
-#pragma mark -
-#pragma mark UITableViewDelegate
+#pragma mark - UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [[self.fetchedResultsController sections] count];
@@ -117,8 +115,7 @@
     return [sectionInfo numberOfObjects];
 }
 
-#pragma mark -
-#pragma mark NSFetchedResultsControllerDelegate methods
+#pragma mark - NSFetchedResultsControllerDelegate methods
 
 /*
  
