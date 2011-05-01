@@ -45,6 +45,15 @@
 
 @synthesize resizeViewToFitKeyboard;
 
+#pragma mark - NSObject 
+
+- (void)awakeFromNib {
+	[super awakeFromNib];
+	[self title];
+}
+
+#pragma mark - UIViewController
+
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];	
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
@@ -86,7 +95,7 @@
 	
 	while (![self isViewLoaded] && [theClass isSubclassOfClass:[UIViewController class]]) {
 		NSString *nibName = [self dctInternal_nibNameForClass:theClass inBundle:bundle];
-		[bundle loadNibNamed:nibName owner:self options:nil];
+		if ((nibName)) [bundle loadNibNamed:nibName owner:self options:nil];
 		theClass = [theClass superclass];
 	}
 	
@@ -148,14 +157,12 @@
 - (NSString *)title {
 	NSString *t = super.title;
 	
-	if (!t) t = [self loadTitle];
+	if (!(t) || [t isEqualToString:@""]) [self loadTitle];
 	
 	return t;
 }
 
-- (NSString *)loadTitle {
-	return super.title;
-}
+- (void)loadTitle {}
 
 #pragma mark -
 #pragma mark UIKeyboard Notification methods
