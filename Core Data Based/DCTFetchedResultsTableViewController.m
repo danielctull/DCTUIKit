@@ -77,9 +77,9 @@
 
 - (NSFetchedResultsController *)fetchedResultsController {
 	
-	if (!fetchedResultsController) [self loadFetchedResultsController];
+	if (!(fetchedResultsController)) [self loadFetchedResultsController];
 	
-	return fetchedResultsController;	
+	return [[fetchedResultsController retain] autorelease];	
 }
 
 - (void)loadFetchedResultsController {}
