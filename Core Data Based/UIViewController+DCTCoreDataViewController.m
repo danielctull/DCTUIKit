@@ -59,4 +59,17 @@
 	[self presentModalViewController:viewController animated:animated];
 }
 
+- (void)dct_presentModalNavigationControllerWithRootCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
+	
+	if ([self conformsToProtocol:@protocol(DCTCoreDataViewControllerProtocol)]) {
+		UIViewController<DCTCoreDataViewControllerProtocol> *coreDataSelf = (UIViewController<DCTCoreDataViewControllerProtocol> *)self;
+		viewController.managedObjectContext = coreDataSelf.managedObjectContext;
+	}
+	
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+	
+	[self presentModalViewController:nav animated:animated];
+	[nav release];
+}
+
 @end

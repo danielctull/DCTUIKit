@@ -48,4 +48,5 @@
 
 - (void)dct_presentModalCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)vc animated:(BOOL)animated;
 
+- (void)dct_presentModalNavigationControllerWithRootCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated;
 @end
