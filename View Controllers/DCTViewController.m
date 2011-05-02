@@ -168,7 +168,10 @@
 - (NSString *)title {
 	NSString *t = super.title;
 	
-	if (!(t) || [t isEqualToString:@""]) [self loadTitle];
+	if (!(t) || [t isEqualToString:@""]) {
+		[self loadTitle];
+		t = super.title;
+	}
 	
 	return t;
 }

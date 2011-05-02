@@ -70,9 +70,9 @@
 - (void)setMainViewController:(UIViewController *)vc {
 	if ([mainViewController isEqual:vc]) return;
 	
-	[mainViewController release];
-	mainViewController = nil;
+	id oldVC = mainViewController;
 	mainViewController = [vc retain];
+	[oldVC release];
 	
 	[self addViewController:mainViewController];
 }

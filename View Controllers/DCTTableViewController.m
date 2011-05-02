@@ -76,7 +76,7 @@
 
 - (void)loadView {
 	[super loadView];
-	if (!tableView) [self loadTableView];
+	if (!(tableView)) [self loadTableView];
 }
 
 // Saving and reloading the position of the table view - if memory warning removes table.
@@ -108,19 +108,19 @@
 
 - (UITableView *)tableView {
 	
-	if (!tableView)	[self loadView];
+	if (!(tableView)) [self loadView];
 	
-	return tableView;
+	return [[tableView retain] autorelease];
 }
 
 - (void)loadTableView {
 	
-	if (!tableView) {
+	if (!(tableView)) {
 		tableView = [[UITableView alloc] initWithFrame:self.view.bounds
 												 style:self.tableViewStyle];
 		tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-		self.tableView.dataSource = self;
-		self.tableView.delegate = self;
+		tableView.dataSource = self;
+		tableView.delegate = self;
 	}
 	
 	tableView.frame = self.view.bounds;
@@ -140,9 +140,8 @@
 	
 	UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@"cell"];
 	
-	if (!cell) {
+	if (!(cell))
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"] autorelease];
-	}
 	
 	cell.textLabel.text = [NSString stringWithFormat:@"Cell with indexPath: %i.%i", indexPath.section, indexPath.row];
 	
