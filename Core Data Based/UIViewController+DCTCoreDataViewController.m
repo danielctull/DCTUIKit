@@ -42,7 +42,7 @@
 - (void)dct_pushCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
 	
 	if ([self conformsToProtocol:@protocol(DCTCoreDataViewControllerProtocol)]) {
-		UIViewController<DCTCoreDataViewControllerProtocol> *coreDataSelf = self;
+		UIViewController<DCTCoreDataViewControllerProtocol> *coreDataSelf = (UIViewController<DCTCoreDataViewControllerProtocol> *)self;
 		viewController.managedObjectContext = coreDataSelf.managedObjectContext;
 	}
 	
@@ -52,7 +52,7 @@
 - (void)dct_presentModalCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
 	
 	if ([self conformsToProtocol:@protocol(DCTCoreDataViewControllerProtocol)]) {
-		UIViewController<DCTCoreDataViewControllerProtocol> *coreDataSelf = self;
+		UIViewController<DCTCoreDataViewControllerProtocol> *coreDataSelf = (UIViewController<DCTCoreDataViewControllerProtocol> *)self;
 		viewController.managedObjectContext = coreDataSelf.managedObjectContext;
 	}
 	
