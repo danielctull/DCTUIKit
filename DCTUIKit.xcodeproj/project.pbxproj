@@ -71,6 +71,12 @@
 		24B8EB6E13491326007A7E2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B8EB6D13491326007A7E2B /* main.m */; };
 		24B8EB7413491326007A7E2B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B8EB7213491326007A7E2B /* MainWindow.xib */; };
 		24B8EB7713491326007A7E2B /* DCTUIKitApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24B8EB7513491326007A7E2B /* DCTUIKitApp.xcdatamodeld */; };
+		24F54A74137C8711000AC87E /* UIWindow+DCTFirstResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F54A72137C8711000AC87E /* UIWindow+DCTFirstResponder.h */; };
+		24F54A75137C8711000AC87E /* UIWindow+DCTFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F54A73137C8711000AC87E /* UIWindow+DCTFirstResponder.m */; };
+		24F54A76137C8711000AC87E /* UIWindow+DCTFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F54A73137C8711000AC87E /* UIWindow+DCTFirstResponder.m */; };
+		24F54A77137C8711000AC87E /* UIWindow+DCTFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F54A73137C8711000AC87E /* UIWindow+DCTFirstResponder.m */; };
+		24F54A7B137C88DA000AC87E /* UIView+DCTFirstResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F54A79137C88DA000AC87E /* UIView+DCTFirstResponder.h */; };
+		24F54A7C137C88DA000AC87E /* UIView+DCTFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F54A7A137C88DA000AC87E /* UIView+DCTFirstResponder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +158,10 @@
 		24B8EB6D13491326007A7E2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24B8EB7313491326007A7E2B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		24B8EB7613491326007A7E2B /* DCTUIKitApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DCTUIKitApp.xcdatamodel; sourceTree = "<group>"; };
+		24F54A72137C8711000AC87E /* UIWindow+DCTFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+DCTFirstResponder.h"; sourceTree = "<group>"; };
+		24F54A73137C8711000AC87E /* UIWindow+DCTFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+DCTFirstResponder.m"; sourceTree = "<group>"; };
+		24F54A79137C88DA000AC87E /* UIView+DCTFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCTFirstResponder.h"; sourceTree = "<group>"; };
+		24F54A7A137C88DA000AC87E /* UIView+DCTFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCTFirstResponder.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +222,10 @@
 				241A222A134913D200574B99 /* UIView+DCTSubviewExtensions.m */,
 				241A222B134913D200574B99 /* UIViewController+DCTExtras.h */,
 				241A222C134913D200574B99 /* UIViewController+DCTExtras.m */,
+				24F54A72137C8711000AC87E /* UIWindow+DCTFirstResponder.h */,
+				24F54A73137C8711000AC87E /* UIWindow+DCTFirstResponder.m */,
+				24F54A79137C88DA000AC87E /* UIView+DCTFirstResponder.h */,
+				24F54A7A137C88DA000AC87E /* UIView+DCTFirstResponder.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -413,6 +427,8 @@
 				241A226F134913D200574B99 /* DCTContentViewController.h in Headers */,
 				241A2271134913D200574B99 /* DCTTableViewController.h in Headers */,
 				241A2273134913D200574B99 /* DCTViewController.h in Headers */,
+				24F54A74137C8711000AC87E /* UIWindow+DCTFirstResponder.h in Headers */,
+				24F54A7B137C88DA000AC87E /* UIView+DCTFirstResponder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +580,8 @@
 				241A2270134913D200574B99 /* DCTContentViewController.m in Sources */,
 				241A2272134913D200574B99 /* DCTTableViewController.m in Sources */,
 				241A2274134913D200574B99 /* DCTViewController.m in Sources */,
+				24F54A75137C8711000AC87E /* UIWindow+DCTFirstResponder.m in Sources */,
+				24F54A7C137C88DA000AC87E /* UIView+DCTFirstResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24B8EB4C134912BF007A7E2B /* DCTUIKitTests.m in Sources */,
+				24F54A76137C8711000AC87E /* UIWindow+DCTFirstResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +602,7 @@
 				24B8EB7713491326007A7E2B /* DCTUIKitApp.xcdatamodeld in Sources */,
 				241A22171349137B00574B99 /* DCTUIKitAppDelegate.m in Sources */,
 				241A22B6134913E800574B99 /* TestViewController.m in Sources */,
+				24F54A77137C8711000AC87E /* UIWindow+DCTFirstResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
