@@ -39,7 +39,7 @@
 /** Subclass of UIViewController.
  */
 @interface DCTViewController : UIViewController {
-    
+	CGRect originalRect;
 }
 
 @property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
