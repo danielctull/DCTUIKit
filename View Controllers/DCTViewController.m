@@ -35,6 +35,7 @@
  */
 
 #import "DCTViewController.h"
+#import "UIResponder+DCTNextResponderExtensions.h"
 
 @interface DCTViewController ()
 - (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification;
@@ -198,30 +199,36 @@
 
 - (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification {
 	
+	NSDictionary *userInfo = [notification userInfo];
+		
+	CGRect keyboardEndRect, keyboardBeginRect;
+	[[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndRect];
+	[[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] getValue:&keyboardBeginRect];
+	
+	if (keyboardEndRect.origin.y == keyboardBeginRect.origin.y) return;
+		
+	UIWindow *window = [self dct_furthestResponderOfClass:[UIWindow class]];
+	CGRect endRect = [window convertRect:keyboardEndRect toView:self.view];
+	
+	if (!hidden) originalRect = self.view.frame;
+	
 	CGRect keyboardRect;
 	UIViewAnimationCurve curve;
+	[[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
+	[[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&curve];
+	double duration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];	
 	
-	[[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
-	[[[notification userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&curve];
-	double duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];	
-	
-	CGFloat height = self.view.bounds.size.height;
-	
-	CGFloat keyboardHeight = keyboardRect.size.height;
-	
-	if (self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)
-		keyboardHeight = keyboardRect.size.width;
-	
-	if (hidden) 
-		height = height + keyboardHeight;
-	else
-		height = height - keyboardHeight;
-	
-	[UIView beginAnimations:@"showKeyboard" context:nil];
+	[UIView beginAnimations:@"DCTKeyboardReaction" context:nil]; 
 	[UIView setAnimationDuration:duration];
 	[UIView setAnimationCurve:curve];
 	
-	self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, height);
+	if (hidden) 
+		self.view.frame = originalRect;
+	else
+		self.view.frame = CGRectMake(originalRect.origin.x, 
+									 originalRect.origin.y,
+									 originalRect.size.width, 
+									 endRect.origin.y);
 	[UIView commitAnimations];
 	
 }
