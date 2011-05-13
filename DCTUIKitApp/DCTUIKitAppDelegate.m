@@ -12,6 +12,7 @@
 
 #import "UIColor+DCTHex.h"
 #import "UIColor+DCTComponents.h"
+#import "TestTableViewController.h"
 
 @implementation DCTUIKitAppDelegate
 
@@ -36,7 +37,7 @@
 	TestViewController *vc1 = [[TestViewController alloc] init];
 	vc1.title = @"One";
 	
-	TestViewController *vc2 = [[TestViewController alloc] init];
+	TestTableViewController *vc2 = [[TestTableViewController alloc] init];
 	vc2.title = @"Two";
 	
 	DCTUITabBar *tabBar = [[DCTUITabBar alloc] init];
