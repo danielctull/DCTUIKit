@@ -89,7 +89,7 @@
 	// If the subclass has loaded a view and called super, return so that
 	// multiple views aren't loaded.
 	
-	if ([self isViewLoaded]) return;
+	if ([self isViewLoaded]) return [super loadView];
 	
 	// Making the nib loading nature explicit. Will try to load a nib that has 
 	// the same name as the view controller class or one of its superclasses.
@@ -101,7 +101,7 @@
 	
 	if ((nib)) [bundle loadNibNamed:nib owner:self options:nil];
 	
-	if ([self isViewLoaded]) return;
+	if ([self isViewLoaded]) return [super loadView];
 	
 	Class theClass = [self class];
 	
@@ -110,8 +110,6 @@
 		if ((nibName)) [bundle loadNibNamed:nibName owner:self options:nil];
 		theClass = [theClass superclass];
 	}
-	
-	if ([self isViewLoaded]) return;
 	
 	[super loadView];
 }
