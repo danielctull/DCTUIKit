@@ -13,6 +13,7 @@
 #import "UIColor+DCTHex.h"
 #import "UIColor+DCTComponents.h"
 #import "TestTableViewController.h"
+#import "TestDCTViewController.h"
 
 @implementation DCTUIKitAppDelegate
 
@@ -34,17 +35,23 @@
 	NSLog(@"c4 r:%f g:%f b:%f a:%f", c4.dct_red, c4.dct_green, c4.dct_blue, c4.dct_alpha);
 	*/
 	
-	TestViewController *vc1 = [[TestViewController alloc] init];
+	TestDCTViewController *vc1 = [[TestDCTViewController alloc] init];
 	vc1.title = @"One";
 	
 	TestTableViewController *vc2 = [[TestTableViewController alloc] init];
 	vc2.title = @"Two";
 	
-	DCTUITabBar *tabBar = [[DCTUITabBar alloc] init];
+	TestViewController *vc3 = [[TestViewController alloc] init];
+	vc3.title = @"Three";
 	
-	tabs = [[DCTTabBarController alloc] initWithViewControllers:[NSArray arrayWithObjects:vc1, vc2, nil]];
-	tabs.tabBar = tabBar;
-	[tabBar release];
+	
+	
+	tabs = [[DCTTabBarController alloc] initWithViewControllers:[NSArray arrayWithObjects:vc1, vc2, vc3, nil]];
+	
+	//DCTUITabBar *tabBar = [[DCTUITabBar alloc] init];
+	//tabs.tabBar = tabBar;
+	//[tabBar release];
+	
 	[vc1 release];
 	[vc2 release];
 	
