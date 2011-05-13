@@ -89,7 +89,7 @@
 	// If the subclass has loaded a view and called super, return so that
 	// multiple views aren't loaded.
 	
-	if ([self isViewLoaded]) return [super loadView];
+	if ([self isViewLoaded]) return;
 	
 	// Making the nib loading nature explicit. Will try to load a nib that has 
 	// the same name as the view controller class or one of its superclasses.
@@ -101,7 +101,7 @@
 	
 	if ((nib)) [bundle loadNibNamed:nib owner:self options:nil];
 	
-	if ([self isViewLoaded]) return [super loadView];
+	if ([self isViewLoaded]) return;
 	
 	Class theClass = [self class];
 	
@@ -110,6 +110,8 @@
 		if ((nibName)) [bundle loadNibNamed:nibName owner:self options:nil];
 		theClass = [theClass superclass];
 	}
+	
+	if ([self isViewLoaded]) return;
 	
 	[super loadView];
 }
@@ -197,38 +199,33 @@
 
 - (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification {
 	
+	UIView *view = self.view;
+	
 	NSDictionary *userInfo = [notification userInfo];
 		
 	CGRect keyboardEndRect, keyboardBeginRect;
-	[[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndRect];
-	[[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] getValue:&keyboardBeginRect];
+	[[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndRect];
+	[[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] getValue:&keyboardBeginRect];
 	
 	if (keyboardEndRect.origin.y == keyboardBeginRect.origin.y) return;
-		
-	UIWindow *window = [self dct_furthestResponderOfClass:[UIWindow class]];
+	
+	UIWindow *window = view.window;
 	CGRect endRect = [window convertRect:keyboardEndRect toView:self.view];
 	
-	if (!hidden) originalRect = self.view.frame;
+	if (!hidden) originalRect = view.frame;
 	
-	CGRect keyboardRect;
 	UIViewAnimationCurve curve;
-	[[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
 	[[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&curve];
 	double duration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];	
 	
-	[UIView beginAnimations:@"DCTKeyboardReaction" context:nil]; 
-	[UIView setAnimationDuration:duration];
-	[UIView setAnimationCurve:curve];
-	
-	if (hidden) 
-		self.view.frame = originalRect;
-	else
-		self.view.frame = CGRectMake(originalRect.origin.x, 
+	[UIView animateWithDuration:duration animations:^(void) {
+		
+		if (hidden) view.frame = originalRect;
+		else view.frame = CGRectMake(originalRect.origin.x, 
 									 originalRect.origin.y,
 									 originalRect.size.width, 
 									 endRect.origin.y);
-	[UIView commitAnimations];
-	
+	}];
 }
 
 @end
