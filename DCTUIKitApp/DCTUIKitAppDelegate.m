@@ -18,7 +18,7 @@
 @implementation DCTUIKitAppDelegate
 
 
-@synthesize window;
+@synthesize window, managedObjectModel, managedObjectContext, persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	/*
@@ -45,8 +45,7 @@
 	vc3.title = @"Three";
 	
 	
-	
-	tabs = [[DCTTabBarController alloc] initWithViewControllers:[NSArray arrayWithObjects:vc1, vc2, vc3, nil]];
+	DCTTabBarController *tabs = [[DCTTabBarController alloc] initWithViewControllers:[NSArray arrayWithObjects:vc1, vc2, vc3, nil]];
 	
 	//DCTUITabBar *tabBar = [[DCTUITabBar alloc] init];
 	//tabs.tabBar = tabBar;
@@ -54,11 +53,28 @@
 	
 	[vc1 release];
 	[vc2 release];
+	[vc3 release];
 	
-	[window addSubview:tabs.view];
-	
-	// Override point for customization after application launch.
+	window.rootViewController = tabs;
 	[window makeKeyAndVisible];
+	
+	
+	TestDCTViewController *vc = [[TestDCTViewController alloc] init];
+	vc.title = @"Modal";
+	
+	UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+																		  target:vc
+																		  action:@selector(dismissModalViewController:)];
+	vc.navigationItem.rightBarButtonItem = item;
+	[item release];
+	
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+	[tabs presentModalViewController:nav animated:YES];
+	[nav release];
+	[vc release];
+		
+	[tabs release];
+	
     return YES;
 }
 

@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1056</int>
-		<string key="IBDocument.SystemVersion">11A444d</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1556</string>
-		<string key="IBDocument.AppKitVersion">1119.1</string>
-		<string key="IBDocument.HIToolboxVersion">555.00</string>
+		<string key="IBDocument.SystemVersion">10J869</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1305</string>
+		<string key="IBDocument.AppKitVersion">1038.35</string>
+		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">519</string>
+			<string key="NS.object.0">300</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -61,11 +61,10 @@
 											<object class="IBUITextField" id="489814016">
 												<reference key="NSNextResponder" ref="558784183"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{65, 42}, {130, 31}}</string>
+												<string key="NSFrame">{{65, 20}, {130, 31}}</string>
 												<reference key="NSSuperview" ref="558784183"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="499258997"/>
-												<string key="NSReuseIdentifierKey">_NS:294</string>
 												<bool key="IBUIOpaque">NO</bool>
 												<bool key="IBUIClipsSubviews">YES</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -88,10 +87,9 @@
 											<object class="IBUIButton" id="499258997">
 												<reference key="NSNextResponder" ref="558784183"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{89, 100}, {82, 37}}</string>
+												<string key="NSFrame">{{89, 70}, {82, 37}}</string>
 												<reference key="NSSuperview" ref="558784183"/>
 												<reference key="NSWindow"/>
-												<string key="NSReuseIdentifierKey">_NS:222</string>
 												<bool key="IBUIOpaque">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 												<int key="IBUIContentHorizontalAlignment">0</int>
@@ -247,8 +245,8 @@
 						<reference key="object" ref="558784183"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="499258997"/>
 							<reference ref="489814016"/>
+							<reference ref="499258997"/>
 						</object>
 						<reference key="parent" ref="885206597"/>
 					</object>
@@ -406,6 +404,6 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<string key="IBCocoaTouchPluginVersion">519</string>
+		<string key="IBCocoaTouchPluginVersion">300</string>
 	</data>
 </archive>

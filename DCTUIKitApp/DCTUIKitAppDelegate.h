@@ -9,13 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DCTTabBarController.h"
 
-@interface DCTUIKitAppDelegate : NSObject <UIApplicationDelegate> {
-	DCTTabBarController *tabs;
-	UIWindow *window;
-	NSManagedObjectContext *managedObjectContext;
-	NSManagedObjectModel *managedObjectModel;
-	NSPersistentStoreCoordinator *persistentStoreCoordinator;
-}
+@interface DCTUIKitAppDelegate : NSObject <UIApplicationDelegate> {}
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
