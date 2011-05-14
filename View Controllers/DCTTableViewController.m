@@ -108,9 +108,9 @@
 
 - (UITableView *)tableView {
 	
-	if (!(tableView)) [self loadView];
+	[self view]; // This will call -loadView on the first load of the view, which in turn calls -loadTableView.
 	
-	return [[tableView retain] autorelease];
+	return tableView;
 }
 
 - (void)loadTableView {
