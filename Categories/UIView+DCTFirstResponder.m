@@ -1,12 +1,12 @@
 /*
- DCTViewController.h
+ UIView+DCTFirstResponder.m
  DCTUIKit
  
- Created by Daniel Tull on 19.09.2010.
+ Created by Daniel Tull on 12.5.2011.
  
  
  
- Copyright (c) 2010 Daniel Tull. All rights reserved.
+ Copyright (c) 2011 Daniel Tull. All rights reserved.
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
@@ -34,25 +34,20 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <UIKit/UIKit.h>
+#import "UIView+DCTFirstResponder.h"
 
-/** Subclass of UIViewController.
- */
-@interface DCTViewController : UIViewController {
-	CGRect originalRect;
+@implementation UIView (DCTFirstResponder)
+
+- (UIResponder *)dct_findFirstResponder {
+	
+	if ([self isFirstResponder]) return self;
+	
+	for (UIView *v in self.subviews) {
+		UIResponder *r = [v dct_findFirstResponder];
+		if ((r)) return r;
+	}
+	
+	return nil;	
 }
-
-@property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
-@property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
-@property (nonatomic, assign) BOOL resizeViewToFitKeyboard;
-@property (nonatomic, assign) BOOL resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
-
-- (void)loadTitle;
-- (IBAction)dismissModalViewController:(id)sender;
-
-- (void)keyboardWillShowNotification:(NSNotification *)notification;
-- (void)keyboardDidShowNotification:(NSNotification *)notification;
-- (void)keyboardWillHideNotification:(NSNotification *)notification;
-- (void)keyboardDidHideNotification:(NSNotification *)notification;
 
 @end
