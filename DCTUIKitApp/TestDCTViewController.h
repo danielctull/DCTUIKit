@@ -11,6 +11,7 @@
 @interface TestDCTViewController : DCTViewController {}
 
 - (IBAction)dismiss:(id)sender;
+- (IBAction)toggleResizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard:(id)sender;
 
 @property (nonatomic, assign) IBOutlet UITextField *textField;
 

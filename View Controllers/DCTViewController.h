@@ -45,6 +45,7 @@
 @property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
 @property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
 @property (nonatomic, assign) BOOL resizeViewToFitKeyboard;
+@property (nonatomic, assign) BOOL resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
 
 - (void)loadTitle;
 - (IBAction)dismissModalViewController:(id)sender;

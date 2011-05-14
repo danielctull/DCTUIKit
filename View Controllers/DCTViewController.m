@@ -36,6 +36,7 @@
 
 #import "DCTViewController.h"
 #import "UIResponder+DCTNextResponderExtensions.h"
+#import "UIView+DCTAnimation.h"
 
 @interface DCTViewController ()
 - (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification;
@@ -45,6 +46,7 @@
 @implementation DCTViewController
 
 @synthesize resizeViewToFitKeyboard;
+@synthesize resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
 
 #pragma mark - NSObject 
 
@@ -53,6 +55,7 @@
 	if (!(self = [super initWithNibName:nibName bundle:bundle])) return nil;
 	
 	[self title];
+	resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = YES;
 	
 	return self;	
 }
@@ -62,6 +65,7 @@
 	if (!(self = [super initWithCoder:coder])) return nil;
 	
 	[self title];
+	resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = YES;
 	
 	return self;	
 }
@@ -210,21 +214,45 @@
 	if (keyboardEndRect.origin.y == keyboardBeginRect.origin.y) return;
 	
 	UIWindow *window = view.window;
-	CGRect endRect = [window convertRect:keyboardEndRect toView:self.view];
+	CGRect endRect = [window convertRect:keyboardEndRect toView:view];
 	
 	if (!hidden) originalRect = view.frame;
 	
+	if (self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard) {
+		
+		CGRect beginRect = [window convertRect:keyboardBeginRect toView:view];
+		
+		[UIView animateWithDuration:0.0f animations:^(void) {
+			view.frame = CGRectMake(originalRect.origin.x, 
+									originalRect.origin.y,
+									originalRect.size.width, 
+									beginRect.origin.y);
+		}];
+	}
+	
 	UIViewAnimationCurve curve;
 	[[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&curve];
+	UIViewAnimationOptions animationOptions = [UIView dct_animationOptionCurveForAnimationCurve:curve];
+		
 	double duration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];	
 	
-	[UIView animateWithDuration:duration animations:^(void) {
+	[UIView animateWithDuration:duration
+						  delay:0.0f
+						options:animationOptions
+					 animations:^(void) {
 		
-		if (hidden) view.frame = originalRect;
-		else view.frame = CGRectMake(originalRect.origin.x, 
-									 originalRect.origin.y,
-									 originalRect.size.width, 
-									 endRect.origin.y);
+						 if (hidden && !self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard)
+							 view.frame = originalRect;
+						 else 
+							 view.frame = CGRectMake(originalRect.origin.x, 
+													 originalRect.origin.y,
+													 originalRect.size.width, 
+													 endRect.origin.y);
+						 
+	} completion:^(BOOL finished) {
+		
+		if (hidden && self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard)
+			view.frame = originalRect;		
 	}];
 }
 

@@ -15,11 +15,16 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = NO;
 	self.resizeViewToFitKeyboard = YES;
 }
 
 - (IBAction)dismiss:(id)sender {
 	[self.textField resignFirstResponder];
+}
+
+- (IBAction)toggleResizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard:(id)sender {
+	self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = !self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
 }
 
 @end

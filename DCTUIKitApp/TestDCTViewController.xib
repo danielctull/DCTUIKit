@@ -87,21 +87,22 @@
 											<object class="IBUIButton" id="499258997">
 												<reference key="NSNextResponder" ref="558784183"/>
 												<int key="NSvFlags">292</int>
-												<string key="NSFrame">{{89, 70}, {82, 37}}</string>
+												<string key="NSFrame">{{89, 59}, {82, 37}}</string>
 												<reference key="NSSuperview" ref="558784183"/>
 												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView" ref="1016742112"/>
 												<bool key="IBUIOpaque">NO</bool>
 												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 												<int key="IBUIContentHorizontalAlignment">0</int>
 												<int key="IBUIContentVerticalAlignment">0</int>
-												<object class="NSFont" key="IBUIFont">
+												<object class="NSFont" key="IBUIFont" id="270516759">
 													<string key="NSName">Helvetica-Bold</string>
 													<double key="NSSize">15</double>
 													<int key="NSfFlags">16</int>
 												</object>
 												<int key="IBUIButtonType">1</int>
 												<string key="IBUINormalTitle">Dismiss</string>
-												<object class="NSColor" key="IBUIHighlightedTitleColor">
+												<object class="NSColor" key="IBUIHighlightedTitleColor" id="782756951">
 													<int key="NSColorSpace">3</int>
 													<bytes key="NSWhite">MQA</bytes>
 												</object>
@@ -109,10 +110,31 @@
 													<int key="NSColorSpace">1</int>
 													<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 												</object>
-												<object class="NSColor" key="IBUINormalTitleShadowColor">
+												<object class="NSColor" key="IBUINormalTitleShadowColor" id="920782591">
 													<int key="NSColorSpace">3</int>
 													<bytes key="NSWhite">MC41AA</bytes>
 												</object>
+											</object>
+											<object class="IBUIButton" id="1016742112">
+												<reference key="NSNextResponder" ref="558784183"/>
+												<int key="NSvFlags">266</int>
+												<string key="NSFrame">{{9, 353}, {242, 37}}</string>
+												<reference key="NSSuperview" ref="558784183"/>
+												<reference key="NSWindow"/>
+												<reference key="NSNextKeyView"/>
+												<bool key="IBUIOpaque">NO</bool>
+												<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+												<int key="IBUIContentHorizontalAlignment">0</int>
+												<int key="IBUIContentVerticalAlignment">0</int>
+												<reference key="IBUIFont" ref="270516759"/>
+												<int key="IBUIButtonType">1</int>
+												<string key="IBUINormalTitle">Toggle resize before keyboard</string>
+												<reference key="IBUIHighlightedTitleColor" ref="782756951"/>
+												<object class="NSColor" key="IBUINormalTitleColor">
+													<int key="NSColorSpace">1</int>
+													<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+												</object>
+												<reference key="IBUINormalTitleShadowColor" ref="920782591"/>
 											</object>
 										</object>
 										<string key="NSFrame">{{10, 10}, {260, 400}}</string>
@@ -192,6 +214,24 @@
 					</object>
 					<int key="connectionID">13</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">dismiss:</string>
+						<reference key="source" ref="1016742112"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">17</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">toggleResizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard:</string>
+						<reference key="source" ref="1016742112"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">18</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -245,8 +285,9 @@
 						<reference key="object" ref="558784183"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="489814016"/>
+							<reference ref="1016742112"/>
 							<reference ref="499258997"/>
+							<reference ref="489814016"/>
 						</object>
 						<reference key="parent" ref="885206597"/>
 					</object>
@@ -260,6 +301,11 @@
 						<reference key="object" ref="489814016"/>
 						<reference key="parent" ref="558784183"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">16</int>
+						<reference key="object" ref="1016742112"/>
+						<reference key="parent" ref="558784183"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -268,6 +314,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>-1.CustomClassName</string>
 					<string>-2.CustomClassName</string>
+					<string>16.IBPluginDependency</string>
 					<string>4.IBEditorWindowLastContentRect</string>
 					<string>4.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
@@ -280,6 +327,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>TestDCTViewController</string>
 					<string>UIResponder</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{354, 396}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -301,7 +349,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">13</int>
+			<int key="maxID">18</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -368,14 +416,35 @@
 					<string key="className">TestDCTViewController</string>
 					<string key="superclassName">DCTViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">dismiss:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>dismiss:</string>
+							<string>toggleResizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">dismiss:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">dismiss:</string>
-							<string key="candidateClassName">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>dismiss:</string>
+							<string>toggleResizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">dismiss:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">toggleResizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
