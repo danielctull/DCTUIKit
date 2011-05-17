@@ -69,6 +69,9 @@
 	
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
 	
+	UINavigationController *viewControllersNav = viewController.navigationController;
+	if ((viewControllersNav)) nav.navigationBar.tintColor = viewControllersNav.navigationBar.tintColor;
+	
 	UIViewController *vc = [self dct_furthestResponderOfClass:[UIViewController class]];
 	[vc presentModalViewController:nav animated:animated];
 	[nav release];
