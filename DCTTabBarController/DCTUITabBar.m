@@ -51,8 +51,7 @@
 	
 	if (!(self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 49.0f)])) return nil;
 	
-	UITabBar *tb = [[UITabBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 49.0f)];
-	uiTabBar = [tb retain];
+	uiTabBar = [[UITabBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 49.0f)];
 	uiTabBar.delegate = self;
 	
 	return self;	
@@ -60,10 +59,6 @@
 
 #pragma mark -
 #pragma mark UIView
-
-
-- (void)drawRect:(CGRect)rect {
-}
 
 - (void)layoutSubviews {
 	[self addSubview:uiTabBar];
