@@ -35,7 +35,7 @@
  */
 
 #import "UIViewController+DCTCoreDataViewController.h"
-
+#import "UIResponder+DCTNextResponderExtensions.h"
 
 @implementation UIViewController (DCTCoreDataViewController)
 
@@ -56,7 +56,8 @@
 		viewController.managedObjectContext = coreDataSelf.managedObjectContext;
 	}
 	
-	[self presentModalViewController:viewController animated:animated];
+	UIViewController *vc = [self dct_furthestResponderOfClass:[UIViewController class]];
+	[vc presentModalViewController:viewController animated:animated];
 }
 
 - (void)dct_presentModalNavigationControllerWithRootCoreDataViewController:(UIViewController<DCTCoreDataViewControllerProtocol> *)viewController animated:(BOOL)animated {
@@ -68,7 +69,11 @@
 	
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
 	
-	[self presentModalViewController:nav animated:animated];
+	UINavigationController *viewControllersNav = viewController.navigationController;
+	if ((viewControllersNav)) nav.navigationBar.tintColor = viewControllersNav.navigationBar.tintColor;
+	
+	UIViewController *vc = [self dct_furthestResponderOfClass:[UIViewController class]];
+	[vc presentModalViewController:nav animated:animated];
 	[nav release];
 }
 
