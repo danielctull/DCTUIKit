@@ -44,6 +44,10 @@
 @property (nonatomic, assign) BOOL resizeViewToFitKeyboard;
 @property (nonatomic, assign) BOOL resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
 
+@property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
+@property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem;
+@property (nonatomic, assign) IBOutlet UIBarButtonItem *leftBarButtonItem;
+
 - (void)keyboardWillShowNotification:(NSNotification *)notification;
 - (void)keyboardDidShowNotification:(NSNotification *)notification;
 - (void)keyboardWillHideNotification:(NSNotification *)notification;
@@ -60,8 +64,4 @@
 /** Subclass of UIViewController.
  */
 @interface DCTViewController : UIViewController<DCTViewController>
-
-@property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
-@property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
-
 @end
