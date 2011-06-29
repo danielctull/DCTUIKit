@@ -34,21 +34,12 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "DCTViewController.h"
+#import <UIKit/UIKit.h>
 
 /** Custom table view controller based on UITableViewController, but with some enhancements.
  */
-@interface DCTTableViewController : DCTViewController <UITableViewDataSource, UITableViewDelegate> {
-    CGPoint savedOffset;
-	NSIndexPath *savedIndexPath;
-}
-
-@property (nonatomic) BOOL clearsSelectionOnViewWillAppear;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, assign) UITableViewStyle tableViewStyle;
+@interface DCTTableViewController : UITableViewController
 
 @property (nonatomic, retain) id<UITableViewDataSource> tableViewDataSource;
 
-- (void)loadTableView;
-- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end

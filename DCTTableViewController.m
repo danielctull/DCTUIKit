@@ -37,48 +37,21 @@
 #import "DCTTableViewController.h"
 
 
-@implementation DCTTableViewController
+@implementation DCTTableViewController {
+    CGPoint savedOffset;
+	NSIndexPath *savedIndexPath;
+}
 
-
-@synthesize tableView, clearsSelectionOnViewWillAppear, tableViewStyle;
 @synthesize tableViewDataSource;
 
-#pragma mark -
-#pragma mark NSObject
+#pragma mark - NSObject
 
 - (void)dealloc {
 	[savedIndexPath release], savedIndexPath = nil;
-	[tableView release], tableView = nil;
 	[super dealloc];
 }
 
-- (id)init {
-	
-	if (!(self = [super init])) return nil;
-	
-	tableViewStyle = UITableViewStylePlain;
-	clearsSelectionOnViewWillAppear = YES;
-	
-	return self;
-}
-
-- (void)awakeFromNib {
-	[super awakeFromNib];
-	clearsSelectionOnViewWillAppear = YES;
-}
-
-#pragma mark -
-#pragma mark UIViewController
-
-- (void)viewDidUnload {
-	[super viewDidUnload];
-	self.tableView = nil;
-}
-
-- (void)loadView {
-	[super loadView];
-	if (!(tableView)) [self loadTableView];
-}
+#pragma mark - UIViewController
 
 // Saving and reloading the position of the table view - if memory warning removes table.
 
@@ -99,13 +72,9 @@
 	
 	[self.tableView selectRowAtIndexPath:savedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 	self.tableView.contentOffset = savedOffset;
-	
-	if (self.clearsSelectionOnViewWillAppear)
-		[self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
 }
 
-#pragma mark -
-#pragma mark DCTTableViewController
+#pragma mark - DCTTableViewController
 
 - (void)setTableViewDataSource:(id<UITableViewDataSource>)tvds {
 	
@@ -119,31 +88,16 @@
 		[tableViewDataSource performSelector:setViewControllerSelector withObject:self];
 }
 
-- (UITableView *)tableView {
+- (void)setTableView:(UITableView *)tableView {
 	
-	[self view]; // This will call -loadView on the first load of the view, which in turn calls -loadTableView.
+	if (self.tableView == tableView) return;
 	
-	return tableView;
+	[super setTableView:tableView];
+	
+	tableView.dataSource = self.tableViewDataSource;
 }
 
-- (void)loadTableView {
-	
-	if (!(tableView)) {
-		tableView = [[UITableView alloc] initWithFrame:self.view.bounds
-												 style:self.tableViewStyle];
-		tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-		tableView.dataSource = self;
-		tableView.delegate = self;
-	}
-	
-	tableView.frame = self.view.bounds;
-	[self.view addSubview:tableView];
-}
-
-- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {}
-
-#pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
 	return 0;
@@ -157,8 +111,6 @@
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"] autorelease];
 	
 	cell.textLabel.text = [NSString stringWithFormat:@"Cell with indexPath: %i.%i", indexPath.section, indexPath.row];
-	
-	[self tableView:tv configureCell:cell atIndexPath:indexPath];
 	
 	return cell;
 }
