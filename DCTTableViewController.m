@@ -57,6 +57,11 @@
 
 #pragma mark - UIViewController
 
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	[self dctInternal_setupDataSource];
+}
+
 // Saving and reloading the position of the table view - if memory warning removes table.
 
 - (void)viewWillDisappear:(BOOL)animated {
