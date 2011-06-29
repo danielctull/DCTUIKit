@@ -41,6 +41,8 @@
 @interface DCTViewController ()
 - (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification;
 - (NSString *)dctInternal_nibNameForClass:(Class)aClass inBundle:(NSBundle *)bundle;
+- (void)dctInternal_addKeyboardObservers;
+- (void)dctInternal_removeKeyboardObservers;
 @end
 
 @implementation DCTViewController
@@ -73,19 +75,13 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];	
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+	[self dctInternal_removeKeyboardObservers];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	[self.navigationController setToolbarHidden:YES animated:YES]; // OVERRIDE THIS IN VIEWWILLAPPEAR: FOR THE MINORITY OF CASES WHERE THE TOOLBAR IS USED
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShowNotification:) name:UIKeyboardWillShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowNotification:) name:UIKeyboardDidShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHideNotification:) name:UIKeyboardDidHideNotification object:nil];
+	[self dctInternal_addKeyboardObservers];
 }
 
 - (void)loadView {
@@ -120,31 +116,11 @@
 	[super loadView];
 }
 
-- (NSString *)dctInternal_nibNameForClass:(Class)aClass inBundle:(NSBundle *)bundle {
-	
-	// If the class is not a UIViewController subclass, we don't need to check for a nib.
-	// if (![aClass isSubclassOfClass:[UIViewController class]]) return nil;
-	
-	// Get the classname, see if a xib with that name exists in the resources, is so return it.
-	NSString *classname = NSStringFromClass(aClass);
-	NSString *path = [bundle pathForResource:classname ofType:@"nib"];
-	
-	if (!(path)) path = [bundle pathForResource:classname ofType:@"xib"]; // Is this check needed? All xibs will get compiled to nibs right?
-	
-	if ((path)) return classname;
-	
-	return nil;
-}
-
-#pragma mark -
-#pragma mark IBAction
+#pragma mark - DCTViewController
 
 - (IBAction)dismissModalViewController:(id)sender {
 	[self.parentViewController dismissModalViewControllerAnimated:YES];
 }
-
-#pragma mark -
-#pragma mark IBOutlet
 
 - (UITabBarItem *)tabBarItem {
 	return [super tabBarItem];
@@ -183,9 +159,6 @@
 
 - (void)loadTitle {}
 
-#pragma mark -
-#pragma mark UIKeyboard Notification methods
-
 - (void)keyboardWillShowNotification:(NSNotification *)notification {
 	if (self.resizeViewToFitKeyboard) [self dctInternal_keyboardWillHide:NO withNotification:notification];
 }
@@ -198,8 +171,21 @@
 
 - (void)keyboardDidHideNotification:(NSNotification *)notification {}
 
-#pragma mark -
-#pragma mark Internal methods
+#pragma mark - Internal
+
+- (void)dctInternal_addKeyboardObservers {
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShowNotification:) name:UIKeyboardWillShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowNotification:) name:UIKeyboardDidShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHideNotification:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+- (void)dctInternal_removeKeyboardObservers {
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+}
 
 - (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification {
 	
@@ -215,6 +201,8 @@
 	
 	UIWindow *window = view.window;
 	CGRect endRect = [window convertRect:keyboardEndRect toView:view];
+	
+	CGRect originalRect;
 	
 	if (!hidden) originalRect = view.frame;
 	
@@ -254,6 +242,22 @@
 		if (hidden && self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard)
 			view.frame = originalRect;		
 	}];
+}
+
+- (NSString *)dctInternal_nibNameForClass:(Class)aClass inBundle:(NSBundle *)bundle {
+	
+	// If the class is not a UIViewController subclass, we don't need to check for a nib.
+	// if (![aClass isSubclassOfClass:[UIViewController class]]) return nil;
+	
+	// Get the classname, see if a xib with that name exists in the resources, is so return it.
+	NSString *classname = NSStringFromClass(aClass);
+	NSString *path = [bundle pathForResource:classname ofType:@"nib"];
+	
+	if (!(path)) path = [bundle pathForResource:classname ofType:@"xib"]; // Is this check needed? All xibs will get compiled to nibs right?
+	
+	if ((path)) return classname;
+	
+	return nil;
 }
 
 @end

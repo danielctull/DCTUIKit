@@ -35,10 +35,17 @@
  */
 
 #import "DCTTableViewController.h"
-
+#import <objc/runtime.h>
 
 @interface DCTTableViewController ()
+- (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification;
 - (void)dctInternal_setupDataSource;
+
+- (void)dctInternal_addKeyboardObservers;
+- (void)dctInternal_removeKeyboardObservers;
+
++ (void)dctInternal_reimplementSelectorFromDCTViewController:(SEL)selector;
+
 @end
 
 @implementation DCTTableViewController {
@@ -47,8 +54,22 @@
 }
 
 @synthesize tableViewDataSource;
+@synthesize resizeViewToFitKeyboard;
+@synthesize resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
 
 #pragma mark - NSObject
+
++ (void)initialize {
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_keyboardWillHide:withNotification:)];
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(title)];
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardWillShowNotification:)];
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardDidShowNotification:)];
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardWillHideNotification:)];
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardDidHideNotification:)];
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dismissModalViewController:)];
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_addKeyboardObservers:)];
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_removeKeyboardObservers:)];
+}
 
 - (void)dealloc {
 	[savedIndexPath release], savedIndexPath = nil;
@@ -69,6 +90,8 @@
 	savedOffset = self.tableView.contentOffset;
 	[savedIndexPath release], savedIndexPath = nil;
 	savedIndexPath = [[self.tableView indexPathForSelectedRow] retain];
+	
+	[self dctInternal_removeKeyboardObservers];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -81,6 +104,8 @@
 	
 	[self.tableView selectRowAtIndexPath:savedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 	self.tableView.contentOffset = savedOffset;
+	
+	[self dctInternal_addKeyboardObservers];
 }
 
 #pragma mark - DCTTableViewController
@@ -101,6 +126,33 @@
 	[super setTableView:tableView];
 	
 	[self dctInternal_setupDataSource];
+}
+
+#pragma mark - DCTViewController
+
+- (void)loadTitle {}
+
+// Implmenetations in DCTViewController class
+
+- (NSString *)title {return nil;}
+- (IBAction)dismissModalViewController:(id)sender {}
+- (void)keyboardWillShowNotification:(NSNotification *)notification {}
+- (void)keyboardDidShowNotification:(NSNotification *)notification {}
+- (void)keyboardWillHideNotification:(NSNotification *)notification {}
+- (void)keyboardDidHideNotification:(NSNotification *)notification {}
+
+#pragma mark - Internal
+
+// Implmenetations in DCTViewController class
+
+- (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification {}
+- (void)dctInternal_addKeyboardObservers {}
+- (void)dctInternal_removeKeyboardObservers {}
+
++ (void)dctInternal_reimplementSelectorFromDCTViewController:(SEL)selector {
+	IMP dctViewControllerImplementation = class_getMethodImplementation([DCTViewController class], selector);
+	Method dctTableViewControllerMethod = class_getInstanceMethod(self, selector);
+	method_setImplementation(dctTableViewControllerMethod, dctViewControllerImplementation);
 }
 
 - (void)dctInternal_setupDataSource {

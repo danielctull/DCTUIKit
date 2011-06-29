@@ -36,23 +36,32 @@
 
 #import <UIKit/UIKit.h>
 
-/** Subclass of UIViewController.
- */
-@interface DCTViewController : UIViewController {
-	CGRect originalRect;
-}
 
-@property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
-@property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
+
+
+@protocol DCTViewController <NSObject>
+
 @property (nonatomic, assign) BOOL resizeViewToFitKeyboard;
 @property (nonatomic, assign) BOOL resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
-
-- (void)loadTitle;
-- (IBAction)dismissModalViewController:(id)sender;
 
 - (void)keyboardWillShowNotification:(NSNotification *)notification;
 - (void)keyboardDidShowNotification:(NSNotification *)notification;
 - (void)keyboardWillHideNotification:(NSNotification *)notification;
 - (void)keyboardDidHideNotification:(NSNotification *)notification;
+
+- (IBAction)dismissModalViewController:(id)sender;
+
+- (void)loadTitle;
+
+@end
+
+
+
+/** Subclass of UIViewController.
+ */
+@interface DCTViewController : UIViewController<DCTViewController>
+
+@property (nonatomic, assign) IBOutlet UITabBarItem *tabBarItem;
+@property (nonatomic, assign) IBOutlet UIBarButtonItem *rightBarButtonItem, *leftBarButtonItem;
 
 @end

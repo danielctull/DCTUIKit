@@ -35,10 +35,11 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "DCTViewController.h"
 
 /** Custom table view controller based on UITableViewController, but with some enhancements.
  */
-@interface DCTTableViewController : UITableViewController
+@interface DCTTableViewController : UITableViewController<DCTViewController>
 
 @property (nonatomic, retain) id<UITableViewDataSource> tableViewDataSource;
 
