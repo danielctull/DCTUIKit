@@ -47,6 +47,8 @@
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
 
+@property (nonatomic, retain) id<UITableViewDataSource> tableViewDataSource;
+
 - (void)loadTableView;
 - (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end

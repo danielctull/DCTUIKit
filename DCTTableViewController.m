@@ -41,6 +41,7 @@
 
 
 @synthesize tableView, clearsSelectionOnViewWillAppear, tableViewStyle;
+@synthesize tableViewDataSource;
 
 #pragma mark -
 #pragma mark NSObject
@@ -105,6 +106,18 @@
 
 #pragma mark -
 #pragma mark DCTTableViewController
+
+- (void)setTableViewDataSource:(id<UITableViewDataSource>)tvds {
+	
+	if (self.tableViewDataSource == tvds) return;
+	
+	tableViewDataSource = tvds;
+	
+	SEL setViewControllerSelector = @selector(setViewControllers:);
+	
+	if ([tableViewDataSource respondsToSelector:setViewControllerSelector])
+		[tableViewDataSource performSelector:setViewControllerSelector withObject:self];
+}
 
 - (UITableView *)tableView {
 	
