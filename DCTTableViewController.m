@@ -37,6 +37,10 @@
 #import "DCTTableViewController.h"
 
 
+@interface DCTTableViewController ()
+- (void)dctInternal_setupDataSource;
+@end
+
 @implementation DCTTableViewController {
     CGPoint savedOffset;
 	NSIndexPath *savedIndexPath;
@@ -82,10 +86,7 @@
 	
 	tableViewDataSource = tvds;
 	
-	SEL setViewControllerSelector = @selector(setViewControllers:);
-	
-	if ([tableViewDataSource respondsToSelector:setViewControllerSelector])
-		[tableViewDataSource performSelector:setViewControllerSelector withObject:self];
+	[self dctInternal_setupDataSource];
 }
 
 - (void)setTableView:(UITableView *)tableView {
@@ -94,26 +95,22 @@
 	
 	[super setTableView:tableView];
 	
-	tableView.dataSource = self.tableViewDataSource;
+	[self dctInternal_setupDataSource];
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section {
-	return 0;
+- (void)dctInternal_setupDataSource {
+	
+	if (self.tableViewDataSource == nil) return;
+	
+	self.tableView.dataSource = self.tableViewDataSource;
+	
+	SEL setViewControllerSelector = @selector(setViewController:);
+	if ([tableViewDataSource respondsToSelector:setViewControllerSelector])
+		[tableViewDataSource performSelector:setViewControllerSelector withObject:self];
+	
+	SEL setTableViewSelector = @selector(setTableView:);
+	if ([tableViewDataSource respondsToSelector:setTableViewSelector])
+		[tableViewDataSource performSelector:setTableViewSelector withObject:self.tableView];
 }
-
-- (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:@"cell"];
-	
-	if (!(cell))
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"] autorelease];
-	
-	cell.textLabel.text = [NSString stringWithFormat:@"Cell with indexPath: %i.%i", indexPath.section, indexPath.row];
-	
-	return cell;
-}
-
 
 @end
