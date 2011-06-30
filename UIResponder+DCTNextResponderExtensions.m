@@ -71,7 +71,7 @@
 		if ([nextResponder isKindOfClass:aClass])
 			[array addObject:nextResponder];
 	
-	return [array autorelease];
+	return array;
 }
 
 @end

@@ -41,6 +41,6 @@
  */
 @interface DCTTableViewController : UITableViewController<DCTViewController>
 
-@property (nonatomic, retain) id<UITableViewDataSource> tableViewDataSource;
+@property (nonatomic, strong) id<UITableViewDataSource> tableViewDataSource;
 
 @end

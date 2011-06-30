@@ -57,8 +57,7 @@
 	if (count > 1) {
 		NSMutableArray *mutableOptions = [options mutableCopy];
 		[mutableOptions removeObjectAtIndex:0];
-		otherButtons = [[mutableOptions copy] autorelease];
-		[mutableOptions release];		
+		otherButtons = [mutableOptions copy];
 	}	
 	
 	id alertView = [[self alloc] initWithTitle:[error domain]
@@ -70,7 +69,7 @@
 	for (NSString *s in otherButtons)
 		[alertView addButtonWithTitle:s];
 	
-	return [alertView autorelease];
+	return alertView;
 }
 
 @end

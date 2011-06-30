@@ -67,7 +67,6 @@
 	
 	NSLog(@"%@%@", string, self);
 	
-	[string release];
 	
 	for (UIView *v in self.subviews)
 		[v dctInternal_logHierarchyValue:integer+1];

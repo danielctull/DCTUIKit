@@ -81,11 +81,6 @@
 	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(setRightBarButtonItem:)];
 }
 
-- (void)dealloc {
-	[savedIndexPath release], savedIndexPath = nil;
-	[super dealloc];
-}
-
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -98,8 +93,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	savedOffset = self.tableView.contentOffset;
-	[savedIndexPath release], savedIndexPath = nil;
-	savedIndexPath = [[self.tableView indexPathForSelectedRow] retain];
+	savedIndexPath = [self.tableView indexPathForSelectedRow];
 	
 	[self dctInternal_removeKeyboardObservers];
 }
