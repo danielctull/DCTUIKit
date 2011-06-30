@@ -46,6 +46,8 @@
 
 + (void)dctInternal_reimplementSelectorFromDCTViewController:(SEL)selector;
 
+- (void)dctInternal_init;
+
 @end
 
 @implementation DCTTableViewController {
@@ -81,7 +83,26 @@
 	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(setRightBarButtonItem:)];
 }
 
+- (void)awakeFromNib {
+	[self dctInternal_init];
+}
+
+- (void)dctInternal_init {
+	[self title];
+	resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = YES;
+}
+
 #pragma mark - UIViewController
+
+
+- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
+	
+	if (!(self = [super initWithNibName:nibName bundle:bundle])) return nil;
+	
+	[self dctInternal_init];
+	
+	return self;	
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];

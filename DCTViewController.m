@@ -43,6 +43,7 @@
 - (NSString *)dctInternal_nibNameForClass:(Class)aClass inBundle:(NSBundle *)bundle;
 - (void)dctInternal_addKeyboardObservers;
 - (void)dctInternal_removeKeyboardObservers;
+- (void)dctInternal_init;
 @end
 
 @implementation DCTViewController
@@ -52,26 +53,25 @@
 
 #pragma mark - NSObject 
 
+- (void)dctInternal_init {
+	[self title];
+	resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = YES;
+}
+
+- (void)awakeFromNib {
+	[self dctInternal_init];
+}
+
+#pragma mark - UIViewController
+
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
 	
 	if (!(self = [super initWithNibName:nibName bundle:bundle])) return nil;
 	
-	[self title];
-	resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = YES;
+	[self dctInternal_init];
 	
 	return self;	
 }
-
-- (id)initWithCoder:(NSCoder *)coder {
-	
-	if (!(self = [super initWithCoder:coder])) return nil;
-	
-	[self title];
-	resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = YES;
-	
-	return self;	
-}
-#pragma mark - UIViewController
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];	
