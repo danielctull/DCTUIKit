@@ -120,30 +120,6 @@
 	[self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
-- (UITabBarItem *)tabBarItem {
-	return [super tabBarItem];
-}
-
-- (void)setTabBarItem:(UITabBarItem *)item {
-	[super setTabBarItem:item];
-}
-
-- (void)setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {
-	self.navigationItem.leftBarButtonItem = leftBarButtonItem;
-}
-
-- (UIBarButtonItem *)leftBarButtonItem {
-	return self.navigationItem.leftBarButtonItem;
-}
-
-- (void)setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {
-	self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-}
-
-- (UIBarButtonItem *)rightBarButtonItem {
-	return self.navigationItem.rightBarButtonItem;
-}
-
 - (NSString *)title {
 	NSString *t = super.title;
 	

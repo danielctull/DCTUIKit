@@ -74,13 +74,6 @@
 	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_addKeyboardObservers:)];
 	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_removeKeyboardObservers:)];
 	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_keyboardWillHide:withNotification:)];
-	
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(tabBarItem)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(setTabBarItem:)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(leftBarButtonItem)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(setLeftBarButtonItem:)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(rightBarButtonItem)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(setRightBarButtonItem:)];
 }
 
 - (void)awakeFromNib {
@@ -160,12 +153,6 @@
 - (void)keyboardDidShowNotification:(NSNotification *)notification {}
 - (void)keyboardWillHideNotification:(NSNotification *)notification {}
 - (void)keyboardDidHideNotification:(NSNotification *)notification {}
-- (UITabBarItem *)tabBarItem {return nil;}
-- (void)setTabBarItem:(UITabBarItem *)item {}
-- (void)setLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem {}
-- (UIBarButtonItem *)leftBarButtonItem {return nil;}
-- (void)setRightBarButtonItem:(UIBarButtonItem *)rightBarButtonItem {}
-- (UIBarButtonItem *)rightBarButtonItem {return nil;}
 
 #pragma mark - Internal
 
