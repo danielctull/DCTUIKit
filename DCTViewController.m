@@ -40,7 +40,8 @@
 
 @interface DCTViewController ()
 - (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification;
-- (NSString *)dctInternal_nibNameForClass:(Class)aClass inBundle:(NSBundle *)bundle;
+- (BOOL)dctInternal_nibExistsWithName:(NSString *)nibName inBundle:(NSBundle *)bundle;
+- (void)dctInternal_safeLoadNibNamed:(NSString *)nibName inBundle:(NSBundle *)bundle;
 - (void)dctInternal_addKeyboardObservers;
 - (void)dctInternal_removeKeyboardObservers;
 - (void)dctInternal_init;
@@ -96,18 +97,15 @@
 	
 	NSBundle *bundle = self.nibBundle;
 	if (!bundle) bundle = [NSBundle mainBundle];
-	
-	NSString *nib = self.nibName;
-	
-	if ((nib)) [bundle loadNibNamed:nib owner:self options:nil];
+		
+	[self dctInternal_safeLoadNibNamed:self.nibName inBundle:bundle];
 	
 	if ([self isViewLoaded]) return;
 	
 	Class theClass = [self class];
 	
 	while (![self isViewLoaded] && [theClass isSubclassOfClass:[UIViewController class]]) {
-		NSString *nibName = [self dctInternal_nibNameForClass:theClass inBundle:bundle];
-		if ((nibName)) [bundle loadNibNamed:nibName owner:self options:nil];
+		[self dctInternal_safeLoadNibNamed:NSStringFromClass(theClass) inBundle:bundle];
 		theClass = [theClass superclass];
 	}
 	
@@ -244,20 +242,26 @@
 	}];
 }
 
-- (NSString *)dctInternal_nibNameForClass:(Class)aClass inBundle:(NSBundle *)bundle {
+- (void)dctInternal_safeLoadNibNamed:(NSString *)nibName inBundle:(NSBundle *)bundle {
 	
-	// If the class is not a UIViewController subclass, we don't need to check for a nib.
-	// if (![aClass isSubclassOfClass:[UIViewController class]]) return nil;
-	
-	// Get the classname, see if a xib with that name exists in the resources, is so return it.
-	NSString *classname = NSStringFromClass(aClass);
-	NSString *path = [bundle pathForResource:classname ofType:@"nib"];
-	
-	if (!(path)) path = [bundle pathForResource:classname ofType:@"xib"]; // Is this check needed? All xibs will get compiled to nibs right?
-	
-	if ((path)) return classname;
-	
-	return nil;
+	if ([self dctInternal_nibExistsWithName:nibName inBundle:bundle])
+		[bundle loadNibNamed:nibName owner:self options:nil];
 }
+
+- (BOOL)dctInternal_nibExistsWithName:(NSString *)nibName inBundle:(NSBundle *)bundle {
+	
+	if (nibName == nil) return NO;
+	
+	if (bundle == nil) bundle = [NSBundle mainBundle];
+	
+	NSString *path = [bundle pathForResource:nibName ofType:@"nib"];
+	
+	if (path == nil) path = [bundle pathForResource:nibName ofType:@"xib"]; // Is this check needed? All xibs will get compiled to nibs right?
+	
+	if (path == nil) return NO;
+	
+	return YES;
+}
+	 
 
 @end
