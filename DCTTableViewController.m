@@ -125,10 +125,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	
 	[self.tableView selectRowAtIndexPath:savedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 	self.tableView.contentOffset = savedOffset;
+	
+	[super viewWillAppear:animated];
 	
 	[self dctInternal_addKeyboardObservers];
 }
