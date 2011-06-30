@@ -2,7 +2,7 @@
  DCTViewController.m
  DCTUIKit
  
- Created by Daniel Tull on 19.09.2010.
+ Created by Daniel Tull on 19.9.2010.
  
  
  

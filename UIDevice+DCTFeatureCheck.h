@@ -2,7 +2,7 @@
  UIDevice+DCTFeatureCheck.h
  DCTUIKit
  
- Created by Daniel Tull on 28.08.2010.
+ Created by Daniel Tull on 28.8.2010.
  
  
  

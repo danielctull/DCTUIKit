@@ -2,7 +2,7 @@
  UIDevice+DCTSystemVersion.m
  DCTUIKit
  
- Created by Daniel Tull on 26.06.2009.
+ Created by Daniel Tull on 26.6.2009.
  
  
  

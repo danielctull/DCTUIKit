@@ -2,7 +2,7 @@
  DCTTableViewController.h
  DCTUIKit
  
- Created by Daniel Tull on 09.08.2010.
+ Created by Daniel Tull on 9.8.2010.
  
  
  
