@@ -119,11 +119,6 @@
 	[self dctInternal_removeKeyboardObservers];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
-	[self.tableView flashScrollIndicators];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
 	[self.tableView selectRowAtIndexPath:savedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 	self.tableView.contentOffset = savedOffset;
