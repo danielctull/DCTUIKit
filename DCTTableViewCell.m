@@ -30,3 +30,18 @@
 }
 
 @end
+
+
+@implementation UITableView (DCTTableViewCell)
+
+- (void)dct_registerDCTTableViewCellSubclass:(Class)tableViewCellClass {
+	
+	if (![tableViewCellClass isSubclassOfClass:[DCTTableViewCell class]]) return;
+	
+	UINib *nib = [UINib nibWithNibName:[tableViewCellClass nibName] bundle:nil];
+	NSString *reuseIdentifier = [tableViewCellClass reuseIdentifier];
+	
+	[self registerNib:nib forCellReuseIdentifier:reuseIdentifier];
+}
+
+@end

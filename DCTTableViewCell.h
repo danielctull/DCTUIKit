@@ -14,3 +14,9 @@
 + (NSString *)nibName;
 
 @end
+
+
+
+@interface UITableView (DCTTableViewCell)
+- (void)dct_registerDCTTableViewCellSubclass:(Class)tableViewCellSubclass;
+@end
