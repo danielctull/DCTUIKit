@@ -37,10 +37,10 @@
 #import "DCTViewController.h"
 #import "UIResponder+DCTNextResponderExtensions.h"
 #import "UIView+DCTAnimation.h"
+#import "UINib+DCTExtensions.h"
 
 @interface DCTViewController ()
 - (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification;
-- (BOOL)dctInternal_nibExistsWithName:(NSString *)nibName inBundle:(NSBundle *)bundle;
 - (void)dctInternal_safeLoadNibNamed:(NSString *)nibName inBundle:(NSBundle *)bundle;
 - (void)dctInternal_addKeyboardObservers;
 - (void)dctInternal_removeKeyboardObservers;
@@ -220,23 +220,8 @@
 
 - (void)dctInternal_safeLoadNibNamed:(NSString *)nibName inBundle:(NSBundle *)bundle {
 	
-	if ([self dctInternal_nibExistsWithName:nibName inBundle:bundle])
+	if ([UINib dct_nibExistsWithNibName:nibName bundle:bundle])
 		[bundle loadNibNamed:nibName owner:self options:nil];
-}
-
-- (BOOL)dctInternal_nibExistsWithName:(NSString *)nibName inBundle:(NSBundle *)bundle {
-	
-	if (nibName == nil) return NO;
-	
-	if (bundle == nil) bundle = [NSBundle mainBundle];
-	
-	NSString *path = [bundle pathForResource:nibName ofType:@"nib"];
-	
-	if (path == nil) path = [bundle pathForResource:nibName ofType:@"xib"]; // Is this check needed? All xibs will get compiled to nibs right?
-	
-	if (path == nil) return NO;
-	
-	return YES;
 }
 	 
 
