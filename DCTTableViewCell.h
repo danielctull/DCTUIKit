@@ -13,6 +13,8 @@
 + (NSString *)reuseIdentifier;
 + (NSString *)nibName;
 
+- (void)configureCellWithObject:(id)object;
+
 @end
 
 

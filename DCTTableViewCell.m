@@ -29,6 +29,8 @@
 	return nil;	
 }
 
+- (void)configureCellWithObject:(id)object {}
+
 @end
 
 
