@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DCTTableViewCell : UITableViewCell
+@protocol DCTTableViewCell <NSObject>
+- (void)configureWithObject:(id)object;
+@end
+
+
+@interface DCTTableViewCell : UITableViewCell <DCTTableViewCell>
 
 + (NSString *)reuseIdentifier;
 + (NSString *)nibName;
-
-- (void)configureCellWithObject:(id)object;
 
 @end
 

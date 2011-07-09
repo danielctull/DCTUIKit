@@ -29,7 +29,7 @@
 	return nil;	
 }
 
-- (void)configureCellWithObject:(id)object {}
+- (void)configureWithObject:(id)object {}
 
 @end
 
