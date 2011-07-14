@@ -45,9 +45,6 @@
 - (void)dctInternal_removeKeyboardObservers;
 
 + (void)dctInternal_reimplementSelectorFromDCTViewController:(SEL)selector;
-
-- (void)dctInternal_init;
-
 @end
 
 @implementation DCTTableViewController {
@@ -63,6 +60,7 @@
 
 + (void)initialize {	
 	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(title)];
+	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(sharedInit)];
 	
 	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardWillShowNotification:)];
 	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardDidShowNotification:)];
@@ -77,12 +75,7 @@
 }
 
 - (void)awakeFromNib {
-	[self dctInternal_init];
-}
-
-- (void)dctInternal_init {
-	[self title];
-	resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = YES;
+	[self sharedInit];
 }
 
 #pragma mark - UIViewController
@@ -92,7 +85,7 @@
 	
 	if (!(self = [super initWithNibName:nibName bundle:bundle])) return nil;
 	
-	[self dctInternal_init];
+	[self sharedInit];
 	
 	return self;	
 }
@@ -147,6 +140,7 @@
 
 // Implmenetations in DCTViewController class
 
+- (void)sharedInit {}
 - (NSString *)title {return nil;}
 - (IBAction)dismissModalViewController:(id)sender {}
 - (void)keyboardWillShowNotification:(NSNotification *)notification {}

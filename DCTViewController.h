@@ -53,6 +53,8 @@
 
 - (void)loadTitle;
 
+- (void)sharedInit;
+
 @end
 
 
