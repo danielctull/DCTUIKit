@@ -53,8 +53,13 @@
 
 #pragma mark - NSObject 
 
-- (void)awakeFromNib {
+- (id)initWithCoder:(NSCoder *)coder {
+	
+	if (!(self = [super initWithCoder:coder])) return nil;
+	
 	[self sharedInit];
+	
+	return self;
 }
 
 #pragma mark - UIViewController

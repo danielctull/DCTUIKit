@@ -74,8 +74,13 @@
 	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_keyboardWillHide:withNotification:)];
 }
 
-- (void)awakeFromNib {
+- (id)initWithCoder:(NSCoder *)coder {
+	
+	if (!(self = [super initWithCoder:coder])) return nil;
+	
 	[self sharedInit];
+	
+	return self;
 }
 
 #pragma mark - UIViewController
@@ -157,9 +162,14 @@
 - (void)dctInternal_removeKeyboardObservers {}
 
 + (void)dctInternal_reimplementSelectorFromDCTViewController:(SEL)selector {
-	IMP dctViewControllerImplementation = class_getMethodImplementation([DCTViewController class], selector);
-	Method dctTableViewControllerMethod = class_getInstanceMethod(self, selector);
-	method_setImplementation(dctTableViewControllerMethod, dctViewControllerImplementation);
+	
+	Method dctViewControllerMethod = class_getInstanceMethod([DCTViewController class], selector);	
+	
+	class_replaceMethod([DCTTableViewController class], 
+						selector,
+						method_getImplementation(dctViewControllerMethod), 
+						method_getTypeEncoding(dctViewControllerMethod));
+	
 }
 
 - (void)dctInternal_setupDataSource {
