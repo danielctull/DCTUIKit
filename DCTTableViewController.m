@@ -175,14 +175,6 @@
 - (void)dctInternal_setupDataSource {
 	
 	if (self.tableViewDataSource == nil) return;
-		
-	SEL setViewControllerSelector = @selector(setViewController:);
-	if ([tableViewDataSource respondsToSelector:setViewControllerSelector])
-		[tableViewDataSource performSelector:setViewControllerSelector withObject:self];
-	
-	SEL setTableViewSelector = @selector(setTableView:);
-	if ([tableViewDataSource respondsToSelector:setTableViewSelector])
-		[tableViewDataSource performSelector:setTableViewSelector withObject:self.tableView];
 	
 	self.tableView.dataSource = self.tableViewDataSource;
 }
