@@ -123,7 +123,7 @@
 
 #pragma mark - DCTTableViewController
 
-- (void)setTableViewDataSource:(id<DCTTableViewDataSource>)tvds {
+- (void)setTableViewDataSource:(id<UITableViewDataSource>)tvds {
 	
 	if (self.tableViewDataSource == tvds) return;
 	
@@ -173,9 +173,6 @@
 	if (self.tableViewDataSource == nil) return;
 	
 	self.tableView.dataSource = self.tableViewDataSource;
-	
-	self.tableViewDataSource.viewController = self;
-	self.tableViewDataSource.tableView = self.tableView;
 }
 
 @end
