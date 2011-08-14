@@ -132,8 +132,6 @@
 - (NSString *)title {
 	NSString *t = super.title;
 	
-	NSLog(@"%@:%@ \"%@\"", self, NSStringFromSelector(_cmd), t);
-	
 	if (!(t) || [t isEqualToString:@""]) {
 		[self loadTitle];
 		t = super.title;
