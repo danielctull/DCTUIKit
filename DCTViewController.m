@@ -84,6 +84,11 @@
 	[self dctInternal_addKeyboardObservers];
 }
 
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	[self title];
+}
+
 - (void)loadView {
 		
 	// If the subclass has loaded a view and called super, return so that
@@ -126,6 +131,8 @@
 
 - (NSString *)title {
 	NSString *t = super.title;
+	
+	NSLog(@"%@:%@ \"%@\"", self, NSStringFromSelector(_cmd), t);
 	
 	if (!(t) || [t isEqualToString:@""]) {
 		[self loadTitle];

@@ -98,6 +98,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self dctInternal_setupDataSource];
+	[self title];
 }
 
 // Saving and reloading the position of the table view - if memory warning removes table.
