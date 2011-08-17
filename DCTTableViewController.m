@@ -35,16 +35,10 @@
  */
 
 #import "DCTTableViewController.h"
-#import <objc/runtime.h>
+#import "UIViewController+DCTViewController.h"
 
 @interface DCTTableViewController ()
-- (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification;
 - (void)dctInternal_setupDataSource;
-
-- (void)dctInternal_addKeyboardObservers;
-- (void)dctInternal_removeKeyboardObservers;
-
-+ (void)dctInternal_reimplementSelectorFromDCTViewController:(SEL)selector;
 @end
 
 @implementation DCTTableViewController {
@@ -58,27 +52,11 @@
 
 #pragma mark - NSObject
 
-+ (void)initialize {	
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(title)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(sharedInit)];
-	
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardWillShowNotification:)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardDidShowNotification:)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardWillHideNotification:)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(keyboardDidHideNotification:)];
-	
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dismissModalViewController:)];
-	
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_addKeyboardObservers:)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_removeKeyboardObservers:)];
-	[self dctInternal_reimplementSelectorFromDCTViewController:@selector(dctInternal_keyboardWillHide:withNotification:)];
-}
-
 - (id)initWithCoder:(NSCoder *)coder {
 	
 	if (!(self = [super initWithCoder:coder])) return nil;
 	
-	[self sharedInit];
+	[self dct_sharedInit];
 	
 	return self;
 }
@@ -90,25 +68,40 @@
 	
 	if (!(self = [super initWithNibName:nibName bundle:bundle])) return nil;
 	
-	[self sharedInit];
+	[self dct_sharedInit];
 	
 	return self;	
 }
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	[self dctInternal_setupDataSource];
-	[self title];
+	[self dct_viewDidLoad];
+}
+
+- (void)loadView {
+	[self dct_loadView];
+	
+	if (![self isViewLoaded]) [super loadView];
+}
+
+- (NSString *)title {
+	NSString *t = super.title;
+	
+	if (!(t) || [t isEqualToString:@""]) {
+		[self loadTitle];
+		t = super.title;
+	}
+	
+	return t;
 }
 
 // Saving and reloading the position of the table view - if memory warning removes table.
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
+	[self dct_viewWillDisappear:animated];
 	savedOffset = self.tableView.contentOffset;
 	savedIndexPath = [self.tableView indexPathForSelectedRow];
-	
-	[self dctInternal_removeKeyboardObservers];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -116,8 +109,7 @@
 	self.tableView.contentOffset = savedOffset;
 	
 	[super viewWillAppear:animated];
-	
-	[self dctInternal_addKeyboardObservers];
+	[self dct_viewWillAppear:animated];
 }
 
 #pragma mark - DCTTableViewController
@@ -142,36 +134,18 @@
 
 #pragma mark - DCTViewController
 
-- (void)loadTitle {}
-
-// Implmenetations in DCTViewController class
+- (IBAction)dismissModalViewController:(id)sender {
+	[self dct_dismissModalViewController:sender];
+}
 
 - (void)sharedInit {}
-- (NSString *)title {return nil;}
-- (IBAction)dismissModalViewController:(id)sender {}
+- (void)loadTitle {}
 - (void)keyboardWillShowNotification:(NSNotification *)notification {}
 - (void)keyboardDidShowNotification:(NSNotification *)notification {}
 - (void)keyboardWillHideNotification:(NSNotification *)notification {}
 - (void)keyboardDidHideNotification:(NSNotification *)notification {}
 
 #pragma mark - Internal
-
-// Implmenetations in DCTViewController class
-
-- (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification {}
-- (void)dctInternal_addKeyboardObservers {}
-- (void)dctInternal_removeKeyboardObservers {}
-
-+ (void)dctInternal_reimplementSelectorFromDCTViewController:(SEL)selector {
-	
-	Method dctViewControllerMethod = class_getInstanceMethod([DCTViewController class], selector);	
-	
-	class_replaceMethod([DCTTableViewController class], 
-						selector,
-						method_getImplementation(dctViewControllerMethod), 
-						method_getTypeEncoding(dctViewControllerMethod));
-	
-}
 
 - (void)dctInternal_setupDataSource {
 	

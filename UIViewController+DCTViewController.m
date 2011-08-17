@@ -67,10 +67,18 @@
 		[self dctInternal_safeLoadNibNamed:NSStringFromClass(theClass) inBundle:bundle];
 		theClass = [theClass superclass];
 	}
-	
-	if ([self isViewLoaded]) return;
-	
-	[self loadView];
+}
+
+#pragma mark - DCTViewController
+
+- (void)dct_dismissModalViewController:(id)sender {
+	[self.parentViewController dismissModalViewControllerAnimated:YES];	
+}
+
+- (void)dct_sharedInit {
+	[self title];
+	self.dctViewController.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = YES;
+	[self.dctViewController sharedInit];
 }
 
 - (void)dctInternal_keyboardWillShowNotification:(NSNotification *)notification {	

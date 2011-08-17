@@ -51,7 +51,7 @@
 	
 	if (!(self = [super initWithCoder:coder])) return nil;
 	
-	[self sharedInit];
+	[self dct_sharedInit];
 	
 	return self;
 }
@@ -62,19 +62,9 @@
 	
 	if (!(self = [super initWithNibName:nibName bundle:bundle])) return nil;
 	
-	[self sharedInit];
+	[self dct_sharedInit];
 	
 	return self;	
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-	[self dct_viewWillDisappear:animated];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	[self dct_viewWillAppear:animated];
 }
 
 - (void)viewDidLoad {
@@ -88,17 +78,6 @@
 	if (![self isViewLoaded]) [super loadView];
 }
 
-#pragma mark - DCTViewController
-
-- (void)sharedInit {
-	[self title];
-	resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard = YES;
-}
-
-- (IBAction)dismissModalViewController:(id)sender {
-	[self.parentViewController dismissModalViewControllerAnimated:YES];
-}
-
 - (NSString *)title {
 	NSString *t = super.title;
 	
@@ -110,8 +89,24 @@
 	return t;
 }
 
-- (void)loadTitle {}
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	[self dct_viewWillDisappear:animated];
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self dct_viewWillAppear:animated];
+}
+
+#pragma mark - DCTViewController
+
+- (IBAction)dismissModalViewController:(id)sender {
+	[self dct_dismissModalViewController:sender];
+}
+
+- (void)sharedInit {}
+- (void)loadTitle {}
 - (void)keyboardWillShowNotification:(NSNotification *)notification {}
 - (void)keyboardDidShowNotification:(NSNotification *)notification {}
 - (void)keyboardWillHideNotification:(NSNotification *)notification {}

@@ -10,9 +10,11 @@
 
 @interface UIViewController (DCTViewController)
 
+- (void)dct_sharedInit;
 - (void)dct_viewDidLoad;
 - (void)dct_loadView;
 - (void)dct_viewWillDisappear:(BOOL)animated;
 - (void)dct_viewWillAppear:(BOOL)animated;
+- (void)dct_dismissModalViewController:(id)sender;
 
 @end
