@@ -124,11 +124,7 @@
 }
 
 - (void)setTableView:(UITableView *)tableView {
-	
-	if (self.tableView == tableView) return;
-	
 	[super setTableView:tableView];
-	
 	[self dctInternal_setupDataSource];
 }
 
