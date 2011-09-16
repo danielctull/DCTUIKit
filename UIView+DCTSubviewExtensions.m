@@ -39,8 +39,7 @@
 @implementation UIView (DCTSubviewExtensions)
 
 - (void)dct_removeAllSubviews {
-	while ([self.subviews count] > 0)
-		[[self.subviews lastObject] removeFromSuperview];
+	[self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 - (id)dct_subviewOfKindOfClass:(Class)aClass {
