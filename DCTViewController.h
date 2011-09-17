@@ -41,9 +41,6 @@
 
 @protocol DCTViewController <NSObject>
 
-@property (nonatomic, assign) BOOL resizeViewToFitKeyboard;
-@property (nonatomic, assign) BOOL resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
-
 - (void)keyboardWillShowNotification:(NSNotification *)notification;
 - (void)keyboardDidShowNotification:(NSNotification *)notification;
 - (void)keyboardWillHideNotification:(NSNotification *)notification;
@@ -62,4 +59,6 @@
 /** Subclass of UIViewController.
  */
 @interface DCTViewController : UIViewController<DCTViewController>
+@property (nonatomic, assign) BOOL resizeViewToFitKeyboard;
+@property (nonatomic, assign) BOOL resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
 @end

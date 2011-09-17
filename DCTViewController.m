@@ -40,6 +40,10 @@
 #import "UINib+DCTExtensions.h"
 #import "UIViewController+DCTViewController.h"
 
+@interface DCTViewController ()
+- (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification;
+@end
+
 @implementation DCTViewController
 
 @synthesize resizeViewToFitKeyboard;
@@ -107,9 +111,74 @@
 
 - (void)sharedInit {}
 - (void)loadTitle {}
-- (void)keyboardWillShowNotification:(NSNotification *)notification {}
+- (void)keyboardWillShowNotification:(NSNotification *)notification {
+	if (self.resizeViewToFitKeyboard)
+		[self dctInternal_keyboardWillHide:NO withNotification:notification];
+}
 - (void)keyboardDidShowNotification:(NSNotification *)notification {}
-- (void)keyboardWillHideNotification:(NSNotification *)notification {}
+
+- (void)keyboardWillHideNotification:(NSNotification *)notification {
+	if (self.resizeViewToFitKeyboard)
+		[self dctInternal_keyboardWillHide:YES withNotification:notification];
+}
+
 - (void)keyboardDidHideNotification:(NSNotification *)notification {}
+
+- (void)dctInternal_keyboardWillHide:(BOOL)hidden withNotification:(NSNotification *)notification {
+	
+	UIView *view = self.view;
+	
+	NSDictionary *userInfo = [notification userInfo];
+	
+	CGRect keyboardEndRect, keyboardBeginRect;
+	[[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardEndRect];
+	[[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] getValue:&keyboardBeginRect];
+	
+	if (keyboardEndRect.origin.y == keyboardBeginRect.origin.y) return;
+	
+	UIWindow *window = view.window;
+	CGRect endRect = [window convertRect:keyboardEndRect toView:view];
+	
+	CGRect originalRect;
+	
+	if (!hidden) originalRect = view.frame;
+	
+	if (self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard) {
+		
+		CGRect beginRect = [window convertRect:keyboardBeginRect toView:view];
+		
+		[UIView animateWithDuration:0.0f animations:^(void) {
+			view.frame = CGRectMake(originalRect.origin.x, 
+									originalRect.origin.y,
+									originalRect.size.width, 
+									beginRect.origin.y);
+		}];
+	}
+	
+	UIViewAnimationCurve curve;
+	[[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&curve];
+	UIViewAnimationOptions animationOptions = [UIView dct_animationOptionCurveForAnimationCurve:curve];
+	
+	double duration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];	
+	
+	[UIView animateWithDuration:duration
+						  delay:0.0f
+						options:animationOptions
+					 animations:^(void) {
+						 
+						 if (hidden && !self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard)
+							 view.frame = originalRect;
+						 else 
+							 view.frame = CGRectMake(originalRect.origin.x, 
+													 originalRect.origin.y,
+													 originalRect.size.width, 
+													 endRect.origin.y);
+						 
+					 } completion:^(BOOL finished) {
+						 
+						 if (hidden && self.resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard)
+							 view.frame = originalRect;		
+					 }];
+}
 
 @end

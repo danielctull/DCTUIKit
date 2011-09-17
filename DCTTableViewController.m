@@ -47,8 +47,6 @@
 }
 
 @synthesize tableViewDataSource;
-@synthesize resizeViewToFitKeyboard;
-@synthesize resizeViewToBottomEdgeOfScreenBeforeResizingForKeyboard;
 
 #pragma mark - NSObject
 
