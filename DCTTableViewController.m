@@ -71,9 +71,15 @@
 	return self;	
 }
 
+- (void)viewDidUnload {
+	[super viewDidUnload];
+	tableViewDataSource = nil;
+}
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self dct_viewDidLoad];
+	[self tableViewDataSource];
 }
 
 - (void)loadView {
@@ -112,9 +118,17 @@
 
 #pragma mark - DCTTableViewController
 
+- (id<UITableViewDataSource>)tableViewDataSource {
+	
+	if (!tableViewDataSource)
+		[self loadTableViewDataSource];
+	
+	return tableViewDataSource;	
+}
+
 - (void)setTableViewDataSource:(id<UITableViewDataSource>)tvds {
 	
-	if (self.tableViewDataSource == tvds) return;
+	if (tableViewDataSource == tvds) return;
 	
 	tableViewDataSource = tvds;
 	
@@ -125,6 +139,8 @@
 	[super setTableView:tableView];
 	[self dctInternal_setupDataSource];
 }
+
+- (void)loadTableViewDataSource {}
 
 #pragma mark - DCTViewController
 
