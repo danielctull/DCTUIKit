@@ -72,7 +72,7 @@
 }
 
 - (void)viewDidLoad {
-	[self viewDidLoad];
+	[super viewDidLoad];
 	[self dct_viewDidLoad];
 }
 
