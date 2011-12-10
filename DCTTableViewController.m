@@ -162,6 +162,7 @@
 	if (self.tableViewDataSource == nil) return;
 	
 	self.tableView.dataSource = self.tableViewDataSource;
+	[self.tableView reloadData];
 }
 
 @end
