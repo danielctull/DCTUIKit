@@ -36,8 +36,8 @@
 
 #import "UIView+DCTLogging.h"
 
-@interface UIView ()
-- (void)dctInternal_logHierarchyValue:(NSInteger)integer;
+@interface UIView (DCTLoggingInternal)
+- (void)dctLoggingInternal_logHierarchyValue:(NSInteger)integer;
 @end
 
 
@@ -48,7 +48,7 @@
 	NSLog(@"Logging Hierarchy");
 	NSLog(@"-----------------");
 	
-	[self dctInternal_logHierarchyValue:0];
+	[self dctLoggingInternal_logHierarchyValue:0];
 	
 	NSLog(@"-----------------");
 }
@@ -56,7 +56,7 @@
 #pragma mark -
 #pragma mark Internal
 
-- (void)dctInternal_logHierarchyValue:(NSInteger)integer {
+- (void)dctLoggingInternal_logHierarchyValue:(NSInteger)integer {
 	
 	
 	NSMutableString *string = [[NSMutableString alloc] init];
@@ -69,7 +69,7 @@
 	
 	
 	for (UIView *v in self.subviews)
-		[v dctInternal_logHierarchyValue:integer+1];
+		[v dctLoggingInternal_logHierarchyValue:integer+1];
 }
 
 @end

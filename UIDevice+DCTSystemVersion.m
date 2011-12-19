@@ -36,28 +36,27 @@
 
 #import "UIDevice+DCTSystemVersion.h"
 
-@interface UIDevice ()
-- (NSInteger)dctInternal_systemVersionComponentAtIndex:(NSUInteger)theIndex;
+@interface UIDevice (DCTSystemVersionInternal)
+- (NSInteger)dctSystemVersionInternal_systemVersionComponentAtIndex:(NSUInteger)theIndex;
 @end
 
 @implementation UIDevice (DCTSystemVersion)
 
 - (NSInteger)dct_majorSystemVersion {
-	return [self dctInternal_systemVersionComponentAtIndex:0];
+	return [self dctSystemVersionInternal_systemVersionComponentAtIndex:0];
 }
 
 - (NSInteger)dct_minorSystemVersion {
-	return [self dctInternal_systemVersionComponentAtIndex:1];
+	return [self dctSystemVersionInternal_systemVersionComponentAtIndex:1];
 }
 
 - (NSInteger)dct_maintenanceSystemVersion {
-	return [self dctInternal_systemVersionComponentAtIndex:2];
+	return [self dctSystemVersionInternal_systemVersionComponentAtIndex:2];
 }
 
-#pragma mark -
-#pragma mark Internal
+#pragma mark - Internal
 
-- (NSInteger)dctInternal_systemVersionComponentAtIndex:(NSUInteger)theIndex {
+- (NSInteger)dctSystemVersionInternal_systemVersionComponentAtIndex:(NSUInteger)theIndex {
 	
 	NSArray *components = [self.systemVersion componentsSeparatedByString:@"."];
 	

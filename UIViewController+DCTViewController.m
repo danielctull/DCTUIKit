@@ -40,18 +40,18 @@
 #import "UIView+DCTAnimation.h"
 #import "DCTViewController.h"
 
-@interface UIViewController ()
-- (void)dctInternal_addKeyboardObservers;
-- (void)dctInternal_removeKeyboardObservers;
+@interface UIViewController (DCTViewControllerInternal)
+- (void)dctViewControllerInternal_addKeyboardObservers;
+- (void)dctViewControllerInternal_removeKeyboardObservers;
 
-- (void)dctInternal_keyboardWillShowNotification:(NSNotification *)notification;
-- (void)dctInternal_keyboardDidShowNotification:(NSNotification *)notification;
-- (void)dctInternal_keyboardWillHideNotification:(NSNotification *)notification;
-- (void)dctInternal_keyboardDidHideNotification:(NSNotification *)notification;
+- (void)dctViewControllerInternal_keyboardWillShowNotification:(NSNotification *)notification;
+- (void)dctViewControllerInternal_keyboardDidShowNotification:(NSNotification *)notification;
+- (void)dctViewControllerInternal_keyboardWillHideNotification:(NSNotification *)notification;
+- (void)dctViewControllerInternal_keyboardDidHideNotification:(NSNotification *)notification;
 
-- (void)dctInternal_safeLoadNibNamed:(NSString *)nibName inBundle:(NSBundle *)bundle;
+- (void)dctViewControllerInternal_safeLoadNibNamed:(NSString *)nibName inBundle:(NSBundle *)bundle;
 
-@property (nonatomic, readonly) UIViewController<DCTViewController> *dctViewController;
+@property (nonatomic, readonly) UIViewController<DCTViewController> *dctViewControllerInternal_dctViewController;
 
 @end
 
@@ -59,11 +59,11 @@
 
 - (void)dct_viewWillAppear:(BOOL)animated {
 	[self.navigationController setToolbarHidden:YES animated:YES]; // OVERRIDE THIS IN VIEWWILLAPPEAR: FOR THE MINORITY OF CASES WHERE THE TOOLBAR IS USED
-	[self dctInternal_addKeyboardObservers];	
+	[self dctViewControllerInternal_addKeyboardObservers];	
 }
 
 - (void)dct_viewWillDisappear:(BOOL)animated {
-	[self dctInternal_removeKeyboardObservers];	
+	[self dctViewControllerInternal_removeKeyboardObservers];	
 }
 
 - (void)dct_viewDidLoad {
@@ -83,14 +83,14 @@
 	NSBundle *bundle = self.nibBundle;
 	if (!bundle) bundle = [NSBundle mainBundle];
 	
-	[self dctInternal_safeLoadNibNamed:self.nibName inBundle:bundle];
+	[self dctViewControllerInternal_safeLoadNibNamed:self.nibName inBundle:bundle];
 	
 	if ([self isViewLoaded]) return;
 	
 	Class theClass = [self class];
 	
 	while (![self isViewLoaded] && [theClass isSubclassOfClass:[UIViewController class]]) {
-		[self dctInternal_safeLoadNibNamed:NSStringFromClass(theClass) inBundle:bundle];
+		[self dctViewControllerInternal_safeLoadNibNamed:NSStringFromClass(theClass) inBundle:bundle];
 		theClass = [theClass superclass];
 	}
 }
@@ -103,48 +103,67 @@
 
 - (void)dct_sharedInit {
 	[self title];
-	[self.dctViewController sharedInit];
+	[self.dctViewControllerInternal_dctViewController sharedInit];
 }
 
-- (void)dctInternal_keyboardWillShowNotification:(NSNotification *)notification {
-	[self.dctViewController keyboardWillShowNotification:notification];
+@end
+
+@implementation UIViewController (DCTViewControllerInternal)
+
+- (void)dctViewControllerInternal_keyboardWillShowNotification:(NSNotification *)notification {
+	[self.dctViewControllerInternal_dctViewController keyboardWillShowNotification:notification];
 }
 
-- (void)dctInternal_keyboardDidShowNotification:(NSNotification *)notification {
-	[self.dctViewController keyboardDidShowNotification:notification];
+- (void)dctViewControllerInternal_keyboardDidShowNotification:(NSNotification *)notification {
+	[self.dctViewControllerInternal_dctViewController keyboardDidShowNotification:notification];
 }
 
-- (void)dctInternal_keyboardWillHideNotification:(NSNotification *)notification {
-	[self.dctViewController keyboardWillHideNotification:notification];
+- (void)dctViewControllerInternal_keyboardWillHideNotification:(NSNotification *)notification {
+	[self.dctViewControllerInternal_dctViewController keyboardWillHideNotification:notification];
 }
 
-- (void)dctInternal_keyboardDidHideNotification:(NSNotification *)notification {
-	[self.dctViewController keyboardDidHideNotification:notification];
+- (void)dctViewControllerInternal_keyboardDidHideNotification:(NSNotification *)notification {
+	[self.dctViewControllerInternal_dctViewController keyboardDidHideNotification:notification];
 }
 
-#pragma mark - Internal
 
-- (void)dctInternal_addKeyboardObservers {
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dctInternal_keyboardWillShowNotification:) name:UIKeyboardWillShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dctInternal_keyboardDidShowNotification:) name:UIKeyboardDidShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dctInternal_keyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dctInternal_keyboardDidHideNotification:) name:UIKeyboardDidHideNotification object:nil];
+
+- (void)dctViewControllerInternal_addKeyboardObservers {
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(dctViewControllerInternal_keyboardWillShowNotification:) 
+												 name:UIKeyboardWillShowNotification
+											   object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(dctViewControllerInternal_keyboardDidShowNotification:) 
+												 name:UIKeyboardDidShowNotification 
+											   object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(dctViewControllerInternal_keyboardWillHideNotification:)
+												 name:UIKeyboardWillHideNotification 
+											   object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(dctViewControllerInternal_keyboardDidHideNotification:) 
+												 name:UIKeyboardDidHideNotification 
+											   object:nil];
 }
 
-- (void)dctInternal_removeKeyboardObservers {
+- (void)dctViewControllerInternal_removeKeyboardObservers {
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
 }
 
-- (void)dctInternal_safeLoadNibNamed:(NSString *)nibName inBundle:(NSBundle *)bundle {
+- (void)dctViewControllerInternal_safeLoadNibNamed:(NSString *)nibName inBundle:(NSBundle *)bundle {
 	
 	if ([UINib dct_nibExistsWithNibName:nibName bundle:bundle])
 		[bundle loadNibNamed:nibName owner:self options:nil];
 }
 
-- (UIViewController<DCTViewController> *)dctViewController {
+- (UIViewController<DCTViewController> *)dctViewControllerInternal_dctViewController {
 	
 	if ([self conformsToProtocol:@protocol(DCTViewController)]) 
 		return (UIViewController<DCTViewController> *)self;
