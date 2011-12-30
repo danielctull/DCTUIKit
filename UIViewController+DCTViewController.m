@@ -58,7 +58,6 @@
 @implementation UIViewController (DCTViewController)
 
 - (void)dct_viewWillAppear:(BOOL)animated {
-	[self.navigationController setToolbarHidden:YES animated:YES]; // OVERRIDE THIS IN VIEWWILLAPPEAR: FOR THE MINORITY OF CASES WHERE THE TOOLBAR IS USED
 	[self dctViewControllerInternal_addKeyboardObservers];	
 }
 
