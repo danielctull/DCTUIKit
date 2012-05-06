@@ -11,4 +11,6 @@
 @interface UITableView (DCTExtras)
 - (void)dct_scrollToBottomAnimated:(BOOL)animated;
 - (void)dct_scrollToTopAnimated:(BOOL)animated;
+- (NSIndexPath *)dct_indexPathOfLastCell;
+- (NSIndexPath *)dct_indexPathOfLastCellInSection:(NSInteger)section;
 @end
