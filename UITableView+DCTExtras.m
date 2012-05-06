@@ -13,10 +13,10 @@
 - (void)dct_scrollToBottomAnimated:(BOOL)animated {
 	
 	NSInteger section = self.numberOfSections - 1;
-	if (section < 0) section = 0;
+	if (section < 0) return;
 	
 	NSInteger row = [self numberOfRowsInSection:section] - 1;
-	if (row < 0) row = 0;
+	if (row < 0) return;
 	
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
 	[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:animated];
