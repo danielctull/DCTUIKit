@@ -112,6 +112,7 @@
 	[self.tableView selectRowAtIndexPath:savedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 	self.tableView.contentOffset = savedOffset;
 	
+	[self tableViewDataSource];
 	[super viewWillAppear:animated];
 	[self dct_viewWillAppear:animated];
 }

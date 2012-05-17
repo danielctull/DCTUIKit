@@ -43,13 +43,7 @@
 	
 	if ([self isKindOfClass:aClass]) return self;
 	
-	UIResponder *nextResponder = self;
-	
-	while ((nextResponder = [nextResponder nextResponder]))
-		if ([nextResponder isKindOfClass:aClass])
-			return nextResponder;
-	
-	return nil;
+	return [[self nextResponder] dct_nearestResponderOfClass:aClass];
 }
 
 - (id)dct_furthestResponderOfClass:(Class)aClass {
@@ -65,11 +59,12 @@
 	
 	NSMutableArray *array = [[NSMutableArray alloc] init];
 	
-	if ([self isKindOfClass:aClass]) [array addObject:self];
-	
-	while ((nextResponder = [nextResponder nextResponder]))
+	do {
+		
 		if ([nextResponder isKindOfClass:aClass])
 			[array addObject:nextResponder];
+	
+	} while ((nextResponder = [nextResponder nextResponder]));
 	
 	return array;
 }
