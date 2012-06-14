@@ -37,3 +37,22 @@
 #define dctuikit         dctuikit_2_0_2
 
 #endif
+
+#import <DCTUIKit/DCTViewController.h>
+#import <DCTUIKit/DCTTableViewController.h>
+#import <DCTUIKit/UIAlertView+DCTErrorHandling.h>
+#import <DCTUIKit/UIColor+DCTComponents.h>
+#import <DCTUIKit/UIColor+DCTHex.h>
+#import <DCTUIKit/UIDevice+DCTFeatureCheck.h>
+#import <DCTUIKit/UIDevice+DCTSystemVersion.h>
+#import <DCTUIKit/UINib+DCTExtensions.h>
+#import <DCTUIKit/UIResponder+DCTNextResponderExtensions.h>
+#import <DCTUIKit/UITableViewCell+DCTExtensions.h>
+#import <DCTUIKit/UIView+DCTAnimation.h>
+#import <DCTUIKit/UIView+DCTFirstResponder.h>
+#import <DCTUIKit/UIView+DCTLogging.h>
+#import <DCTUIKit/UIView+DCTSubviewExtensions.h>
+#import <DCTUIKit/UIWindow+DCTFirstResponder.h>
+#import <DCTUIKit/UIImageView+DCTImageSizing.h>
+#import <DCTUIKit/UIColor+DCTMixing.h>
+#import <DCTUIKit/UITableView+DCTExtras.h>
