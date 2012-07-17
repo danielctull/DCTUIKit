@@ -33,8 +33,9 @@
 #define dctuikit_2_0     20000
 #define dctuikit_2_0_1	 20001
 #define dctuikit_2_0_2	 20002
+#define dctuikit_2_1	 20100
 
-#define dctuikit         dctuikit_2_0_2
+#define dctuikit         dctuikit_2_1
 
 #endif
 
