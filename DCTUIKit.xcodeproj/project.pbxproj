@@ -7,68 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24F6EE4A158A3F1E00CEDD41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F6EE49158A3F1E00CEDD41 /* Foundation.framework */; };
+		2437B6F315B97DD500750117 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F6EE49158A3F1E00CEDD41 /* Foundation.framework */; };
+		2437B70015B97E0B00750117 /* DCTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE73158A3F6500CEDD41 /* DCTTableViewController.m */; };
+		2437B70215B97E0B00750117 /* DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE75158A3F6500CEDD41 /* DCTViewController.m */; };
+		2437B70415B97E0B00750117 /* UIAlertView+DCTErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE77158A3F6500CEDD41 /* UIAlertView+DCTErrorHandling.m */; };
+		2437B70615B97E0B00750117 /* UIColor+DCTComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE79158A3F6500CEDD41 /* UIColor+DCTComponents.m */; };
+		2437B70815B97E0B00750117 /* UIColor+DCTHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE7B158A3F6500CEDD41 /* UIColor+DCTHex.m */; };
+		2437B70A15B97E0B00750117 /* UIDevice+DCTFeatureCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE7D158A3F6500CEDD41 /* UIDevice+DCTFeatureCheck.m */; };
+		2437B70C15B97E0B00750117 /* UIDevice+DCTSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE7F158A3F6500CEDD41 /* UIDevice+DCTSystemVersion.m */; };
+		2437B70E15B97E0B00750117 /* UINib+DCTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE81158A3F6500CEDD41 /* UINib+DCTExtensions.m */; };
+		2437B71015B97E0B00750117 /* UIResponder+DCTNextResponderExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE83158A3F6500CEDD41 /* UIResponder+DCTNextResponderExtensions.m */; };
+		2437B71215B97E0B00750117 /* UITableViewCell+DCTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE85158A3F6500CEDD41 /* UITableViewCell+DCTExtensions.m */; };
+		2437B71415B97E0B00750117 /* UIView+DCTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE87158A3F6500CEDD41 /* UIView+DCTAnimation.m */; };
+		2437B71615B97E0B00750117 /* UIView+DCTFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE89158A3F6500CEDD41 /* UIView+DCTFirstResponder.m */; };
+		2437B71815B97E0B00750117 /* UIView+DCTLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE8B158A3F6500CEDD41 /* UIView+DCTLogging.m */; };
+		2437B71A15B97E0B00750117 /* UIView+DCTSubviewExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE8D158A3F6500CEDD41 /* UIView+DCTSubviewExtensions.m */; };
+		2437B71C15B97E0B00750117 /* UIViewController+DCTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE8F158A3F6500CEDD41 /* UIViewController+DCTExtras.m */; };
+		2437B71E15B97E0B00750117 /* UIViewController+DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE91158A3F6500CEDD41 /* UIViewController+DCTViewController.m */; };
+		2437B72015B97E0B00750117 /* UIWindow+DCTFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE93158A3F6600CEDD41 /* UIWindow+DCTFirstResponder.m */; };
+		2437B72215B97E0B00750117 /* UIImageView+DCTImageSizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE95158A3F6600CEDD41 /* UIImageView+DCTImageSizing.m */; };
+		2437B72415B97E0B00750117 /* UIColor+DCTMixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EEBB158A40A400CEDD41 /* UIColor+DCTMixing.m */; };
+		2437B72615B97E0B00750117 /* UITableView+DCTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EEBD158A40A400CEDD41 /* UITableView+DCTExtras.m */; };
+		2437B72715B97E0C00750117 /* DCTUIKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE4E158A3F1E00CEDD41 /* DCTUIKit.h */; };
+		2437B72815B97E0D00750117 /* DCTTableViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE72158A3F6500CEDD41 /* DCTTableViewController.h */; };
+		2437B72A15B97E0D00750117 /* DCTViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE74158A3F6500CEDD41 /* DCTViewController.h */; };
+		2437B72C15B97E0D00750117 /* UIAlertView+DCTErrorHandling.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE76158A3F6500CEDD41 /* UIAlertView+DCTErrorHandling.h */; };
+		2437B72E15B97E0D00750117 /* UIColor+DCTComponents.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE78158A3F6500CEDD41 /* UIColor+DCTComponents.h */; };
+		2437B73015B97E0D00750117 /* UIColor+DCTHex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE7A158A3F6500CEDD41 /* UIColor+DCTHex.h */; };
+		2437B73215B97E0D00750117 /* UIDevice+DCTFeatureCheck.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE7C158A3F6500CEDD41 /* UIDevice+DCTFeatureCheck.h */; };
+		2437B73415B97E0D00750117 /* UIDevice+DCTSystemVersion.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE7E158A3F6500CEDD41 /* UIDevice+DCTSystemVersion.h */; };
+		2437B73615B97E0D00750117 /* UINib+DCTExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE80158A3F6500CEDD41 /* UINib+DCTExtensions.h */; };
+		2437B73815B97E0D00750117 /* UIResponder+DCTNextResponderExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE82158A3F6500CEDD41 /* UIResponder+DCTNextResponderExtensions.h */; };
+		2437B73A15B97E0D00750117 /* UITableViewCell+DCTExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE84158A3F6500CEDD41 /* UITableViewCell+DCTExtensions.h */; };
+		2437B73C15B97E0D00750117 /* UIView+DCTAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE86158A3F6500CEDD41 /* UIView+DCTAnimation.h */; };
+		2437B73E15B97E0D00750117 /* UIView+DCTFirstResponder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE88158A3F6500CEDD41 /* UIView+DCTFirstResponder.h */; };
+		2437B74015B97E0D00750117 /* UIView+DCTLogging.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE8A158A3F6500CEDD41 /* UIView+DCTLogging.h */; };
+		2437B74215B97E0D00750117 /* UIView+DCTSubviewExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE8C158A3F6500CEDD41 /* UIView+DCTSubviewExtensions.h */; };
+		2437B74415B97E0D00750117 /* UIViewController+DCTExtras.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE8E158A3F6500CEDD41 /* UIViewController+DCTExtras.h */; };
+		2437B74815B97E0D00750117 /* UIWindow+DCTFirstResponder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE92158A3F6600CEDD41 /* UIWindow+DCTFirstResponder.h */; };
+		2437B74A15B97E0D00750117 /* UIImageView+DCTImageSizing.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EE94158A3F6600CEDD41 /* UIImageView+DCTImageSizing.h */; };
+		2437B74C15B97E0D00750117 /* UIColor+DCTMixing.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EEBA158A40A400CEDD41 /* UIColor+DCTMixing.h */; };
+		2437B74E15B97E0D00750117 /* UITableView+DCTExtras.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24F6EEBC158A40A400CEDD41 /* UITableView+DCTExtras.h */; };
 		24F6EE58158A3F1E00CEDD41 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F6EE57158A3F1E00CEDD41 /* SenTestingKit.framework */; };
 		24F6EE5B158A3F1E00CEDD41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F6EE49158A3F1E00CEDD41 /* Foundation.framework */; };
-		24F6EE5E158A3F1E00CEDD41 /* libDCTUIKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F6EE46158A3F1E00CEDD41 /* libDCTUIKit.a */; };
 		24F6EE64158A3F1E00CEDD41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24F6EE62158A3F1E00CEDD41 /* InfoPlist.strings */; };
 		24F6EE67158A3F1E00CEDD41 /* DCTUIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE66158A3F1E00CEDD41 /* DCTUIKitTests.m */; };
-		24F6EE71158A3F5300CEDD41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F6EE70158A3F5300CEDD41 /* UIKit.framework */; };
-		24F6EE96158A3F6600CEDD41 /* DCTTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE72158A3F6500CEDD41 /* DCTTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EE97158A3F6600CEDD41 /* DCTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE73158A3F6500CEDD41 /* DCTTableViewController.m */; };
-		24F6EE98158A3F6600CEDD41 /* DCTViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE74158A3F6500CEDD41 /* DCTViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EE99158A3F6600CEDD41 /* DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE75158A3F6500CEDD41 /* DCTViewController.m */; };
-		24F6EE9A158A3F6600CEDD41 /* UIAlertView+DCTErrorHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE76158A3F6500CEDD41 /* UIAlertView+DCTErrorHandling.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EE9B158A3F6600CEDD41 /* UIAlertView+DCTErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE77158A3F6500CEDD41 /* UIAlertView+DCTErrorHandling.m */; };
-		24F6EE9C158A3F6600CEDD41 /* UIColor+DCTComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE78158A3F6500CEDD41 /* UIColor+DCTComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EE9D158A3F6600CEDD41 /* UIColor+DCTComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE79158A3F6500CEDD41 /* UIColor+DCTComponents.m */; };
-		24F6EE9E158A3F6600CEDD41 /* UIColor+DCTHex.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE7A158A3F6500CEDD41 /* UIColor+DCTHex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EE9F158A3F6600CEDD41 /* UIColor+DCTHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE7B158A3F6500CEDD41 /* UIColor+DCTHex.m */; };
-		24F6EEA0158A3F6600CEDD41 /* UIDevice+DCTFeatureCheck.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE7C158A3F6500CEDD41 /* UIDevice+DCTFeatureCheck.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEA1158A3F6600CEDD41 /* UIDevice+DCTFeatureCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE7D158A3F6500CEDD41 /* UIDevice+DCTFeatureCheck.m */; };
-		24F6EEA2158A3F6600CEDD41 /* UIDevice+DCTSystemVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE7E158A3F6500CEDD41 /* UIDevice+DCTSystemVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEA3158A3F6600CEDD41 /* UIDevice+DCTSystemVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE7F158A3F6500CEDD41 /* UIDevice+DCTSystemVersion.m */; };
-		24F6EEA4158A3F6600CEDD41 /* UINib+DCTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE80158A3F6500CEDD41 /* UINib+DCTExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEA5158A3F6600CEDD41 /* UINib+DCTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE81158A3F6500CEDD41 /* UINib+DCTExtensions.m */; };
-		24F6EEA6158A3F6600CEDD41 /* UIResponder+DCTNextResponderExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE82158A3F6500CEDD41 /* UIResponder+DCTNextResponderExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEA7158A3F6600CEDD41 /* UIResponder+DCTNextResponderExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE83158A3F6500CEDD41 /* UIResponder+DCTNextResponderExtensions.m */; };
-		24F6EEA8158A3F6600CEDD41 /* UITableViewCell+DCTExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE84158A3F6500CEDD41 /* UITableViewCell+DCTExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEA9158A3F6600CEDD41 /* UITableViewCell+DCTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE85158A3F6500CEDD41 /* UITableViewCell+DCTExtensions.m */; };
-		24F6EEAA158A3F6600CEDD41 /* UIView+DCTAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE86158A3F6500CEDD41 /* UIView+DCTAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEAB158A3F6600CEDD41 /* UIView+DCTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE87158A3F6500CEDD41 /* UIView+DCTAnimation.m */; };
-		24F6EEAC158A3F6600CEDD41 /* UIView+DCTFirstResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE88158A3F6500CEDD41 /* UIView+DCTFirstResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEAD158A3F6600CEDD41 /* UIView+DCTFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE89158A3F6500CEDD41 /* UIView+DCTFirstResponder.m */; };
-		24F6EEAE158A3F6600CEDD41 /* UIView+DCTLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE8A158A3F6500CEDD41 /* UIView+DCTLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEAF158A3F6600CEDD41 /* UIView+DCTLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE8B158A3F6500CEDD41 /* UIView+DCTLogging.m */; };
-		24F6EEB0158A3F6600CEDD41 /* UIView+DCTSubviewExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE8C158A3F6500CEDD41 /* UIView+DCTSubviewExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEB1158A3F6600CEDD41 /* UIView+DCTSubviewExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE8D158A3F6500CEDD41 /* UIView+DCTSubviewExtensions.m */; };
-		24F6EEB2158A3F6600CEDD41 /* UIViewController+DCTExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE8E158A3F6500CEDD41 /* UIViewController+DCTExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEB3158A3F6600CEDD41 /* UIViewController+DCTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE8F158A3F6500CEDD41 /* UIViewController+DCTExtras.m */; };
-		24F6EEB4158A3F6600CEDD41 /* UIViewController+DCTViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE90158A3F6500CEDD41 /* UIViewController+DCTViewController.h */; settings = {ATTRIBUTES = (); }; };
-		24F6EEB5158A3F6600CEDD41 /* UIViewController+DCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE91158A3F6500CEDD41 /* UIViewController+DCTViewController.m */; };
-		24F6EEB6158A3F6600CEDD41 /* UIWindow+DCTFirstResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE92158A3F6600CEDD41 /* UIWindow+DCTFirstResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEB7158A3F6600CEDD41 /* UIWindow+DCTFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE93158A3F6600CEDD41 /* UIWindow+DCTFirstResponder.m */; };
-		24F6EEB8158A3F6600CEDD41 /* UIImageView+DCTImageSizing.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE94158A3F6600CEDD41 /* UIImageView+DCTImageSizing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEB9158A3F6600CEDD41 /* UIImageView+DCTImageSizing.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EE95158A3F6600CEDD41 /* UIImageView+DCTImageSizing.m */; };
-		24F6EEBE158A40A400CEDD41 /* UIColor+DCTMixing.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EEBA158A40A400CEDD41 /* UIColor+DCTMixing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEBF158A40A400CEDD41 /* UIColor+DCTMixing.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EEBB158A40A400CEDD41 /* UIColor+DCTMixing.m */; };
-		24F6EEC0158A40A400CEDD41 /* UITableView+DCTExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EEBC158A40A400CEDD41 /* UITableView+DCTExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F6EEC1158A40A400CEDD41 /* UITableView+DCTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F6EEBD158A40A400CEDD41 /* UITableView+DCTExtras.m */; };
-		24F6EECF158A41B600CEDD41 /* DCTUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F6EE4E158A3F1E00CEDD41 /* DCTUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		24F6EE5C158A3F1E00CEDD41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24F6EE3D158A3F1E00CEDD41 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 24F6EE45158A3F1E00CEDD41;
-			remoteInfo = DCTUIKit;
+/* Begin PBXCopyFilesBuildPhase section */
+		2437B6F015B97DD500750117 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				2437B72715B97E0C00750117 /* DCTUIKit.h in CopyFiles */,
+				2437B72815B97E0D00750117 /* DCTTableViewController.h in CopyFiles */,
+				2437B72A15B97E0D00750117 /* DCTViewController.h in CopyFiles */,
+				2437B72C15B97E0D00750117 /* UIAlertView+DCTErrorHandling.h in CopyFiles */,
+				2437B72E15B97E0D00750117 /* UIColor+DCTComponents.h in CopyFiles */,
+				2437B73015B97E0D00750117 /* UIColor+DCTHex.h in CopyFiles */,
+				2437B73215B97E0D00750117 /* UIDevice+DCTFeatureCheck.h in CopyFiles */,
+				2437B73415B97E0D00750117 /* UIDevice+DCTSystemVersion.h in CopyFiles */,
+				2437B73615B97E0D00750117 /* UINib+DCTExtensions.h in CopyFiles */,
+				2437B73815B97E0D00750117 /* UIResponder+DCTNextResponderExtensions.h in CopyFiles */,
+				2437B73A15B97E0D00750117 /* UITableViewCell+DCTExtensions.h in CopyFiles */,
+				2437B73C15B97E0D00750117 /* UIView+DCTAnimation.h in CopyFiles */,
+				2437B73E15B97E0D00750117 /* UIView+DCTFirstResponder.h in CopyFiles */,
+				2437B74015B97E0D00750117 /* UIView+DCTLogging.h in CopyFiles */,
+				2437B74215B97E0D00750117 /* UIView+DCTSubviewExtensions.h in CopyFiles */,
+				2437B74415B97E0D00750117 /* UIViewController+DCTExtras.h in CopyFiles */,
+				2437B74815B97E0D00750117 /* UIWindow+DCTFirstResponder.h in CopyFiles */,
+				2437B74A15B97E0D00750117 /* UIImageView+DCTImageSizing.h in CopyFiles */,
+				2437B74C15B97E0D00750117 /* UIColor+DCTMixing.h in CopyFiles */,
+				2437B74E15B97E0D00750117 /* UITableView+DCTExtras.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		24F6EE46158A3F1E00CEDD41 /* libDCTUIKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCTUIKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2437B6F215B97DD500750117 /* libDCTUIKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCTUIKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F6EE49158A3F1E00CEDD41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24F6EE4E158A3F1E00CEDD41 /* DCTUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTUIKit.h; sourceTree = "<group>"; };
 		24F6EE56158A3F1E00CEDD41 /* DCTUIKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCTUIKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,12 +140,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		24F6EE43158A3F1E00CEDD41 /* Frameworks */ = {
+		2437B6EF15B97DD500750117 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24F6EE71158A3F5300CEDD41 /* UIKit.framework in Frameworks */,
-				24F6EE4A158A3F1E00CEDD41 /* Foundation.framework in Frameworks */,
+				2437B6F315B97DD500750117 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +154,6 @@
 			files = (
 				24F6EE58158A3F1E00CEDD41 /* SenTestingKit.framework in Frameworks */,
 				24F6EE5B158A3F1E00CEDD41 /* Foundation.framework in Frameworks */,
-				24F6EE5E158A3F1E00CEDD41 /* libDCTUIKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +173,8 @@
 		24F6EE47158A3F1E00CEDD41 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				24F6EE46158A3F1E00CEDD41 /* libDCTUIKit.a */,
 				24F6EE56158A3F1E00CEDD41 /* DCTUIKitTests.octest */,
+				2437B6F215B97DD500750117 /* libDCTUIKit.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,45 +258,14 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		24F6EE44158A3F1E00CEDD41 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24F6EECF158A41B600CEDD41 /* DCTUIKit.h in Headers */,
-				24F6EE96158A3F6600CEDD41 /* DCTTableViewController.h in Headers */,
-				24F6EE98158A3F6600CEDD41 /* DCTViewController.h in Headers */,
-				24F6EE9A158A3F6600CEDD41 /* UIAlertView+DCTErrorHandling.h in Headers */,
-				24F6EE9C158A3F6600CEDD41 /* UIColor+DCTComponents.h in Headers */,
-				24F6EE9E158A3F6600CEDD41 /* UIColor+DCTHex.h in Headers */,
-				24F6EEA0158A3F6600CEDD41 /* UIDevice+DCTFeatureCheck.h in Headers */,
-				24F6EEA2158A3F6600CEDD41 /* UIDevice+DCTSystemVersion.h in Headers */,
-				24F6EEA4158A3F6600CEDD41 /* UINib+DCTExtensions.h in Headers */,
-				24F6EEA6158A3F6600CEDD41 /* UIResponder+DCTNextResponderExtensions.h in Headers */,
-				24F6EEA8158A3F6600CEDD41 /* UITableViewCell+DCTExtensions.h in Headers */,
-				24F6EEAA158A3F6600CEDD41 /* UIView+DCTAnimation.h in Headers */,
-				24F6EEAC158A3F6600CEDD41 /* UIView+DCTFirstResponder.h in Headers */,
-				24F6EEAE158A3F6600CEDD41 /* UIView+DCTLogging.h in Headers */,
-				24F6EEB0158A3F6600CEDD41 /* UIView+DCTSubviewExtensions.h in Headers */,
-				24F6EEB2158A3F6600CEDD41 /* UIViewController+DCTExtras.h in Headers */,
-				24F6EEB6158A3F6600CEDD41 /* UIWindow+DCTFirstResponder.h in Headers */,
-				24F6EEBE158A40A400CEDD41 /* UIColor+DCTMixing.h in Headers */,
-				24F6EEC0158A40A400CEDD41 /* UITableView+DCTExtras.h in Headers */,
-				24F6EEB8158A3F6600CEDD41 /* UIImageView+DCTImageSizing.h in Headers */,
-				24F6EEB4158A3F6600CEDD41 /* UIViewController+DCTViewController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		24F6EE45158A3F1E00CEDD41 /* DCTUIKit */ = {
+		2437B6F115B97DD500750117 /* DCTUIKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 24F6EE6A158A3F1E00CEDD41 /* Build configuration list for PBXNativeTarget "DCTUIKit" */;
+			buildConfigurationList = 2437B6FB15B97DD600750117 /* Build configuration list for PBXNativeTarget "DCTUIKit" */;
 			buildPhases = (
-				24F6EE42158A3F1E00CEDD41 /* Sources */,
-				24F6EE43158A3F1E00CEDD41 /* Frameworks */,
-				24F6EE44158A3F1E00CEDD41 /* Headers */,
+				2437B6EE15B97DD500750117 /* Sources */,
+				2437B6EF15B97DD500750117 /* Frameworks */,
+				2437B6F015B97DD500750117 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -287,7 +273,7 @@
 			);
 			name = DCTUIKit;
 			productName = DCTUIKit;
-			productReference = 24F6EE46158A3F1E00CEDD41 /* libDCTUIKit.a */;
+			productReference = 2437B6F215B97DD500750117 /* libDCTUIKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		24F6EE55158A3F1E00CEDD41 /* DCTUIKitTests */ = {
@@ -302,7 +288,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				24F6EE5D158A3F1E00CEDD41 /* PBXTargetDependency */,
 			);
 			name = DCTUIKitTests;
 			productName = DCTUIKitTests;
@@ -330,7 +315,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				24F6EE45158A3F1E00CEDD41 /* DCTUIKit */,
+				2437B6F115B97DD500750117 /* DCTUIKit */,
 				24F6EE55158A3F1E00CEDD41 /* DCTUIKitTests */,
 			);
 		};
@@ -364,30 +349,30 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		24F6EE42158A3F1E00CEDD41 /* Sources */ = {
+		2437B6EE15B97DD500750117 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24F6EE97158A3F6600CEDD41 /* DCTTableViewController.m in Sources */,
-				24F6EE99158A3F6600CEDD41 /* DCTViewController.m in Sources */,
-				24F6EE9B158A3F6600CEDD41 /* UIAlertView+DCTErrorHandling.m in Sources */,
-				24F6EE9D158A3F6600CEDD41 /* UIColor+DCTComponents.m in Sources */,
-				24F6EE9F158A3F6600CEDD41 /* UIColor+DCTHex.m in Sources */,
-				24F6EEA1158A3F6600CEDD41 /* UIDevice+DCTFeatureCheck.m in Sources */,
-				24F6EEA3158A3F6600CEDD41 /* UIDevice+DCTSystemVersion.m in Sources */,
-				24F6EEA5158A3F6600CEDD41 /* UINib+DCTExtensions.m in Sources */,
-				24F6EEA7158A3F6600CEDD41 /* UIResponder+DCTNextResponderExtensions.m in Sources */,
-				24F6EEA9158A3F6600CEDD41 /* UITableViewCell+DCTExtensions.m in Sources */,
-				24F6EEAB158A3F6600CEDD41 /* UIView+DCTAnimation.m in Sources */,
-				24F6EEAD158A3F6600CEDD41 /* UIView+DCTFirstResponder.m in Sources */,
-				24F6EEAF158A3F6600CEDD41 /* UIView+DCTLogging.m in Sources */,
-				24F6EEB1158A3F6600CEDD41 /* UIView+DCTSubviewExtensions.m in Sources */,
-				24F6EEB3158A3F6600CEDD41 /* UIViewController+DCTExtras.m in Sources */,
-				24F6EEB5158A3F6600CEDD41 /* UIViewController+DCTViewController.m in Sources */,
-				24F6EEB7158A3F6600CEDD41 /* UIWindow+DCTFirstResponder.m in Sources */,
-				24F6EEB9158A3F6600CEDD41 /* UIImageView+DCTImageSizing.m in Sources */,
-				24F6EEBF158A40A400CEDD41 /* UIColor+DCTMixing.m in Sources */,
-				24F6EEC1158A40A400CEDD41 /* UITableView+DCTExtras.m in Sources */,
+				2437B70015B97E0B00750117 /* DCTTableViewController.m in Sources */,
+				2437B70215B97E0B00750117 /* DCTViewController.m in Sources */,
+				2437B70415B97E0B00750117 /* UIAlertView+DCTErrorHandling.m in Sources */,
+				2437B70615B97E0B00750117 /* UIColor+DCTComponents.m in Sources */,
+				2437B70815B97E0B00750117 /* UIColor+DCTHex.m in Sources */,
+				2437B70A15B97E0B00750117 /* UIDevice+DCTFeatureCheck.m in Sources */,
+				2437B70C15B97E0B00750117 /* UIDevice+DCTSystemVersion.m in Sources */,
+				2437B70E15B97E0B00750117 /* UINib+DCTExtensions.m in Sources */,
+				2437B71015B97E0B00750117 /* UIResponder+DCTNextResponderExtensions.m in Sources */,
+				2437B71215B97E0B00750117 /* UITableViewCell+DCTExtensions.m in Sources */,
+				2437B71415B97E0B00750117 /* UIView+DCTAnimation.m in Sources */,
+				2437B71615B97E0B00750117 /* UIView+DCTFirstResponder.m in Sources */,
+				2437B71815B97E0B00750117 /* UIView+DCTLogging.m in Sources */,
+				2437B71A15B97E0B00750117 /* UIView+DCTSubviewExtensions.m in Sources */,
+				2437B71C15B97E0B00750117 /* UIViewController+DCTExtras.m in Sources */,
+				2437B71E15B97E0B00750117 /* UIViewController+DCTViewController.m in Sources */,
+				2437B72015B97E0B00750117 /* UIWindow+DCTFirstResponder.m in Sources */,
+				2437B72215B97E0B00750117 /* UIImageView+DCTImageSizing.m in Sources */,
+				2437B72415B97E0B00750117 /* UIColor+DCTMixing.m in Sources */,
+				2437B72615B97E0B00750117 /* UITableView+DCTExtras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,14 +386,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		24F6EE5D158A3F1E00CEDD41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 24F6EE45158A3F1E00CEDD41 /* DCTUIKit */;
-			targetProxy = 24F6EE5C158A3F1E00CEDD41 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		24F6EE62158A3F1E00CEDD41 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -421,6 +398,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2437B6FC15B97DD600750117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				DSTROOT = /tmp/DCTUIKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2437B6FD15B97DD600750117 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				DSTROOT = /tmp/DCTUIKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		24F6EE68158A3F1E00CEDD41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -442,7 +447,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -461,35 +466,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		24F6EE6B158A3F1E00CEDD41 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/DCTUIKit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		24F6EE6C158A3F1E00CEDD41 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/DCTUIKit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -526,20 +505,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2437B6FB15B97DD600750117 /* Build configuration list for PBXNativeTarget "DCTUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2437B6FC15B97DD600750117 /* Debug */,
+				2437B6FD15B97DD600750117 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		24F6EE40158A3F1E00CEDD41 /* Build configuration list for PBXProject "DCTUIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				24F6EE68158A3F1E00CEDD41 /* Debug */,
 				24F6EE69158A3F1E00CEDD41 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		24F6EE6A158A3F1E00CEDD41 /* Build configuration list for PBXNativeTarget "DCTUIKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				24F6EE6B158A3F1E00CEDD41 /* Debug */,
-				24F6EE6C158A3F1E00CEDD41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
